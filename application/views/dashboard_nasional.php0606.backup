@@ -1,0 +1,1503 @@
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="javascript:void(0);"><b>&emsp; Dashboard</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-align-justify"></i>
+            </button>
+            
+            
+        </nav>
+        <div class="container-fluid">
+            
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="<?php echo site_url('Kontrak/konstruksi'); ?>">
+                    <div class="card widget_2 big_icon traffic" style="background-color: #00B4D8">
+                        <div class="body" style="color: white">
+                            <h5 style="color: white"><b>Kontrak Konstruksi Tol</b></h5>
+                            <h2 style="text-align: center; color: white"><?php echo $jml_kontrak_konstruksi ?></h2>
+                            <hr>
+                            <small><b>Total Nilai : Rp. <?php echo number_format($nilai_kontrak_konstruksi,2,',','.') ?></b></small><br>
+                            <!-- <small>&nbsp;</small> -->
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="<?php echo site_url('Kontrak/nonTol'); ?>">
+                    <div class="card widget_2 big_icon sales " style="background-color: #06D6A0">
+                        <div class="body" style="color: white">
+                            <h5 style="color: white"><b>Kontrak Konstruksi non Tol</b></h5>
+                            <h2 style="text-align: center; color: white"><?php echo $jml_kontrak_nonTol ?></h2>
+                            <hr>
+                            <small><b>Total Nilai : Rp. <?php echo number_format($nilai_kontrak_nonTol,2,',','.') ?></b></small><br>
+                            <!-- <small>*Meliputi konstruksi & non konstruksi</small> -->
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="<?php echo site_url('Kontrak_konsultan'); ?>">
+                    <div class="card widget_2 big_icon traffic" style="background-color: #FFBD00">
+                        <div class="body" style="color: white">
+                            <h5 style="color: white"><b>Kontrak Konsultan Tol</b></h5>
+                            <h2 style="text-align: center; color: white"><?php echo $jml_kontrak_konsultanTol ?></h2>
+                            <hr>
+                            <small><b>Total Nilai : Rp. <?php echo number_format($nilai_kontrak_konsultanTol,2,',','.') ?></b></small><br>
+                            <!-- <small>&nbsp;</small> -->
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="<?php echo site_url('Kontrak_konsultan/nonTol'); ?>">
+                    <div class="card widget_2 big_icon sales" style="background-color: #FE6D73">
+                        <div class="body" style="color: white">
+                            <h5 style="color: white"><b>Kontrak Konsultan non Tol</b></h5>
+                            <h2 style="text-align: center;color: white"><?php echo $jml_kontrak_konsultanNonTol ?></h2>
+                            <hr>
+                            <small><b>Total Nilai : Rp. <?php echo number_format($nilai_kontrak_konsultanNonTol,2,',','.') ?></b></small><br>
+                            <small></small>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+              
+            </div>
+            <div class="row clearfix">
+                
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <a href="<?php echo site_url('Kontrak_konsultan/peralatanTol'); ?>">
+                    <div class="card widget_2 big_icon traffic" style="background-color: #43AA8B;">
+                        <div class="body" style="color: white">
+                            <h5 style="color: white"><b>Kontrak Peralatan Tol</b></h5>
+                            <h2 style="color: white"><?php echo $jml_kontrak_peralatanTol ?></h2>
+                            <hr>
+                            <small><b>Total Nilai : Rp. <?php echo number_format($nilai_kontrak_peralatan,2,',','.') ?></b></small><br>
+                            <!-- <small>&nbsp;</small> -->
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <a href="<?php echo site_url('Kontrak_konsultan/nonTol'); ?>">
+                    <div class="card widget_2 big_icon sales" style="background-color: #0A9396">
+                        <div class="body" style="color: white">
+                            <h5 style="color: white"><b>Kontrak Lainnya</b></h5>
+                            <h2 style="color: white"><?php echo $jml_kontrak_lainnya ?></h2>
+                            <hr>
+                            <small><b>Total Nilai : Rp. <?php echo number_format($nilai_kontrak_lainnya,2,',','.') ?></b></small><br>
+                            <small></small>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+
+                    <div class="card widget_2 big_icon traffic" style="background-color: #277DA1;">
+                        <div class="body" style="color: white">
+                            <h5 style="color: white"><b>Semua Kontrak</b></h5>
+                            <h2 style="color: white;"><?php echo $jml_kontrak_peralatanTol+$jml_kontrak_konstruksi+$jml_kontrak_nonTol+$jml_kontrak_konsultanTol+$jml_kontrak_konsultanNonTol ?></h2>
+                            <hr>
+                            <small><b>Total Nilai : Rp. <?php echo number_format($sum_nilai,2,',','.') ?></b></small><br>
+                            <!-- <small>&nbsp;</small> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card widget_2 big_icon traffic ">
+                        <div class="body">
+                            <h5><b>Alokasi Total</b></h5>
+                            <h2>6,3<small class="info"> Triliun</small></h2>
+                            <small>Terpakai <b>Rp. <?php echo number_format($realisasi_pmn+5100000000000,2,',','.') ?></b></small>
+                            <?php
+                                $persen_tot = (($realisasi_pmn+5100000000000)/6300000000000)*100;
+                            ?>
+                            <div class="progress mb-0 mt-2">
+                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="<?php echo round($persen_tot,2) ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo round($persen_tot,2) ?>%;"><?php echo round($persen_tot,2) ?>%</div>
+                            </div>
+                       
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card widget_2 big_icon traffic ">
+                        <div class="body">
+                            <h5><b>Alokasi PMN</b></h5>
+                            <h2>1,2<small class="info"> Triliun</small></h2>
+                            <small>Terpakai <b>Rp. <?php echo number_format($realisasi_pmn,2,',','.') ?></b></small>
+                            <?php
+                                $persen_pmn = ($realisasi_pmn/1200000000000)*100;
+                            ?>
+                            <div class="progress mb-0 mt-2">
+                                <div class="progress-bar bg-red" role="progressbar" aria-valuenow="<?php echo round($persen_pmn,2) ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo round($persen_pmn,2) ?>%;"><?php echo round($persen_pmn,2) ?>%</div>
+                            </div>
+                       
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card widget_2 big_icon sales">
+                        <div class="body">
+                            <h5><b>Alokasi Non-PMN</b></h5>
+                            <h2>5,1 <small class="info">Triliun</small></h2>
+                            <small>Terpakai <b>Rp 5,1 Triliun</b></small>
+                            <div class="progress mb-0 mt-2">
+                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100" style="width: 100%;">100%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="row clearfix">
+               <!--  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card widget_2 big_icon traffic">
+                        <div class="body">
+                            <h5><b>Jumlah Kontrak</b></h5><br>
+                            <div class="row text-center">
+                              <div class="col-md-4">
+                                <h5><b>25</b></h5>
+                                 <div class="card-icon-actions card-icon-actions-lg" >
+                                      <a href="javascript:void(0);" class="love active"><i class="fa fa-gavel fa-2x mb-3" ></i></a>     
+                                 </div>
+                                <h5 class=""><b>Konstruksi</b></h5>
+                              </div>
+                              <div class="col-md-4">
+                                <h5><b>46</b></h5>
+                                <div class="card-icon-actions card-icon-actions-lg">
+                                      <a href="javascript:void(0);"><i class="fa fa-group fa-2x mb-3" style="color:orange"></i></a>     
+                                </div>
+                                <h5><b>Konsultan</b></h5>
+                              </div>
+                              <div class="col-md-4">
+                                <h5><b>53</b></h5>
+                                <div class="card-icon-actions card-icon-actions-lg">
+                                      <a href="javascript:void(0);" ><i class="fa fa-gears fa-2x mb-3" style="color:blue"></i></a>     
+                                 </div>
+                                <h5><b>Konstruksi non Tol</b></h5>
+                              </div>
+                              <br>
+                              <div class="col-md-6 mt-5">
+                                <h5><b>53</b></h5>
+                                <div class="card-icon-actions card-icon-actions-lg">
+                                      <a href="javascript:void(0);" ><i class="fa fa-cubes fa-2x mb-3" style="color:green"></i></a>     
+                                 </div>
+                                <h5><b>Peralatan Tol</b></h5>
+                              </div>
+                              <div class="col-md-6 mt-5">
+                                <h5><b>53</b></h5>
+                                <div class="card-icon-actions card-icon-actions-lg">
+                                      <a href="javascript:void(0);" ><i class="fa fa-bars fa-2x mb-3" style="color:red"></i></a>     
+                                 </div>
+                                <h5><b>Lainnya</b></h5>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-xl-6 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Jumlah Kontrak</b></h5>
+                        </div>
+                        <div class="body">
+                            
+                            <div id="dok_pembayaran" style="height: 310px;"></div>
+                            
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total Kontrak :  <b>12</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Jumlah Issue</b></h5>
+                        </div>
+                        <div class="body">
+                            
+                            <div id="pie_issue_pmn" style="height: 310px;"></div>
+                            
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total Issue :  <b>12</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <h5><b>Monitoring Dana PMN</b></h5>
+            <div class="row clearfix">
+               <div class="col-xl-8 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Summary Penggunaan Dana PMN per Bulan</b></h5>
+                        </div>
+                        <div class="body">                           
+                            <div id="bar_pmn" style="height: 350px;"></div>                            
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total  :  <b>Rp. <?php echo number_format($realisasi_pmn,2,',','.') ?></b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Penggunaan Dana PMN </b></h5>
+                        </div>
+                        <div class="body">                           
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td>Pembayaran Kontrak Konstruksi</td>
+                                        <td class="align-right"><span class="badge badge-lg badge-pill badge-warning text-uppercase">Rp. <?php echo number_format($kontrak_konstruksi_pmn,2,',','.') ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pembayaran Kontrak Konsultan</td>
+                                        <td class="align-right"><span class="badge badge-lg badge-pill badge-primary text-uppercase">Rp. <?php echo number_format($kontrak_konsultan_pmn,2,',','.') ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pembayaran Kontrak Lainnya</td>
+                                        <td class="align-right"><span class="badge badge-lg badge-pill badge-tertiary text-uppercase">Rp. 0,00</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pembayaran Utang PPh</td>
+                                        <td class="align-right"><span class="badge badge-lg badge-pill badge-success text-uppercase">Rp. <?php echo number_format($utang_pmn,2,',','.') ?></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pembayaran Kewajiban Angsuran</td>
+                                        <td class="align-right"><span class="badge badge-lg badge-pill badge-primary text-uppercase">Rp. <?php echo number_format($angsuran_pmn,2,',','.') ?></span></td>
+                                    </tr>                            
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h5><b>Kekurangan Dokumen Kontrak Konstruksi Tol</b></h5>
+            <div class="row clearfix mt-4">
+                <div class="col-xl-4 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Administrasi Kontrak</b></h5>
+                        </div>
+                        <div class="body">
+                            
+                            <div id="pie_krg_konstruksi" style="height: 290px;"></div>
+                            <br>
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total Kekurangan Berkas :  <b><?php echo $sum_konstruksi ?></b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Administrasi Proyek</b></h5>
+                        </div>
+                        <div class="body">                           
+                            <div id="proyek_konstruksi" style="height: 290px;"></div>
+                            <br>
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total Kekurangan Berkas :  <b><?php echo $sum_proyek_konstruksi ?></b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Dokumen Pembayaran</b></h5>
+                        </div>
+                        <div class="body">                           
+                            <div id="pie_pembayaranKonstruksi" style="height: 290px;"></div>
+                            <br>
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total Kekurangan Berkas :  <b>2</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h5><b>Kekurangan Dokumen Kontrak Konsultan Tol</b></h5>
+            <div class="row clearfix mt-4">
+                <div class="col-xl-6 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Administrasi Kontrak</b></h5>
+                        </div>
+                        <div class="body">
+                            
+                            <div id="pie_krg_konsultan" style="height: 290px;"></div>
+                            <br>
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total Kekurangan Berkas :  <b><?php echo $sum_konsultan ?></b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Dokumen Pembayaran</b></h5>
+                        </div>
+                        <div class="body">                           
+                            <div id="pie_pembayaranKonsultan" style="height: 290px;"></div>
+                            <br>
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total Kekurangan Berkas :  <b>2</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <h5><b>Kekurangan Dokumen Kontrak Konsultan Non Tol</b></h5>
+            <div class="row clearfix mt-4">
+               
+                <div class="col-xl-6 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Administrasi Kontrak</b></h5>
+                        </div>
+                        <div class="body">
+                            
+                            <div id="pie_krg_knt" style="height: 290px;"></div>
+                            <br>
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total Kekurangan Berkas :  <b><?php echo $sum_konsultanNonTol ?></b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h5><b>Dokumen Pembayaran</b></h5>
+                        </div>
+                        <div class="body">
+                            
+                            <div id="" style="height: 290px;"></div>
+                            <br>
+                            <div class="d-flex bd-highlight mb-1">
+                                <div class="flex-fill bd-highlight">
+                                    <h6>Total Kekurangan Berkas :  <b>0</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <h5><b>Kekurangan Dokumen Pembayaran</b></h5>
+            <div class="row clearfix">
+               
+            </div> -->
+            
+        </div>
+<div class="modal fade none-border" id="view_dok_pra">
+        <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h4 class="modal-title"><strong>Kekurangan Dokumen</strong></h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                                <table class="table table-hover table-bordered" width="50%">
+                                    <thead>
+                                        <tr>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white; width: 13px"><b>No.</b></th>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white; "><b>Nama Kontrak</b></th>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white"><b>No. Kontrak</b></th>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white; width: 160px;"><b>Nilai (Rp.)</b></th>
+                                          <!-- <th scope="col">Scope</th> -->
+                                          <!-- <th scope="col" style="text-align: center; background-color: #1d6296; color: white; width: 150px;"><b>Status</b></th> -->
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="kurang_dok">
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary btn-sm waves-effect" data-dismiss="modal">Close</button>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="modal fade none-border" id="view_dok_proyek">
+        <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h4 class="modal-title"><strong>Kekurangan Dokumen Proyek</strong></h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                                <table class="table table-hover table-bordered" width="50%">
+                                    <thead>
+                                        <tr>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white; width: 13px"><b>No.</b></th>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white; width: 90px;"><b>No. Sertifikat</b></th>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white"><b>Periode</b></th>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white; "><b>Keterangan</b></th>
+                                          <!-- <th scope="col">Scope</th> -->
+                                          <!-- <th scope="col" style="text-align: center; background-color: #1d6296; color: white; width: 150px;"><b>Status</b></th> -->
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="kurang_dokProyek">
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary btn-sm waves-effect" data-dismiss="modal">Close</button>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="modal fade none-border" id="view_dok_pembayaranKonsultan">
+        <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h4 class="modal-title"><strong>Kekurangan Dokumen Pembayaran</strong></h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                                <table class="table table-hover table-bordered" width="50%">
+                                    <thead>
+                                        <tr>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white; width: 13px"><b>No.</b></th>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white; width: 350px;"><b>Nama Kontrak</b></th>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white"><b>Termin</b></th>
+                                          <th scope="col" style="text-align: center; background-color: #1d6296; color: white; "><b>Nilai</b></th>
+                                          <!-- <th scope="col">Scope</th> -->
+                                          <!-- <th scope="col" style="text-align: center; background-color: #1d6296; color: white; width: 150px;"><b>Status</b></th> -->
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="pembayaranKonsultan">
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary btn-sm waves-effect" data-dismiss="modal">Close</button>
+                        </div>
+                </div>
+        </div>
+</div>
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Simantapp 2022</small>
+    </div>
+  </footer>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script type="text/javascript">
+ 
+ 
+  Highcharts.chart('pie_krg_konstruksi', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ' '
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format : '<b>{point.y}</b>',
+                    distance: -40,
+                },
+                showInLegend: true,
+                point: {
+                    events: {
+                        click: function (e) {
+
+                            var ids = this.z;
+                            return view_kurang_dok_konstruksi(ids);
+                            // $('#view_aset').modal('show');
+
+                            
+                        }
+                    }
+                },
+                colors: [
+                          '#1AA1CC',
+                          '#2571EB',  
+                          '#FF7723',
+                          '#ECCD2C',
+                          '#1CD345' ,
+                          '#FF2626'                    
+                        ],
+            }
+        },
+        legend: {
+            enabled : false,
+        },
+        series: [{
+            name: 'Jumlah',
+            colorByPoint: true,
+            data: [{
+                name: 'Surat Penawaran',
+                y: <?php echo $krg_penawaran_ksi ?>,
+                sliced: true,
+                selected: true,
+                z : 1,
+            }, {
+                name: 'BA Koreksi Aritmatik',
+                y: <?php echo $krg_aritmatik_ksi ?>,
+            }, {
+                name: 'Hasil Kewajaran Harga & Klarifikasi Harga',
+                y: <?php echo $krg_kewajaranHarga_ksi ?>,
+                z: 7,
+            }, {
+                name: 'Surat Penetapan Pemenang Pelelangan',
+                y: <?php echo $krg_pemenangLelang_ksi ?>,
+                z: 9,
+            }, {
+                name: 'Evaluasi Penawaran Akhir',
+                y: <?php echo $krg_evaluasiAkhir_ksi ?>,
+                z: 19,
+            },{
+                name: 'SPMK',
+                y: <?php echo $krg_spmk_ksi ?>,
+                z: 10,
+            },
+            
+            ]
+        }]
+    });
+
+  Highcharts.chart('proyek_konstruksi', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ' '
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format : '<b>{point.y}</b>',
+                    distance: -40,
+                },
+                showInLegend: true,
+                point: {
+                    events: {
+                        click: function (e) {
+
+                            var ids = this.z;
+                            return view_dokProyek_konstruksi(ids);
+                            // $('#view_aset').modal('show');
+
+                            
+                        }
+                    }
+                },
+                colors: [
+                          '#1AA1CC',
+                          '#2571EB',  
+                          '#FF7723',
+                          '#ECCD2C',
+                          '#1CD345' ,
+                          '#FF2626',
+                          '#1accbd',
+                          '#dd3261',
+                          '#fc539f',
+                          '#a7c706',  
+                          '#e66a7c'                  
+                        ],
+            }
+        },
+        legend: {
+            enabled : false,
+        },
+        series: [{
+            name: 'Jumlah',
+            colorByPoint: true,
+            data: [{
+                name: 'Berita Acara Rekapitulasi Volume',
+                y: <?php echo $rekap_vol ?>,
+                sliced: true,
+                selected: true,
+                z : 40,
+            }, {
+                name: 'Data Survey',
+                y: <?php echo $data_surv ?>,
+                z: 41,
+            }, {
+                name: 'Backup Quantity',
+                y: <?php echo $b_quantity ?>,
+                z: 42,
+            }, {
+                name: 'Laporan Quality',
+                y: <?php echo $lap_quality ?>,
+                z: 43,
+            }, {
+                name: 'Laporan Bulanan',
+                y: <?php echo $lap_bul ?>,
+                z: 44,
+            },{
+                name: 'Laporan Mingguan',
+                y: <?php echo $lap_ming ?>,
+                z: 45,
+            },{
+                name: 'Laporan Harian',
+                y: <?php echo $lap_har ?>,
+                z: 46,
+            },{
+                name: ' Izin Pelaksanaan Pekerjaan',
+                y: <?php echo $request ?>,
+                z: 47,
+            },{
+                name: 'Dokumentasi',
+                y: <?php echo $dokumentasi ?>,
+                z: 48,
+            },{
+                name: 'Shop Drawing',
+                y: <?php echo $shop_draw ?>,
+                z: 49,
+            },
+            
+            ]
+        }]
+    });
+  Highcharts.chart('pie_krg_konsultan', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ' '
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format : '<b>{point.y}</b>',
+                    distance: -40,
+                },
+                showInLegend: true,
+                point: {
+                    events: {
+                        click: function (e) {
+
+                            var ids = this.z;
+                            return view_kurang_dok_konsultan(ids);
+                            // $('#view_kurang_konsultan').modal('show');
+
+                            
+                        }
+                    }
+                },
+                colors: [
+                          '#1AA1CC',
+                          '#2571EB',  
+                          '#FF7723',
+                          '#ECCD2C',
+                          '#1CD345' ,
+                          '#FF2626',
+                          '#1accbd',
+                          '#dd3261',
+                          '#fc539f',
+                          '#a7c706',  
+                          '#e66a7c'                  
+                        ],
+            }
+        },
+        legend: {
+            enabled : false,
+        },
+        series: [{
+            name: 'Jumlah Kekurangan',
+            colorByPoint: true,
+            data: [ {
+                name: 'Surat Penawaran',
+                y: <?php echo $krg_penawaran_kst ?>,
+                sliced: true,
+                selected: true,
+                z : 1,
+            }, {
+                name: 'BA Evaluasi & Negosiasi',
+                y: <?php echo $krg_evaluasi_kst ?>,
+                z: 2,
+            }, {
+                name: 'Surat Penunjukan Pemenang',
+                y: <?php echo $krg_suratPenunjukan_kst ?>,
+                z: 3,
+            }, {
+                name: 'Hasil Kewajaran Harga & Klarifikasi Harga',
+                y: <?php echo $krg_kewajaranHarga_kst ?>,
+                z: 7,
+            },{
+                name: 'Surat Pernyataan Kesanggupan',
+                y: <?php echo $krg_kesanggupan_kst ?>,
+                z: 8,
+            },{
+                name: 'Surat Penetapan Pemenang Pelelangan',
+                y: <?php echo $krg_pemenangLelang_kst ?>,
+                z: 9,
+            }, {
+                name: 'SPMK',
+                y: <?php echo $krg_spmk_kst ?>,
+                z: 10,
+            },{
+                name: 'Kontrak',
+                y: <?php echo $krg_kontrak_kst ?>,
+                z: 11,
+            },{
+                name: 'Ketentuan Umum Kontrak',
+                y: <?php echo $krg_ketUmum_kst ?>,
+                z: 12,
+            },{
+                name: 'KAK',
+                y: <?php echo $krg_kak_kst ?>,
+                z: 13,
+            },
+            // {
+            //     name: 'Daftar Kuantitasa & Harga',
+            //     y: <?php echo $krg_kuantitas_kst ?>,
+            // },
+            
+            ]
+        }]
+    });
+
+    Highcharts.chart('pie_pembayaranKonsultan', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ' '
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format : '<b>{point.y}</b>',
+                    distance: -40,
+                },
+                showInLegend: true,
+                point: {
+                    events: {
+                        click: function (e) {
+
+                            var ids = this.z;
+                            return view_kurang_pembayaranKonsultan(ids);
+                            // $('#view_kurang_konsultan').modal('show');
+
+                            
+                        }
+                    }
+                },
+                colors: [
+                          '#1AA1CC',
+                          '#2571EB',  
+                          '#FF7723',
+                          '#ECCD2C',
+                          '#1CD345' ,
+                          '#FF2626',
+                          '#1accbd',
+                          '#dd3261',
+                          '#fc539f',
+                          '#a7c706',  
+                          '#e66a7c'                  
+                        ],
+            }
+        },
+        legend: {
+            enabled : false,
+        },
+        series: [{
+            name: 'Jumlah Kekurangan',
+            colorByPoint: true,
+            data: [ {
+                name: 'Laporan Progres',
+                y: <?php echo $laporan_kst ?>,
+                sliced: true,
+                selected: true,
+                z : 29,
+            }, {
+                name: 'Berita Acara Pembayaran (BAP)',
+                y: <?php echo $bap_kst ?>,
+                z: 31,
+            }, {
+                name: 'Surat Permohonan Pembayaran',
+                y: <?php echo $spp_kst ?>,
+                z: 32,
+            }, {
+                name: 'Kwintansi',
+                y: <?php echo $kwitansi_kst ?>,
+                z: 33,
+            },{
+                name: 'Faktur Pajak (PPN)',
+                y: <?php echo $faktur_kst ?>,
+                z: 34,
+            },{
+                name: 'Slip Pembayaran',
+                y: <?php echo $slip_kst ?>,
+                z: 35,
+            }, {
+                name: 'Internal Memo',
+                y: <?php echo $memo_kst ?>,
+                z: 36,
+            },
+            
+            ]
+        }]
+    });
+    Highcharts.chart('pie_pembayaranKonstruksi', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ' '
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format : '<b>{point.y}</b>',
+                    distance: -40,
+                },
+                showInLegend: true,
+                point: {
+                    events: {
+                        click: function (e) {
+
+                            var ids = this.z;
+                            // return view_kurang_pembayaranKonsultan(ids);
+                            // $('#view_kurang_konsultan').modal('show');
+
+                            
+                        }
+                    }
+                },
+                colors: [
+                          '#1AA1CC',
+                          '#2571EB',  
+                          '#FF7723',
+                          '#ECCD2C',
+                          '#1CD345' ,
+                          '#FF2626',
+                          '#1accbd',
+                          '#dd3261',
+                          '#fc539f',
+                          '#a7c706',  
+                          '#e66a7c'                  
+                        ],
+            }
+        },
+        legend: {
+            enabled : false,
+        },
+        series: [{
+            name: 'Jumlah Kekurangan',
+            colorByPoint: true,
+            data: [ {
+                name: 'Laporan Progres',
+                y: 0,
+                sliced: true,
+                selected: true,
+                z : 29,
+            }, {
+                name: 'Berita Acara Pembayaran (BAP)',
+                y: 0,
+                z: 31,
+            }, {
+                name: 'Surat Permohonan Pembayaran',
+                y: 0,
+                z: 32,
+            }, {
+                name: 'Kwintansi',
+                y: 1,
+                z: 33,
+            },{
+                name: 'Faktur Pajak (PPN)',
+                y: 0,
+                z: 34,
+            },{
+                name: 'Slip Pembayaran',
+                y: 1,
+                z: 35,
+            }, {
+                name: 'Internal Memo',
+                y: 0,
+                z: 36,
+            },
+            
+            ]
+        }]
+    });
+
+  Highcharts.chart('pie_krg_knt', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ' '
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        legend: {
+            enabled : false,
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format : '<b>{point.y}</b>',
+                    distance: -40,
+                },
+                showInLegend: true,
+                point: {
+                    events: {
+                        click: function (e) {
+
+                            var ids = this.z;
+                            return view_kurang_dok_konsultanNonTol(ids);
+                            // $('#view_aset').modal('show');
+
+                            
+                        }
+                    }
+                },
+                colors: [
+                          '#1AA1CC',
+                          '#2571EB',  
+                          '#FF7723',
+                          '#ECCD2C',
+                          '#1CD345' ,
+                          '#FF2626',
+                          '#1accbd',
+                          '#dd3261',
+                          '#fc539f',
+                          '#a7c706',  
+                          '#e66a7c'                  
+                        ],
+            }
+        },
+        series: [{
+            name: 'Jumlah',
+            colorByPoint: true,
+             data: [ {
+                name: 'Surat Penawaran',
+                y: <?php echo $krg_penawaran_knt ?>,
+                sliced: true,
+                selected: true,
+                z : 1,
+            }, {
+                name: 'BA Evaluasi & Negosiasi',
+                y: <?php echo $krg_evaluasi_knt ?>,
+                z: 2,
+            }, {
+                name: 'Surat Penunjukan Pemenang',
+                y: <?php echo $krg_suratPenunjukan_knt ?>,
+                z: 3,
+            },{
+                name: 'SPMK',
+                y: <?php echo $krg_spmk_knt ?>,
+                z: 10,
+            },{
+                name: 'Ketentuan Umum Kontrak',
+                y: <?php echo $krg_ketUmum_knt ?>,
+                z: 12,
+            },{
+                name: 'KAK',
+                y: <?php echo $krg_kak_knt ?>,
+                z: 13,
+            },{
+                name: 'Kontrak',
+                y: <?php echo $krg_kontrak_knt ?>,
+                z: 11,
+            },
+            
+            ]
+        }]
+    });
+
+  Highcharts.chart('bar_pmn', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: '&nbsp;'
+        },
+        xAxis: {
+              categories: [
+              'Maret 2022',
+              'April 2022',
+              'Mei 2022',
+              'Juni 2022',
+              'Juli 2022',
+              'Agustus 2022',
+              'September 2022',
+              'Oktober 2022',
+              'November 2022',
+              'Desember 2022',
+              'Januari 2023',
+              // 'Februari 2023',
+          ],
+        },
+        yAxis: {
+            min: 0,
+            max: 150000000000,
+            title: {
+                text: 'Nilai (Rp.)'
+            },
+            labels: {
+                formatter: function() {
+                  if ( this.value > 100000000 ) return Highcharts.numberFormat( this.value/1000000000, 1) + "M";  //  only switch if > 1000
+                  return Highcharts.numberFormat(this.value,0);
+                }               
+              }
+
+        },
+        legend: {
+            reversed: true,
+            enabled : false
+        },
+        credits:{
+            enabled:false
+        },
+        plotOptions: {
+        bar: {
+            dataLabels: {
+                        enabled: true,
+                        // crop: false,
+                        overflow: 'none',
+                        color: '#000000',
+                        // y: -15,
+                                         
+                        formatter: function() {
+                            if (this.y >= 1E9 ) {
+                                return  (this.y / 1000000000).toFixed(2) + ' M';
+                            }
+                                          
+                        }
+                    },
+        },
+        series: {
+                    cursor: 'pointer',
+                    point: {
+                        events: {
+                            click: function() {
+                                location.href = this.options.url;
+                            }
+                        }
+                    }
+                },
+    },
+        series: [{
+            name: 'Nilai',
+            keys: [ 'y', 'url'],
+            data: [
+
+                    [<?php echo $total_mar ?>,"<?= base_url('Summary/detail_pmn/3');?>"], 
+                    [<?php echo $total_apr ?>,"<?= base_url('Summary/detail_pmn/4');?>"], 
+                    [<?php echo $total_mei ?>,"<?= base_url('Summary/detail_pmn/5');?>"], 
+                    [<?php echo $total_jun ?>,"<?= base_url('Summary/detail_pmn/6');?>"], 
+                    [<?php echo $total_jul ?>,"<?= base_url('Summary/detail_pmn/7');?>"],
+                    [<?php echo $total_agu ?>,"<?= base_url('Summary/detail_pmn/8');?>"], 
+                    [<?php echo $total_sep ?>,"<?= base_url('Summary/detail_pmn/9');?>"], 
+                    [<?php echo $total_okt ?>,"<?= base_url('Summary/detail_pmn/10');?>"],
+                    [<?php echo $total_nov ?>,"<?= base_url('Summary/detail_pmn/11');?>"],
+                    [<?php echo $total_des ?>,"<?= base_url('Summary/detail_pmn/12');?>"],
+                    [<?php echo $total_jan ?>,"<?= base_url('Summary/detail_pmn/1');?>"],
+                    // [<?php echo $total_feb ?>,"<?= base_url('Summary/detail_pmn/2');?>"]  
+
+            ],
+            color: '#17a2b8',
+
+        }, ]
+    });
+  // Highcharts.chart('dok_proyek', {
+  //       chart: {
+  //           type: 'bar'
+  //       },
+  //       title: {
+  //           text: '&nbsp;'
+  //       },
+  //       xAxis: {
+  //             categories: [
+  //             'PMN Seksi 4',
+  //             'Non-PMN Seksi 1',
+  //             'Non-PMN Seksi 2',
+  //             'Non-PMN Seksi 3',
+  //             'Non-PMN Seksi 4',
+  //         ],
+  //       },
+  //       yAxis: {
+  //           min: 0,
+  //           title: {
+  //               text: 'Total issue'
+  //           },
+  //       },
+  //       legend: {
+  //           reversed: true
+  //       },
+  //       credits:{
+  //           enabled:false
+  //       },
+  //       plotOptions: {
+  //           series: {
+  //               stacking: 'normal'
+  //           }
+  //       },
+  //       series: [{
+  //           name: 'Lain-lain',
+  //           data: [4, 2, 3, 5, 2],
+  //           color: '#1AB063',
+
+  //       },{
+  //           name: 'Konstruksi',
+  //           data: [2,1,2,3,2],
+  //           color: '#0263FF',
+  //       }, {
+  //           name: 'Konsultan',
+  //           data: [5, 2, 3, 8, 6],
+  //           color: '#FF7723',
+
+  //       }, ]
+  //   });
+  Highcharts.chart('dok_pembayaran', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: '&nbsp;'
+        },
+        xAxis: {
+              categories: [
+              'Konstruksi',
+              'Konsultan',
+              'Non Konstruksi',
+              'Operasional & Pemeliharaan',
+              'Lainnya',
+          ],
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Kontrak'
+            },
+        },
+        legend: {
+            reversed: true,
+            enabled : false
+        },
+        credits:{
+            enabled:false
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: 'Jumlah',
+            data: [2,1,2,3,2],
+            color: '#1AB063',
+        } ]
+    });
+
+   function view_kurang_dok_konsultan($id_dok){
+         var id = '';
+         var id_dok = $id_dok;
+
+            $.ajax({
+                type : "GET",
+                url  : "<?php echo site_url('Dashboard/get_kurang_dok_konsultan')?>",
+                data : "id_dok="+id_dok, 
+                success:function(response){
+                var data ="";
+                var i=1;
+                $.each(JSON.parse(response), function( index, item ) {
+
+                    var limit = i++;
+                    var bilangan = item.nilai_kontrak;
+    
+                    var number_string = bilangan.toString(),
+                        sisa    = number_string.length % 3,
+                        rupiah  = number_string.substr(0, sisa),
+                        ribuan  = number_string.substr(sisa).match(/\d{3}/g);
+                            
+                    if (ribuan) {
+                        separator = sisa ? '.' : '';
+                        rupiah += separator + ribuan.join('.');
+                    }
+
+                    data+="<tr><td style='color:black'>"+limit+"<td style='color:black;'>"+item.nama_kontrak+"<td style='color:black; text-align:center'>"+item.nomor_kontrak+"<td style='color:black; text-align:center'>"+rupiah +"</td></td</td></tr>";     
+                        
+                    $("#kurang_dok").html(data); 
+
+               });
+                        
+            }
+            });
+
+         $("#view_dok_pra").modal('show');
+    };
+
+     function view_kurang_dok_konsultanNonTol($id_dok){
+         var id = '';
+         var id_dok = $id_dok;
+
+            $.ajax({
+                type : "GET",
+                url  : "<?php echo site_url('Dashboard/get_kurang_dok_konsultanNonTol')?>",
+                data : "id_dok="+id_dok, 
+                success:function(response){
+                var data ="";
+                var i=1;
+                $.each(JSON.parse(response), function( index, item ) {
+
+                    var limit = i++;
+                    var bilangan = item.nilai_kontrak;
+    
+                    var number_string = bilangan.toString(),
+                        sisa    = number_string.length % 3,
+                        rupiah  = number_string.substr(0, sisa),
+                        ribuan  = number_string.substr(sisa).match(/\d{3}/g);
+                            
+                    if (ribuan) {
+                        separator = sisa ? '.' : '';
+                        rupiah += separator + ribuan.join('.');
+                    }
+
+                    data+="<tr><td style='color:black'>"+limit+"<td style='color:black;'>"+item.nama_kontrak+"<td style='color:black; text-align:center'>"+item.nomor_kontrak+"<td style='color:black; text-align:center'>"+rupiah +"</td></td</td></tr>";     
+                        
+                    $("#kurang_dok").html(data); 
+
+               });
+                        
+            }
+            });
+
+         $("#view_dok_pra").modal('show');
+    };
+
+     function view_kurang_dok_konstruksi($id_dok){
+         var id = '';
+         var id_dok = $id_dok;
+
+            $.ajax({
+                type : "GET",
+                url  : "<?php echo site_url('Dashboard/get_kurang_dok_konstruksi')?>",
+                data : "id_dok="+id_dok, 
+                success:function(response){
+                var data ="";
+                var i=1;
+                $.each(JSON.parse(response), function( index, item ) {
+
+                    var limit = i++;
+                    var bilangan = item.nilai_kontrak;
+    
+                    var number_string = bilangan.toString(),
+                        sisa    = number_string.length % 3,
+                        rupiah  = number_string.substr(0, sisa),
+                        ribuan  = number_string.substr(sisa).match(/\d{3}/g);
+                            
+                    if (ribuan) {
+                        separator = sisa ? '.' : '';
+                        rupiah += separator + ribuan.join('.');
+                    }
+
+                    data+="<tr><td style='color:black'>"+limit+"<td style='color:black;'>"+item.nama_kontrak+"<td style='color:black; text-align:center'>"+item.nomor_kontrak+"<td style='color:black; text-align:center'>"+rupiah +"</td></td</td></tr>";     
+                        
+                    $("#kurang_dok").html(data); 
+
+               });
+                        
+            }
+            });
+
+         $("#view_dok_pra").modal('show');
+    };
+
+    function view_dokProyek_konstruksi($id_dok){
+         var id = '';
+         var id_dok = $id_dok;
+
+            $.ajax({
+                type : "GET",
+                url  : "<?php echo site_url('Dashboard/get_kurang_dokProyek')?>",
+                data : "id_dok="+id_dok, 
+                success:function(response){
+                var data ="";
+                var i=1;
+                $.each(JSON.parse(response), function( index, item ) {
+
+                    var limit = i++;
+
+                    data+="<tr><td style='color:black;text-align:center '>"+limit+"<td style='color:black;text-align:center'>"+item.nomor_mc+"<td style='color:black; text-align:center'>"+item.bulan+" "+item.tahun+"<td style='color:black;'>"+item.keterangan +"</td></td</td></tr>";     
+                        
+                    $("#kurang_dokProyek").html(data); 
+
+               });
+                        
+            }
+            });
+
+         $("#view_dok_proyek").modal('show');
+    };
+
+    function view_kurang_pembayaranKonsultan($id_dok){
+         var id = '';
+         var id_dok = $id_dok;
+
+            $.ajax({
+                type : "GET",
+                url  : "<?php echo site_url('Dashboard/get_kurang_dokPembayaranKonsultan')?>",
+                data : "id_dok="+id_dok, 
+                success:function(response){
+                var data ="";
+                var i=1;
+                $.each(JSON.parse(response), function( index, item ) {
+
+                    var limit = i++;
+                    var bilangan = item.nilai;
+    
+                    var number_string = bilangan.toString(),
+                        sisa    = number_string.length % 3,
+                        rupiah  = number_string.substr(0, sisa),
+                        ribuan  = number_string.substr(sisa).match(/\d{3}/g);
+                            
+                    if (ribuan) {
+                        separator = sisa ? '.' : '';
+                        rupiah += separator + ribuan.join('.');
+                    }
+
+                    data+="<tr><td style='color:black;text-align:center '>"+limit+"<td style='color:black;'>"+item.keterangan+"<td style='color:black; text-align:center'>"+item.termin+"<td style='color:black;text-align:center'>"+rupiah +"</td></td</td></tr>";     
+                        
+                    $("#pembayaranKonsultan").html(data); 
+
+               });                        
+            }
+            });
+
+         $("#view_dok_pembayaranKonsultan").modal('show');
+    };
+
+</script>

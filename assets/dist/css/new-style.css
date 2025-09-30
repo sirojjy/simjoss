@@ -1,0 +1,316 @@
+/* === Timeline Styles === */
+.hori-timeline .events {
+	border-top: 5px solid green;
+	border-radius: 10px;
+}
+
+.hori-timeline .events .event-list {
+	display: block;
+	position: relative;
+	text-align: center;
+	margin-right: 0;
+}
+
+.inner-circle {
+	border-radius: 1.5rem;
+	height: 1rem;
+	width: 1rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #3b82f6;
+}
+
+.hori-timeline .events .event-list:before {
+	content: "";
+	position: absolute;
+	height: 36px;
+	border-right: 2px dashed #2ddf36;
+	top: 0;
+}
+
+.hori-timeline .events .event-list .event-date {
+	position: absolute;
+	top: 38px;
+	left: 0;
+	right: 0;
+	width: 75px;
+	margin: 0 auto;
+	border-radius: 4px;
+	padding: 2px 4px;
+}
+
+@media (min-width: 1140px) {
+	.hori-timeline .events .event-list {
+		display: inline-block;
+		width: 19%;
+		padding-top: 45px;
+	}
+
+	.hori-timeline .events .event-list .event-date {
+		top: -12px;
+	}
+}
+
+/* === Card & Shadow Effect === */
+.card {
+	border: none;
+	margin-bottom: 14px;
+	box-shadow: 0 0 13px 0 rgba(236, 236, 241, 0.44);
+}
+
+.effect7 {
+	position: relative;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.effect7:before,
+.effect7:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+	top: 0;
+	bottom: 0;
+	left: 10px;
+	right: 10px;
+	border-radius: 100px / 10px;
+}
+
+.effect7:after {
+	right: 10px;
+	left: auto;
+	transform: skew(8deg) rotate(3deg);
+}
+
+/* === Timeline Steps === */
+.circle {
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	padding: 10px;
+	background: #fff;
+	border: 3px solid #000;
+	color: #000;
+	text-align: center;
+	font: 32px Arial, sans-serif;
+}
+
+.timeline-steps {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.timeline-steps .timeline-step {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	margin: 1rem;
+}
+
+@media (min-width: 768px) {
+	.timeline-steps .timeline-step:not(:last-child):after {
+		content: "";
+		display: block;
+		border-top: 0.25rem dotted #3b82f6;
+		width: 3.46rem;
+		position: absolute;
+		left: 6rem;
+		top: 0.3125rem;
+	}
+
+	.timeline-steps .timeline-step:not(:first-child):before {
+		content: "";
+		display: block;
+		border-top: 0.25rem dotted #3b82f6;
+		width: 3.8125rem;
+		position: absolute;
+		right: 6rem;
+		top: 0.3125rem;
+	}
+}
+
+.timeline-steps .timeline-content {
+	width: 8.2rem;
+	text-align: center;
+}
+
+.timeline-steps .timeline-content .inner-circle,
+.timeline-steps .timeline-content .inner-circle2,
+.timeline-steps .timeline-content .inner-circle3,
+.timeline-steps .timeline-content .inner-circle4,
+.timeline-steps .timeline-content .inner-circle5 {
+	border-radius: 1.5rem;
+	height: 1rem;
+	width: 1rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.timeline-steps .timeline-content .inner-circle {
+	background-color: #3b82f6;
+}
+
+.timeline-steps .timeline-content .inner-circle2 {
+	background-color: #fb8500;
+}
+
+.timeline-steps .timeline-content .inner-circle3 {
+	background-color: #e63946;
+}
+
+.timeline-steps .timeline-content .inner-circle4 {
+	background-color: #20bf55;
+}
+
+.timeline-steps .timeline-content .inner-circle5 {
+	background-color: #03b1fc;
+}
+
+.timeline-steps .timeline-content .inner-circle:before,
+.timeline-steps .timeline-content .inner-circle2:before,
+.timeline-steps .timeline-content .inner-circle3:before,
+.timeline-steps .timeline-content .inner-circle4:before,
+.timeline-steps .timeline-content .inner-circle5:before {
+	content: "";
+	display: inline-block;
+	height: 2rem;
+	width: 2rem;
+	min-width: 2rem;
+	border-radius: 6.25rem;
+	opacity: 0.5;
+}
+
+.timeline-steps .timeline-content .inner-circle:before {
+	background-color: #3b82f6;
+}
+.timeline-steps .timeline-content .inner-circle2:before {
+	background-color: #fb8500;
+}
+.timeline-steps .timeline-content .inner-circle3:before {
+	background-color: #e63946;
+}
+.timeline-steps .timeline-content .inner-circle4:before {
+	background-color: #20bf55;
+}
+.timeline-steps .timeline-content .inner-circle5:before {
+	background-color: #03b1fc;
+}
+
+/* === Comment Row === */
+.comment-widgets .comment-row {
+	border-bottom: 1px solid transparent;
+	padding: 1px 14px 1px 1px;
+	display: flex;
+	margin: 0;
+}
+
+/* === Leaflet & Map Styling === */
+.leafleat-tooltip.no-background {
+	background: transparent;
+	border: 0;
+	color: #fff;
+}
+
+.styleLabelBidang {
+	background: white;
+	border: 0;
+	border-radius: 0px;
+	box-shadow: none;
+	font-size: 7pt;
+	color: black;
+	text-shadow: 2px 2px 5px white;
+}
+
+.styleLabelPermanent {
+	background: rgba(255, 255, 255, 0);
+	border: 0;
+	border-radius: 0px;
+	box-shadow: none;
+	font-size: 9pt;
+	color: #fa003f;
+	text-shadow: 2px 2px 5px white;
+}
+
+.hiddenRow {
+	padding: 0 !important;
+}
+
+.legend {
+	padding: 6px 8px;
+	font: 14px Arial, Helvetica, sans-serif;
+	background: rgba(255, 255, 255, 0.8);
+	line-height: 24px;
+	color: #555;
+}
+
+.legend h4 {
+	text-align: center;
+	font-size: 16px;
+	margin: 2px 12px 8px;
+	color: #777;
+}
+
+.legend span {
+	position: relative;
+	bottom: 3px;
+}
+
+.legend i {
+	width: 18px;
+	height: 18px;
+	float: left;
+	margin: 0 8px 0 0;
+	opacity: 0.7;
+}
+
+.legend i.icon {
+	background-size: 18px;
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.checked {
+	color: orange;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.blink {
+	-webkit-animation: blinker 1s linear infinite;
+	animation: blinker 1s linear infinite;
+	/* size */
+	font-size: 20px;
+}
+
+/* from 0, 50%, 100% */
+@-webkit-keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+
+.bg-cream {
+	background-color: #fef2ca !important;
+}
+
+.bg-slate {
+	background-color: #d9e2f3 !important;
+}
+
+.bg-lightslate {
+	background-color: #eaedf2 !important;
+}
+
+.indent {
+	text-indent: 24px;
+}

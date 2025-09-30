@@ -1,0 +1,147 @@
+
+            <div class="container-fluid">
+                <div class="row clearfix">
+                    <div class="col-xl-11 mx-auto">
+                        <h5 class="mb-10 text-uppercase"><b>PPJT dan Amandemen PPJT</b></h5>
+                        <hr/>
+                        <div class="card border-top border-0 border-4 border-primary">
+                            <div class="card-body">
+                                <form class="form-horizontal" id="upload_form" action="<?php echo $action ?>" enctype="multipart/form-data" data-parsley-validate="true" method="post">
+                                <div class="border p-4 rounded">
+                                    <div class="card-title d-flex align-items-center">
+                                        <div><i class="bx bxs-file me-1 font-22 text-primary"></i>
+                                        </div>
+                                        <h5 class="mb-0 text-primary "> <b>Tambah Data PPJT/Amandemen PPJT</b></h5>
+                                    </div>
+                                    <hr/>
+
+                                    <div class="row mb-3">
+                                        <label for="inputEmailAddress2" class="col-sm-3 col-form-label">Jenis</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control show-tick ms select2" required="" name="jenis" data-placeholder="Select">
+                                                <option value="">-- Pilih --</option>
+                                                <option value="0">PPJT Awal</option>
+                                                <option value="1">Amandemen 1</option>
+                                                <option value="2">Amandemen 2</option>
+                                                <option value="3">Amandemen 3</option>
+                                                <option value="4">Amandemen 4</option>
+                                                <option value="5">Amandemen 5</option>
+                                                <option value="6">Amandemen 6</option>
+                                                <option value="7">Amandemen 7</option>
+                                                <option value="8">Amandemen 8</option>
+                                                <option value="9">Amandemen 9</option>
+                                                <option value="10">Amandemen 10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Nomor Dokumen</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="" name="nomor_dok" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Tanggal Dokumen</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" required="" name="tanggal_dok" class="form-control">
+                                        </div>
+                                    </div>
+                            
+                                    <div class="row mb-3">
+                                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Nilai (Rp.)</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="" name="nilai" id="rupiah" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Keterangan<br><small style="color: red">(*Kosongkan jika tidak ada)</small></label>
+                                        <div class="col-sm-9">
+                                            <textarea name="keterangan" rows="3" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">PIC</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="pic" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Lokasi Hardcopy</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-control show-tick ms select2" name="kantor">
+                                                <option value="">-- Kantor --</option>
+                                                <option value="Kantor Pusat">Kantor Pusat</option>
+                                                <option value="Kantor Lahan">Kantor Lahan</option>
+                                                <option value="Kantor Proyek">Kantor Proyek</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input type="text"  name="rak" class="form-control" placeholder="Rak No.">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input type="text"  name="box" class="form-control" placeholder="Box No.">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">File Dokumen (.pdf)</label>
+                                        <div class="col-sm-9">
+                                            <div class="browse-wrap">
+                                                <input type="file" name="file" id="fileku" class="btn btn-secondary btn-block" title="Choose a file to upload">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-9">
+                                            <progress id="progressBar" value="0" max="100" style="width:100%;"></progress>
+                                            <h5 id="status"></h5>
+                                            <p id="total"></p>
+                                        </div>
+                                    </div>
+                                    
+                                    <br>
+                                    <div class="row">
+                                        <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-9">
+                                            <button type="submit" value="Upload File" onclick="uploadFile()" class="btn btn-primary px-4">Simpan</button> &nbsp;
+                                            <a href="<?php echo site_url('Ppjt') ?>"><button type="button" class="btn btn-danger px-4">Batal</button></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <br><br>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+
+function uploadFile() {
+    var file = document.getElementById("fileku").files[0];
+    var formdata = new FormData();
+    formdata.append("datafile", file);
+    
+    var ajax = new XMLHttpRequest();
+    ajax.upload.addEventListener("progress", progressHandler, false);
+    ajax.open("POST", "upload.php", true);
+    ajax.send(formdata);
+}
+
+function progressHandler(event){
+    // hitung prosentase
+    var percent = (event.loaded / event.total) * 100;
+    // menampilkan prosentase ke komponen id 'progressBar'
+    document.getElementById("progressBar").value = Math.round(percent);
+    // menampilkan prosentase ke komponen id 'status'
+    document.getElementById("status").innerHTML = Math.round(percent)+"% telah terupload";
+    // menampilkan file size yg tlh terupload dan totalnya ke komponen id 'total'
+    document.getElementById("total").innerHTML = "Telah terupload "+event.loaded+" bytes dari "+event.total;
+}
+
+</script>
+
+  
