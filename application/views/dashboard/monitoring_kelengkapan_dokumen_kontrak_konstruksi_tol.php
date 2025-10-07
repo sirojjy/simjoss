@@ -29,6 +29,7 @@
                     </div>
                 </div>
             </div>
+            <p class="text-info ml-4"><i>Last updated : <?= $last_update ?></i></p>
         </div>
     </div>
 </div>
