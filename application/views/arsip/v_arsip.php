@@ -137,6 +137,7 @@
     };
 
     const API_BASE_URL = "http://202.157.176.53:1801/api/";
+    const API_TOKEN = "<?= $api_key ?>";
 
     $(document).ready(function() {
         let table = $('#dt_arsip').DataTable({
@@ -153,8 +154,15 @@
                     d.location = $('#lokasi').val();
                     d.status = $('#status').val();
                     d.search = $('#search').val();
+                },
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer " + API_TOKEN);
+                },
+                error: function(xhr, status, error) {
+                    console.error("DataTables Error:", xhr.responseText);
                 }
             },
+
             "order": [1, 'desc'],
             "columnDefs": [{
                 "orderable": false,
@@ -221,6 +229,12 @@
         $.ajax({
             url: API_BASE_URL + "division/list",
             type: "GET",
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + API_TOKEN);
+            },
+            error: function(xhr, status, error) {
+                console.error("DataTables Error:", xhr.responseText);
+            },
             dataType: "json",
             success: function(data) {
                 $.each(data, function(i, item) {
@@ -246,6 +260,12 @@
                 $.ajax({
                     url: API_BASE_URL + "division/" + divisionId + "/list",
                     type: "GET",
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer " + API_TOKEN);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("DataTables Error:", xhr.responseText);
+                    },
                     dataType: "json",
                     success: function(data) {
                         $.each(data, function(i, item) {
@@ -267,6 +287,12 @@
             url: API_BASE_URL + "location/list",
             type: "GET",
             dataType: "json",
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + API_TOKEN);
+            },
+            error: function(xhr, status, error) {
+                console.error("DataTables Error:", xhr.responseText);
+            },
             success: function(data) {
                 $.each(data, function(i, item) {
                     $('#lokasi').append(

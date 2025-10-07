@@ -38,3 +38,6 @@ application/config/database.php
 #Node modules
 /node_modules
 >>>>>>> 4a12366 (feat: menu pencarian arsip)
+
+application/config/database.php
+application/config/api_key.php
