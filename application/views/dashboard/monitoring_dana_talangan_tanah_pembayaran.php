@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-info"><i>Last updated : <?= $update_bulan_juli ?></i></p>
+                <p class="text-info"><i>Last updated : <?= $last_update ?></i></p>
             </div>
         </div>
     </div>
