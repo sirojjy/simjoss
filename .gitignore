@@ -31,4 +31,10 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+<<<<<<< HEAD
 application/config/database.php
+=======
+
+#Node modules
+/node_modules
+>>>>>>> 4a12366 (feat: menu pencarian arsip)

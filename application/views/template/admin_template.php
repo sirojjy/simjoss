@@ -156,6 +156,8 @@
                             </ul>
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo site_url('Manajemen/arsip') ?>" aria-expanded="false"><i class="mdi mdi-magnify"></i><span class="hide-menu">Pencarian Arsip</span></a></li>
+
                         <li class="sidebar-item "> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-line"></i><span class="hide-menu">Monitoring Operasi</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="<?php echo site_url('Monitoring_operasi/volume'); ?>" class="sidebar-link"> <i class="mdi mdi-chevron-right"></i><span class="hide-menu">Perbandingan Volume</span></a></li>

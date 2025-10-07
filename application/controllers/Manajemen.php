@@ -806,4 +806,17 @@ class Manajemen extends CI_Controller
 
         echo $data;
     }
+
+    //PENCARIAN ARSIP
+    public function arsip()
+    {
+        $ses_data = array(
+            'act_menu'   => 'arsip',
+            'title'      => 'arsip',
+            'breadcrumb' => 'arsip',
+        );
+        $this->session->set_userdata($ses_data);
+        $data = array();
+        $this->template->load('template/admin_template', 'arsip/v_arsip.php');
+    }
 }

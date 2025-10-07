@@ -50,7 +50,9 @@
                             echo $error;
                         }; ?> -->
                 <!-- <h5 align="center" class="m-t-20">JASAMARGA JOGJA SOLO</h5> -->
-                <img src="<?php echo base_url(''); ?>/assets/assets/images/Simjos2.png" style="width: 100%; height:100%" class="light-logo" />
+                <div class="w-100 d-flex justify-content-center mt-3">
+                    <img src="<?php echo base_url(''); ?>/assets/assets/images/Simjos2.png" style="width: 70%; height:100%" class="light-logo" />
+                </div>
                 <hr>
                 <p align="center" class="m-t-20">
                 <h6 align="center"> <b>Login</b></h6></label></p>
