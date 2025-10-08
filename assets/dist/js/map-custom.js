@@ -49,7 +49,7 @@ function templatePopUpWithDetail(params) {
 			<td>Waktu Pemeliharaan</td>
 			<td>: ${params.properties.waktu_pemeliharaan}</td>
 		</tr>
-		<tr>
+		<tr class="${params.properties.Status != "Operasi" ? "d-none" : ""}">
 			<td>Sisa Pemeliharaan</td>
 			${
 				params.properties.PHO_Date
