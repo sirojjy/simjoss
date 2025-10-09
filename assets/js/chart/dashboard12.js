@@ -62,7 +62,7 @@ function getDataKPI(params) {
 			].forEach(([id, colIndex]) => {
 				let total = calcTotal(colIndex);
 				$(`#${id}`).html(
-					`<strong>${new Intl.NumberFormat("id-ID").format(total)}</strong>`
+					`<strong>${new Intl.NumberFormat("id-ID").format(total)}%</strong>`
 				);
 			});
 		},

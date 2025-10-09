@@ -39,6 +39,7 @@ $format_bulan_tahun = "April $tahun";
 $format_bulan_saja = "April $tahun";
 $update_bulan_juni = "Juni $tahun";
 $update_bulan_juli = "Juli $tahun";
+$last_update = "Agustus $tahun";
 ?>
 
 <div class="container-fluid">

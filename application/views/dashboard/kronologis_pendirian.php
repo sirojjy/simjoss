@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <br>
-                <p class="text-info"><i>Last updated : <?= $update_bulan_juli ?></i></p>
+                <p class="text-info"><i>Last updated : <?= $last_update ?></i></p>
             </div>
         </div>
     </div>
@@ -158,7 +158,7 @@
                                 $no = 1;
                                 foreach ($sql as $dt) { ?>
                                     <div class="timeline-step">
-                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Perencanaan KPBU" style="">
+                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Perencanaan KPBU">
                                             <div class="inner-circle2"></div>
                                             <p class="h7 mt-1 text-warning" style="font-size: 14px;"><b><?= $no++ ?>.</b></p>
                                             <p class="h7 mt-1 mb-1" style="font-size: 11px"><b><?php echo date('d-m-Y', strtotime($dt->tanggal)); ?></b></p>
@@ -195,7 +195,7 @@
                                 $no = 4;
                                 foreach ($sql as $dt) { ?>
                                     <div class="timeline-step">
-                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Perencanaan KPBU" style="">
+                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Perencanaan KPBU">
                                             <div class="inner-circle2"></div>
                                             <p class="h7 mt-1 text-warning" style="font-size: 14px;"><b><?= $no++ ?>.</b></p>
                                             <p class="h7 mt-3 mb-1" style="font-size: 11px"><b><?= date('d-m-Y', strtotime($dt->tanggal)); ?></b></p>
@@ -237,7 +237,7 @@
                                 foreach ($row31 as $dt) { ?>
 
                                     <div class="timeline-step">
-                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Penyiapan KPBU" style="">
+                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Penyiapan KPBU">
                                             <div class="inner-circle3"></div>
                                             <p class="h7 mt-1 text-danger" style="font-size: 14px;"><b><?php echo $no++ ?>.</b></p>
                                             <p class="h7 mt-1 mb-1" style="font-size: 11px"><b><?php echo date('d-m-Y', strtotime($dt->tanggal)); ?></b></p>
@@ -279,7 +279,7 @@
                                 foreach ($row41 as $dt) { ?>
 
                                     <div class="timeline-step">
-                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Penyiapan KPBU" style="">
+                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Penyiapan KPBU">
                                             <div class="inner-circle4"></div>
                                             <p class="h7 mt-1 text-success" style="font-size: 14px;"><b><?php echo $no++ ?>.</b></p>
                                             <p class="h7 mt-1 mb-1" style="font-size: 11px"><b><?php echo date('d-m-Y', strtotime($dt->tanggal)); ?></b></p>
@@ -303,7 +303,7 @@
                                 foreach ($row42 as $dt) { ?>
 
                                     <div class="timeline-step">
-                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Penyiapan KPBU" style="">
+                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Penyiapan KPBU">
                                             <div class="inner-circle4"></div>
                                             <p class="h7 mt-1 text-success" style="font-size: 14px;"><b><?php echo $no++ ?>.</b></p>
                                             <p class="h7 mt-1 mb-1" style="font-size: 11px"><b><?php echo date('d-m-Y', strtotime($dt->tanggal)); ?></b></p>
@@ -329,7 +329,7 @@
                                 foreach ($row43 as $dt) { ?>
 
                                     <div class="timeline-step">
-                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Pelaksanaan PPJT" style="">
+                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Pelaksanaan PPJT">
                                             <div class="inner-circle4"></div>
                                             <p class="h7 mt-1 text-success" style="font-size: 14px;"><b><?php echo $no++ ?>.</b></p>
                                             <p class="h7 mt-1 mb-1" style="font-size: 11px"><b><?php echo date('d-m-Y', strtotime($dt->tanggal)); ?></b></p>
@@ -356,7 +356,7 @@
                                 foreach ($row44 as $dt) { ?>
 
                                     <div class="timeline-step">
-                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Pelaksanaan PPJT" style="">
+                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Pelaksanaan PPJT">
                                             <div class="inner-circle4"></div>
                                             <p class="h7 mt-1 text-success" style="font-size: 14px;"><b><?php echo $no++ ?>.</b></p>
                                             <p class="h7 mt-1 mb-1" style="font-size: 11px"><b><?php echo date('d-m-Y', strtotime($dt->tanggal)); ?></b></p>
@@ -383,7 +383,7 @@
                                 foreach ($row45 as $dt) { ?>
 
                                     <div class="timeline-step">
-                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Pelaksanaan PPJT" style="">
+                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Pelaksanaan PPJT">
                                             <div class="inner-circle4"></div>
                                             <p class="h7 mt-1 text-success" style="font-size: 14px;"><b><?php echo $no++ ?>.</b></p>
                                             <p class="h7 mt-1 mb-1" style="font-size: 11px"><b><?php echo date('d-m-Y', strtotime($dt->tanggal)); ?></b></p>
@@ -425,7 +425,7 @@
                                 <?php $no = 1;
                                 foreach ($row5 as $dt) { ?>
                                     <div class="timeline-step">
-                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Pelaksanaan PPJT" style="">
+                                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="Pelaksanaan PPJT">
                                             <div class="inner-circle5"></div>
                                             <p class="h7 mt-1 text-info" style="font-size: 14px;"><b><?= $no++ ?>.</b></p>
                                             <p class="h7 mt-1 mb-1" style="font-size: 11px"><b><?= date('d-m-Y', strtotime($dt->tanggal)); ?></b></p>

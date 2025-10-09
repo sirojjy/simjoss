@@ -1,6 +1,25 @@
 // ==================================================================
 //                      Maps Leaflet Javascipt
 // ==================================================================
+function getProgressStatus(phoDateStr, phoFile, totalDays = 1095) {
+	const urlBase = window.location.origin + "/";
+	const startDate = new Date(phoDateStr);
+	const currentDate = new Date();
+	const elapsedDays = Math.floor(
+		(currentDate - startDate) / (1000 * 60 * 60 * 24)
+	);
+
+	if (elapsedDays >= totalDays) {
+		const passedDays = elapsedDays - totalDays;
+		const endDate = new Date(startDate);
+		endDate.setDate(endDate.getDate() + totalDays);
+		const endDateStr = endDate.toISOString().split("T")[0];
+		return `<td>: <a style="color:red;" class="font-weight-bold" href="${urlBase}file_uploads/maps/${phoFile}" target="_blank"> Masa Berakhir sejak ${endDateStr} (lewat ${passedDays} hari)</a></td>`;
+	} else {
+		return `<td>: <a style="color:green;" class="font-weight-bold" href="${urlBase}file_uploads/maps/${phoFile}" target="_blank"> ${elapsedDays}/${totalDays} hari</a></td>`;
+	}
+}
+
 function templatePopUpWithDetail(params) {
 	let element = `
     <h6 class="font-weight-bold text-center mb-0">Detail</h6>
@@ -29,6 +48,17 @@ function templatePopUpWithDetail(params) {
 		<tr class="${params.properties.Status != "Operasi" ? "d-none" : ""}">
 			<td>Waktu Pemeliharaan</td>
 			<td>: ${params.properties.waktu_pemeliharaan}</td>
+		</tr>
+		<tr class="${params.properties.Status != "Operasi" ? "d-none" : ""}">
+			<td>Sisa Pemeliharaan</td>
+			${
+				params.properties.PHO_Date
+					? getProgressStatus(
+							params.properties.PHO_Date,
+							params.properties.PHO_file
+					  )
+					: "-"
+			}
 		</tr>
 	</table>
 	<p class="text-center mb-0 mt-2">
