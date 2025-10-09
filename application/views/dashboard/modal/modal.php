@@ -30,9 +30,662 @@
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Tabel 1 -->
+                <!-- 55-57 -->
                 <h6 class="font-weight-bold" style="color: rgb(21, 81, 128);">Tabel 1: Pembiayaan Tahap 1</h6>
                 <div class="table-responsive mb-4">
+                    <table class="table table-bordered table-striped table-sm">
+                        <thead class="text-center text-white" style="background-color:#1d6296;">
+                            <tr>
+                                <th rowspan="3">No</th>
+                                <th rowspan="3">Uraian</th>
+                                <th rowspan="3">Total Project Cost</th>
+                                <th rowspan="2" colspan="3">Akumulasi Pengeluaran + Pencairan 19 Dari awal s.d 30 Juni 2025</th>
+                                <th rowspan="2">Sisa Anggaran</th>
+                                <th colspan="7">Proyeksi Juni s.d Des 2025</th>
+                            </tr>
+                            <tr>
+                                <th>Jun-25</th>
+                                <th>Jul-25</th>
+                                <th>Agu-25</th>
+                                <th>Sep-25</th>
+                                <th>Okt-25</th>
+                                <th>Nov-25</th>
+                                <th>Des-25</th>
+                            </tr>
+                            <tr>
+                                <th>Jumlah Rp</th>
+                                <th>Prestasi %</th>
+                                <th>Bobot %</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Desain (FED)</td>
+                                <td>199.198.000.000</td>
+                                <td>64.440.909.612</td>
+                                <td>32.35%</td>
+                                <td>0.46%</td>
+                                <td>134.757.090.388</td>
+                                <td>-</td>
+                                <td>4.086.101.200</td>
+                                <td>4.834.813.136</td>
+                                <td>5.984.582.700</td>
+                                <td>-</td>
+                                <td>7.943.242.714</td>
+                                <td>31.367.800.500</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Konstruksi</td>
+                                <td>10.392.510.000.000</td>
+                                <td>7.048.941.727.164</td>
+                                <td>67,83%</td>
+                                <td>67,83%</td>
+                                <td>3.343.568.272.836</td>
+                                <td>172.395.568.297</td>
+                                <td>121.255.796.623</td>
+                                <td>155.733.927.803</td>
+                                <td>189.176.049.262</td>
+                                <td>292.921.248.330</td>
+                                <td>238.086.988.365</td>
+                                <td>238.086.988.365</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Clear Zone</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Peralatan Tol</td>
+                                <td>28.907.000.000</td>
+                                <td>15.840.466.975</td>
+                                <td>54,80%</td>
+                                <td>0,11%</td>
+                                <td>13.066.533.025</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>15.840.466.975</td>
+                                <td>-</td>
+                                <td>18.310.276.837</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Supervisi</td>
+                                <td>123.808.000.000</td>
+                                <td>93.841.580.149</td>
+                                <td>75,80%</td>
+                                <td>0,66%</td>
+                                <td>29.966.419.851</td>
+                                <td>1.695.950.154</td>
+                                <td>2.886.790.000</td>
+                                <td>2.812.278.000</td>
+                                <td>2.624.492.000</td>
+                                <td>2.660.541.500</td>
+                                <td>2.187.630.000</td>
+                                <td>2.337.357.798</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Eskalasi</td>
+                                <td>973.264.000.000</td>
+                                <td>-</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td>973.264.000.000</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>442.205.380.370</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>PPN</td>
+                                <td>1.288.945.000.000</td>
+                                <td>792.317.573.949</td>
+                                <td>61,47%</td>
+                                <td>5,61%</td>
+                                <td>496.627.426.051</td>
+                                <td>19.209.717.835</td>
+                                <td>14.164.531.461</td>
+                                <td>18.030.242.883</td>
+                                <td>21.814.694.436</td>
+                                <td>32.577.167.681</td>
+                                <td>76.004.887.359</td>
+                                <td>23.265.507.472</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Overhead</td>
+                                <td>171.877.000.000</td>
+                                <td>19.848.202.020</td>
+                                <td>11,55%</td>
+                                <td>0,14%</td>
+                                <td>152.028.797.980</td>
+                                <td>-</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Financial Cost</td>
+                                <td>195.781.000.000</td>
+                                <td>-</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td>195.781.000.000</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>86.248.082.214</td>
+                                <td>-</td>
+                                <td>25.000.000.000</td>
+                                <td>-</td>
+                                <td>1.500.000.000</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>IDC</td>
+                                <td>758.875.000.000</td>
+                                <td>545.054.946.183</td>
+                                <td>71,82%</td>
+                                <td>3,86%</td>
+                                <td>213.820.053.817</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>110.314.887.919</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>103.505.165.899</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th class="text-center font-weight-bold">Total</th>
+                                <th class="text-center font-weight-bold">14.133.165.000.000 </th>
+                                <th class="text-center font-weight-bold">8.580.285.406.052 </th>
+                                <th></th>
+                                <th class="text-center font-weight-bold">60,71%</th>
+                                <th class="text-center font-weight-bold">5.552.879.593.948</th>
+                                <th class="text-center font-weight-bold">193.301.236.286</th>
+                                <th class="text-center font-weight-bold">144.664.102.001</th>
+                                <th class="text-center font-weight-bold">285.770.693.729</th>
+                                <th class="text-center font-weight-bold">332.185.589.034</th>
+                                <th class="text-center font-weight-bold">373.740.117.066</th>
+                                <th class="text-center font-weight-bold">768.699.011.526</th>
+                                <th class="text-center font-weight-bold">341.545.389.467</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered table-striped table-sm">
+                        <thead class="text-center text-white" style="background-color:#1d6296;">
+                            <tr>
+                                <th rowspan="3">No</th>
+                                <th rowspan="3">Uraian</th>
+                                <th rowspan="3">Total Project Cost</th>
+                                <th rowspan="2" colspan="3">Akumulasi Pengeluaran + Pencairan 19 Dari awal s.d 30 Juni 2025</th>
+                                <th rowspan="2">Sisa Anggaran</th>
+                                <th colspan="7">Proyeksi Januari s.d Juni 2026</th>
+                            </tr>
+                            <tr>
+                                <th>Jan-26</th>
+                                <th>Feb-26</th>
+                                <th>Mar-26</th>
+                                <th>Apr-26</th>
+                                <th>Mei-26</th>
+                                <th>Jun-26</th>
+                            </tr>
+                            <tr>
+                                <th>Jumlah Rp</th>
+                                <th>Prestasi %</th>
+                                <th>Bobot %</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Konstruksi</td>
+                                <td>10.392.510.000.000</td>
+                                <td>7.048.941.727.164</td>
+                                <td>67,83%</td>
+                                <td>67,83%</td>
+                                <td>3.343.568.272.836</td>
+                                <td>271.711.500.542</td>
+                                <td>257.926.166.842</td>
+                                <td>281.416.451.515</td>
+                                <td>147.170.103.523</td>
+                                <td>142.851.597.944</td>
+                                <td>50.993.629.716</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Clear Zone</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Peralatan Tol</td>
+                                <td>28.907.000.000</td>
+                                <td>15.840.466.975</td>
+                                <td>54,80%</td>
+                                <td>0,11%</td>
+                                <td>13.066.533.025</td>
+                                <td>18.310.276.837</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Supervisi</td>
+                                <td>123.808.000.000</td>
+                                <td>93.841.580.149</td>
+                                <td>75,80%</td>
+                                <td>0,66%</td>
+                                <td>29.966.419.851</td>
+                                <td>2.260.483.800</td>
+                                <td>2.229.483.800</td>
+                                <td>2.273.483.800</td>
+                                <td>2.400.583.800</td>
+                                <td>2.371.533.050</td>
+                                <td>2.492.632.798</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Eskalasi</td>
+                                <td>973.264.000.000</td>
+                                <td>-</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td>973.264.000.000</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>PPN</td>
+                                <td>1.288.945.000.000</td>
+                                <td>792.317.573.949</td>
+                                <td>61,47%</td>
+                                <td>5,61%</td>
+                                <td>496.627.426.051</td>
+                                <td>30.295.101.578</td>
+                                <td>28.775.304.871</td>
+                                <td>31.368.916.185</td>
+                                <td>16.610.958.906</td>
+                                <td>16.132.727.709</td>
+                                <td>6.041.892.176</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Overhead</td>
+                                <td>171.877.000.000</td>
+                                <td>19.848.202.020</td>
+                                <td>11,55%</td>
+                                <td>0,14%</td>
+                                <td>152.028.797.980</td>
+                                <td>2.270.882.718</td>
+                                <td>95.178.538.232</td>
+                                <td>3.496.022.049</td>
+                                <td>2.270.882.718</td>
+                                <td>95.178.538.232</td>
+                                <td>2.270.882.718</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Financial Cost</td>
+                                <td>195.781.000.000</td>
+                                <td>-</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td>195.781.000.000</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>15.000.000.000</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>IDC</td>
+                                <td>758.875.000.000</td>
+                                <td>545.054.946.183</td>
+                                <td>71,82%</td>
+                                <td>3,86%</td>
+                                <td>213.820.053.817</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th class="text-center font-weight-bold">Total</th>
+                                <th class="text-center font-weight-bold">14.133.165.000.000 </th>
+                                <th class="text-center font-weight-bold">8.580.285.406.052 </th>
+                                <th></th>
+                                <th class="text-center font-weight-bold">60,71%</th>
+                                <th class="text-center font-weight-bold">5.552.879.593.948</th>
+                                <th class="text-center font-weight-bold">325.790.495.474</th>
+                                <th class="text-center font-weight-bold">385.051.743.744</th>
+                                <th class="text-center font-weight-bold">334.497.123.549</th>
+                                <th class="text-center font-weight-bold">169.394.778.946</th>
+                                <th class="text-center font-weight-bold">257.476.646.935</th>
+                                <th class="text-center font-weight-bold">62.741.287.407</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered table-striped table-sm">
+                        <thead class="text-center text-white" style="background-color:#1d6296;">
+                            <tr>
+                                <th rowspan="3">No</th>
+                                <th rowspan="3">Uraian</th>
+                                <th rowspan="3">Total Project Cost</th>
+                                <th rowspan="2" colspan="3">Akumulasi Pengeluaran + Pencairan 19 Dari awal s.d 30 Juni 2025</th>
+                                <th rowspan="2">Sisa Anggaran</th>
+                                <th colspan="6">Proyeksi Januari s.d Juni 2026</th>
+                                <th rowspan="2">Total Proyeksi</th>
+                                <th rowspan="2">Sisa Anggaran</th>
+                            </tr>
+                            <tr>
+                                <th>Jul-26</th>
+                                <th>Agu-26</th>
+                                <th>Sep-26</th>
+                                <th>Okt-26</th>
+                                <th>Nov-26</th>
+                                <th>Des-26</th>
+                            </tr>
+                            <tr>
+                                <th>Jumlah Rp</th>
+                                <th>Prestasi %</th>
+                                <th>Bobot %</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                                <th>Jumlah Rp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>942.250.000</td>
+                                <td>65.523.540.250</td>
+                                <td>69.233.550.138</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Konstruksi</td>
+                                <td>10.392.510.000.000</td>
+                                <td>7.048.941.727.164</td>
+                                <td>67,83%</td>
+                                <td>67,83%</td>
+                                <td>3.343.568.272.836</td>
+                                <td>66.711.685.507</td>
+                                <td>66.709.852.910</td>
+                                <td>133.419.705.819</td>
+                                <td>194.840.705.819</td>
+                                <td>133.416.040.625</td>
+                                <td>426.627.907.547</td>
+                                <td>3.520.663.602.071</td>
+                                <td>(177.095.329.235)</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Clear Zone</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Peralatan Tol</td>
+                                <td>28.907.000.000</td>
+                                <td>15.840.466.975</td>
+                                <td>54,80%</td>
+                                <td>0,11%</td>
+                                <td>13.066.533.025</td>
+                                <td>21.109.097.685</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>21.109.097.685</td>
+                                <td>94.679.216.018</td>
+                                <td>(81.612.682.993)</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Supervisi</td>
+                                <td>123.808.000.000</td>
+                                <td>93.841.580.149</td>
+                                <td>75,80%</td>
+                                <td>0,66%</td>
+                                <td>29.966.419.851</td>
+                                <td>1.662.024.285</td>
+                                <td>906.667.309</td>
+                                <td>321.657.691</td>
+                                <td>321.657.691</td>
+                                <td>70.000.000</td>
+                                <td>70.000.000</td>
+                                <td>34.585.247.475</td>
+                                <td>(4.618.827.624)</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Eskalasi</td>
+                                <td>973.264.000.000</td>
+                                <td>-</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td>973.264.000.000</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>442.205.380.370</td>
+                                <td>531.058.619.630</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>PPN</td>
+                                <td>1.288.945.000.000</td>
+                                <td>792.317.573.949</td>
+                                <td>61,47%</td>
+                                <td>5,61%</td>
+                                <td>496.627.426.051</td>
+                                <td>7.680.162.499</td>
+                                <td>7.541.464.724</td>
+                                <td>14.815.197.486</td>
+                                <td>21.571.507.486</td>
+                                <td>14.787.111.969</td>
+                                <td>47.040.417.330</td>
+                                <td>447.727.512.045</td>
+                                <td>48.899.914.006</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Overhead</td>
+                                <td>171.877.000.000</td>
+                                <td>19.848.202.020</td>
+                                <td>11,55%</td>
+                                <td>0,14%</td>
+                                <td>152.028.797.980</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                                <td>2.270.882.718</td>
+                                <td>227.916.339.274</td>
+                                <td>(75.887.541.294)</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Financial Cost</td>
+                                <td>195.781.000.000</td>
+                                <td>-</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                                <td>195.781.000.000</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>25.000.000.000</td>
+                                <td>1.500.000.000</td>
+                                <td>154.248.082.214</td>
+                                <td>41.532.917.786</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>IDC</td>
+                                <td>758.875.000.000</td>
+                                <td>545.054.946.183</td>
+                                <td>71,82%</td>
+                                <td>3,86%</td>
+                                <td>213.820.053.817</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>213.820.053.817</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th class="text-center font-weight-bold">Total</th>
+                                <th class="text-center font-weight-bold">14.133.165.000.000 </th>
+                                <th class="text-center font-weight-bold">8.580.285.406.052 </th>
+                                <th></th>
+                                <th class="text-center font-weight-bold">60,71%</th>
+                                <th class="text-center font-weight-bold">5.552.879.593.948</th>
+                                <th class="text-center font-weight-bold">100.376.102.693</th>
+                                <th class="text-center font-weight-bold">78.371.117.660</th>
+                                <th class="text-center font-weight-bold">151.769.693.714</th>
+                                <th class="text-center font-weight-bold">219.947.003.714</th>
+                                <th class="text-center font-weight-bold">176.486.285.311</th>
+                                <th class="text-center font-weight-bold">499.560.555.280</th>
+                                <th class="text-center font-weight-bold">5.201.368.973.535</th>
+                                <th class="text-center font-weight-bold">351.510.620.413</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- Tabel 1 -->
+                <h6 class="font-weight-bold d-none" style="color: rgb(21, 81, 128);">Tabel 1: Pembiayaan Tahap 1</h6>
+                <div class="table-responsive mb-4 d-none">
                     <table class="table table-bordered table-striped table-sm">
                         <thead class="text-center text-white" style="background-color:#1d6296;">
                             <tr>
@@ -119,8 +772,8 @@
                 </div>
 
                 <!-- Tabel 2 -->
-                <h6 class="font-weight-bold" style="color: rgb(21, 81, 128);">Tabel 2: Realisasi Pembiayaan Tahap 1</h6>
-                <div class="table-responsive mb-4">
+                <h6 class="font-weight-bold d-none" style="color: rgb(21, 81, 128);">Tabel 2: Realisasi Pembiayaan Tahap 1</h6>
+                <div class="table-responsive mb-4 d-none">
                     <table class="table table-bordered table-striped table-sm">
                         <thead class="text-center text-white" style="background-color:#1d6296;">
                             <tr>
@@ -371,8 +1024,8 @@
                 <div id="bar_3d"></div>
 
                 <!-- Tabel 3 -->
-                <h6 class="font-weight-bold" style="color: rgb(21, 81, 128);">Tabel 3: Total Realisasi Pembiayaan Tahap 1 s/d Tahun 2024 </h6>
-                <div class="table-responsive mb-4">
+                <h6 class="font-weight-bold d-none" style="color: rgb(21, 81, 128);">Tabel 3: Total Realisasi Pembiayaan Tahap 1 s/d Tahun 2024 </h6>
+                <div class="table-responsive mb-4 d-none">
                     <table class="table table-bordered table-striped table-sm">
                         <thead class="text-center text-white" style="background-color:#1d6296;">
                             <tr>
@@ -511,8 +1164,8 @@
                 </div>
 
                 <!-- Tabel 4 -->
-                <h6 class="font-weight-bold" style="color: rgb(21, 81, 128);">Tabel 4: Penarikan Tahap 1 </h6>
-                <div class="table-responsive mb-4">
+                <h6 class="font-weight-bold d-none" style="color: rgb(21, 81, 128);">Tabel 4: Penarikan Tahap 1 </h6>
+                <div class="table-responsive mb-4 d-none">
                     <table class="table table-bordered table-striped table-sm">
                         <thead class="text-center text-white" style="background-color:#1d6296;">
                             <tr>
@@ -911,8 +1564,8 @@
                 <div id="bar_3d_outstanding"></div>
 
                 <!-- Tabel 5 -->
-                <h6 class="font-weight-bold" style="color: rgb(21, 81, 128);">Tabel 5: RKAP Pembiayaan Tahap 1 </h6>
-                <div class="table-responsive mb-4">
+                <h6 class="font-weight-bold d-none" style="color: rgb(21, 81, 128);">Tabel 5: RKAP Pembiayaan Tahap 1 </h6>
+                <div class="table-responsive mb-4 d-none">
                     <table class="table table-bordered table-striped table-sm">
                         <thead class="text-center text-white" style="background-color:#1d6296;">
                             <tr>
