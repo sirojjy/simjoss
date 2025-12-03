@@ -45,8 +45,10 @@
                                         <select class="form-control show-tick ms select2" name="status" id="status">
                                             <option value="">-- Status --</option>
                                             <option value="aktif">Aktif</option>
-                                            <option value="dipinjam">Dipinjam</option>
                                             <option value="kadaluarsa">Kadaluarsa</option>
+                                            <option value="dipinjam">Dipinjam</option>
+                                            <option value="hilang">Hilang</option>
+                                            <option value="inaktif">Inaktif</option>
                                         </select>
                                     </div>
                                 </div>
