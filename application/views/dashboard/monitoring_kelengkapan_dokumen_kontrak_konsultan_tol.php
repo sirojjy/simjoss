@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-info ml-4"><i>Last updated : <?= $last_update ?></i></p>
+            <p class="text-info ml-4"><i>Last updated : <?= $update_bulan_november ?></i></p>
         </div>
     </div>
 </div>

@@ -39,6 +39,7 @@ $format_bulan_tahun = "April $tahun";
 $format_bulan_saja = "April $tahun";
 $update_bulan_juni = "Juni $tahun";
 $update_bulan_juli = "Juli $tahun";
+$update_bulan_november = "November $tahun";
 $last_update = "Agustus $tahun";
 ?>
 
@@ -52,7 +53,7 @@ $last_update = "Agustus $tahun";
     <!-- Dashboard 3 - Monitoring Progres Pekerjaan -->
     <?php include 'monitoring_progres_pekerjaan.php'; ?>
 
-    <!-- Dashboard 4 - Monitoring Volume Lalu Lintas & Pendapatan Tol -->
+    <!-- Dashboard 4 - Monitoring Laju Harian Rata-Rata & Pendapatan Tol -->
     <?php include 'monitoring_volume_lalu_lintas_pendapatan_tol.php'; ?>
 
     <!-- Dashboard 5 - Monitoring RKAP -->
@@ -173,10 +174,10 @@ $last_update = "Agustus $tahun";
                     title: "Tahap 2",
                     categories: [
                         "Paket 3.1<br>Junction Sleman-Gamping<br><b>7.417 km</b>",
-                        "Paket 3.2<br>Gamping-Sentolo<br><b>10 km</b>",
-                        "Paket 3.3<br>Sentolo-Wates<br><b>7.995 km</b>",
-                        "Paket 3.4<br>Wates-Kulonprogo<br><b>10.331 km</b>",
-                        "Paket 3.5<br>Kulonprogo - Purworejo<br><b>3.135 km</b>",
+                        "Paket 3.1A<br>Gamping-Sentolo<br><b>10 km</b>",
+                        "Paket 3.1B<br>Sentolo-Wates<br><b>7.995 km</b>",
+                        "Paket 3.2A<br>Wates-Kulonprogo<br><b>10.331 km</b>",
+                        "Paket 3.2B<br>Kulonprogo - Purworejo<br><b>3.135 km</b>",
                     ],
                     series: [{
                         originalName: 'Konstruksi',
@@ -239,7 +240,7 @@ $last_update = "Agustus $tahun";
         // Dashboard 4
         lineChartDashboard4({
             id: 'line_volume',
-            title: "Perbandingan Volume Lalu Lintas",
+            title: "Laju Harian Rata-Rata (LHR)",
             subtitle: "",
             yAxisTitle: "Jumlah Volume",
             categories: <?= json_encode($pv_chart_data['pv_labels']) ?>,
