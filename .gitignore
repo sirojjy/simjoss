@@ -31,4 +31,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+
+#Node modules
+/node_modules
+
 application/config/database.php
+application/config/api_key.phpapplication/config/api_key.php
