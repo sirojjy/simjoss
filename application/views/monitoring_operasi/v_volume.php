@@ -14,7 +14,7 @@
             <?php endif; ?>
             <div class="card">
                 <div class="card-body border-bottom d-flex justify-content-between align-items-center">
-                    <h4 class="mb-0 font-bold">Data Perbandingan Volume Lalu Lintas</h4>
+                    <h4 class="mb-0 font-bold">Data Laju Harian Rata-Rata (LHR)</h4>
                     <?php if ($this->session->userdata('level_user') == 1) { ?>
                         <div class="d-flex">
                             <a href="javascript:void(0)" data-toggle="modal" data-target="#modalAdd" class="btn btn-default">

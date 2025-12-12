@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12 border-right p-r-0">
             <div class="card-body border-bottom d-flex align-items-center">
-                <h4 class="card-title font-weight-bold m-t-10 mr-2">4. Monitoring Volume Lalu Lintas dan Pendapatan Tol</h4>
+                <h4 class="card-title font-weight-bold m-t-10 mr-2">4. Monitoring Laju Harian Rata-Rata dan Pendapatan Tol</h4>
                 <span class="mdi mdi-alert-circle blink cursor-pointer <?= (!$isu4) ? 'd-none' : '' ?>" style="color:red;" onclick="view_alert(`<b>PERMASALAHAN :</b><br>
                         <?= (!$isu4 ? '' : $isu4->issue) ?>
                         <hr>
