@@ -1,0 +1,4 @@
+/file_uploads
+*.log
+tmp/
+node_modules/

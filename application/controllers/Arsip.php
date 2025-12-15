@@ -17,8 +17,10 @@ class Arsip extends CI_Controller
     {
         $this->load->config('api_key');
         $api_key = $this->config->item('api_key_arsip');
+        $api_url = $this->config->item('api_url_arsip');
         $data = array(
-            'api_key' => $api_key
+            'api_key' => $api_key,
+            'api_url' => $api_url
         );
         $ses_data = array(
             'act_menu'   => 'arsip',
