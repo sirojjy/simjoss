@@ -6,4 +6,6 @@ services:
     container_name: simjos_test
     volumes:
       - .:/var/www/html
+    ports:
+      - "127.0.0.1:9020:9000"
     restart: unless-stopped
