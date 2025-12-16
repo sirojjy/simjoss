@@ -3,6 +3,8 @@ if (!defined('BASEPATH'))
 
     exit('No direct script access allowed');
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class M_dokumen extends CI_Model
 {
@@ -262,56 +264,58 @@ class M_dokumen extends CI_Model
         return $sql->result();
     }
 
+    public function excelToDate($value)
+    {
+        if ($value != null) {
+            if (@date('Y', strtotime($value)) == 1970) {
+                $date = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToTimestamp($value);
+                return date('Y-m-d', $date);
+            } else {
+                return date('Y-m-d', strtotime($value));
+            }
+        } else {
+            return null;
+        }
+    }
+
     public function import_excel($directory, $filename)
     {
         ini_set('memory_limit', '-1');
         $inputFileName = './file_uploads/' . $directory . '/' . $filename;
-        require_once APPPATH . 'libraries/PHPExcel/IOFactory.php';
+        $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+        $reader->setReadDataOnly(true);
         try {
-            $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
+            $objPHPExcel = $reader->load($inputFileName);
         } catch (Exception $e) {
             die('Error loading file :' . $e->getMessage());
         }
 
         $worksheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-        $numRows = count($worksheet);
+        unset($worksheet[1]);
 
-        for ($i = 2; $i <= $numRows; $i++) {
-            $row = $worksheet[$i];
+        $this->db->trans_start();
+        $this->db->query('TRUNCATE TABLE ' . $this->_KRONOLOGIS);
 
-            $id_kronologis = trim($row['A']);
-            $id_tahapan = trim($row['B']);
-            $sub_tahapan = trim($row['C']);
-            $jenis_dokumen = trim($row['D']);
-            $nomor_dokumen = trim($row['E']);
-            $tanggal = date('Y-m-d', strtotime($row['F']));
-            $pihak = trim($row['G']);
-            $jumlah_halaman = trim($row['H']);
-            $file = trim($row['I']);
-
-            if (empty($id_tahapan)) continue;
-
+        foreach ($worksheet as $i => $row) {
             $data = [
-                'id_tahapan' => $id_tahapan,
-                'sub_tahapan' => ($sub_tahapan == '') ? null : $sub_tahapan,
-                'jenis_dokumen' => $jenis_dokumen,
-                'nomor_dokumen' => $nomor_dokumen,
-                'tanggal' => $tanggal,
-                'pihak' => $pihak,
-                'jumlah_halaman' => ($jumlah_halaman == '') ? null : $jumlah_halaman,
-                'file' => $file,
-                'created_at' => date('Y-m-d H:i:s')
+                'id_tahapan' => $row['B'],
+                'sub_tahapan' => $row['C'],
+                'jenis_dokumen' => $row['D'],
+                'nomor_dokumen' => $row['E'],
+                'tanggal' => $this->excelToDate($row['F']),
+                'pihak' => $row['G'],
+                'jumlah_halaman' => $row['H'],
+                'file' => $row['I'],
+                'created_at' => date('Y-m-d H:i:s'),
             ];
-
-            $exists = $this->db->get_where($this->_KRONOLOGIS, ['id_kronologis' => $id_kronologis])->row();
-            if ($exists) {
-                $this->db->where('id_kronologis', $id_kronologis);
-                $this->db->update($this->_KRONOLOGIS, $data);
-                continue;
-            } else {
-                $data['id_kronologis'] = $id_kronologis;
-                $this->db->insert($this->_KRONOLOGIS, $data);
-            }
+            $this->db->insert($this->_KRONOLOGIS, $data);
+        }
+        if ($this->db->trans_status() === FALSE) {
+            $this->session->set_flashdata('error', 'Gagal Import Data');
+            $this->db->trans_rollback();
+        } else {
+            $this->session->set_flashdata('success', 'Berhasil Import Data');
+            $this->db->trans_commit();
         }
 
         return true;

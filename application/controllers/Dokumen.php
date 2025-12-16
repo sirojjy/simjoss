@@ -1,5 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+require 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Dokumen extends CI_Controller
 {
@@ -12,16 +16,13 @@ class Dokumen extends CI_Controller
         } else {
             redirect('Login');
         }
-        //$this->load->library(array('PHPExcel','PHPExcel/IOFactory'));
         $this->load->model(array('M_dokumen'));
     }
 
     public function export_file_excel()
     {
-        require_once APPPATH . 'libraries/PHPExcel.php';
-        $excel = new PHPExcel();
-        $excel->setActiveSheetIndex(0);
-        $sheet = $excel->getActiveSheet();
+        $sphreadset = new Spreadsheet();
+        $sheet = $sphreadset->getActiveSheet();
 
         $sheet->setCellValue('A1', 'ID');
         $sheet->setCellValue('B1', 'Tahapan');
@@ -60,9 +61,9 @@ class Dokumen extends CI_Controller
         header('Content-Disposition: attachment;filename="template-kronologis-' . date('Y-m-d-H-i-s') . '.xlsx"');
         header('Cache-Control: max-age=0');
 
-        $writer = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
+        $writer = new Xlsx($sphreadset);
+
         $writer->save('php://output');
-        exit;
     }
 
     public function import_file_excel()
