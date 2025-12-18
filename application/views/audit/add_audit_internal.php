@@ -1,15 +1,15 @@
-<?php 
-    if($jenis_audit==1){
-        $audit = "Internal";
-    }else{
-        $audit = "Eksternal";
-    } 
+<?php
+if ($jenis_audit == 1) {
+    $audit = "Internal";
+} else {
+    $audit = "Eksternal";
+}
 ?>
 <div class="container-fluid">
     <div class="row clearfix">
         <div class="col-xl-11 mx-auto">
             <h5 class="mb-10 text-uppercase"><b>Audit <?php echo $audit ?></b></h5>
-            <hr/>
+            <hr />
             <div class="card border-top border-0 border-4 border-primary">
                 <div class="card-body">
                     <form class="form-horizontal" id="upload_form" action="<?php echo $action ?>" enctype="multipart/form-data" data-parsley-validate="true" method="post">
@@ -19,16 +19,16 @@
                                 </div>
                                 <h5 class="mb-0 text-primary "> <b>Tambah Data Audit <?php echo $audit ?></b></h5>
                             </div>
-                            <hr/>
+                            <hr />
 
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Tahun</label>
                                 <div class="col-sm-9">
                                     <select class="form-control show-tick ms select2" name="tahun">
                                         <option value="">-- Pilih Tahun --</option>
-                                        <?php 
-                                            $year = date('Y');
-                                            for($x=2024;$x<=$year;$x++){ 
+                                        <?php
+                                        $year = date('Y');
+                                        for ($x = 2024; $x <= $year; $x++) {
                                         ?>
                                             <option value="<?php echo $x ?>"><?php echo $x ?></option>
                                         <?php } ?>
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                
+
                                 <label for="inputEmailAddress2" class="col-sm-3 col-form-label">Tanggal Audit</label>
                                 <div class="col-sm-9">
                                     <input type="date" required="" name="tanggal" id="tanggal" class="form-control">
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                
+
                                 <label for="inputEmailAddress2" class="col-sm-3 col-form-label">Uraian Temuan</label>
                                 <div class="col-sm-9">
                                     <textarea name="uraian_temuan" rows="3" class="form-control"></textarea>
@@ -79,7 +79,7 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Klausul</label>
                                 <div class="col-sm-9">
@@ -106,7 +106,7 @@
                                 <label for="inputPhoneNo2" class="col-sm-3 col-form-label">File Dokumen (.pdf)</label>
                                 <div class="col-sm-9">
                                     <div class="browse-wrap">
-                                        <input type="file" name="file" id="file" class="btn btn-secondary btn-block" title="Choose a file to upload">
+                                        <input type="file" name="file" id="file" class="btn btn-secondary btn-block" title="Choose a file to upload" accept=".pdf">
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@
                             <div class="row">
                                 <label class="col-sm-3 col-form-label"></label>
                                 <div class="col-sm-9">
-                                    <button type="submit"  class="btn btn-primary px-4">Simpan</button> &nbsp;
+                                    <button type="submit" class="btn btn-primary px-4">Simpan</button> &nbsp;
                                     <a href="<?php echo site_url('Audit/internal') ?>"><button type="button" class="btn btn-danger px-4">Batal</button></a>
                                 </div>
                             </div>
@@ -133,4 +133,3 @@
 <script>
 
 </script>
-
