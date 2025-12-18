@@ -1,0 +1,30 @@
+# Composer
+vendor/
+
+# Upload runtime
+file_uploads/
+uploads/
+
+# CI3 runtime
+application/logs/*
+application/cache/*
+
+# Env & secret
+.env
+
+# Git
+.git
+.gitignore
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Docker files (opsional)
+docker-compose.yml
+Dockerfile
+
+# Logs
+*.log
+tmp/
+node_modules/

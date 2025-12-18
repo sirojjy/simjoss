@@ -10,6 +10,7 @@ application/logs/*
 
 composer.lock
 application/config/database.php
+application/config/api_key.php
 /file_uploads/*
 
 user_guide_src/build/*

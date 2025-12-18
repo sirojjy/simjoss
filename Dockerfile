@@ -1,21 +1,33 @@
-# Gunakan image PHP 7.4 dengan FPM
 FROM php:7.4-fpm
 
-# Install ekstensi yang dibutuhkan CI3 + PostgreSQL
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libonig-dev \
+    libzip-dev \
     libpq-dev \
+    zip \
     unzip \
-    && docker-php-ext-install pdo pdo_pgsql
+    curl \
+    git \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install \
+        pdo \
+        pdo_pgsql \
+        pgsql \
+        mbstring \
+        zip \
+        gd \
+        opcache \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Salin source code CI3
-WORKDIR /var/www/simjos
-COPY . .
+# Set working directory ke root CI3
+WORKDIR /var/www/html
 
-# Ubah permission (opsional, jika ada masalah permission)
-RUN chown -R www-data:www-data /var/www/simjos
+# Permission untuk CI3
+RUN chown -R www-data:www-data /var/www
 
-# Ekspos port default FPM
-EXPOSE 9000
-
-# Jalankan PHP-FPM
-CMD ["php-fpm"]
+USER www-data

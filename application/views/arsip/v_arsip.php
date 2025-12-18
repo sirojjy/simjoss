@@ -138,7 +138,7 @@
         }
     };
 
-    const API_BASE_URL = "http://202.157.176.53:1801/api/";
+    const API_BASE_URL = "<?= $api_url ?>";
     const API_TOKEN = "<?= $api_key ?>";
 
     $(document).ready(function() {

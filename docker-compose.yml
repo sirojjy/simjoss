@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  php74:
+    container_name: simjos
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:9020:9000"
+    volumes:
+      - .:/var/www/html
+      - ./php.ini:/usr/local/etc/php/conf.d/uploads.ini
+    restart: unless-stopped
