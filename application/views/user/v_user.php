@@ -33,38 +33,10 @@
                                     <th class="align-middle font-weight-bold">Nama</th>
                                     <th class="align-middle font-weight-bold">Email</th>
                                     <th class="align-middle font-weight-bold">Username</th>
-                                    <th class="align-middle font-weight-bold">Password</th>
                                     <th class="align-middle font-weight-bold">Level</th>
                                     <th class="align-middle font-weight-bold">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <?php
-                                $no = 1;
-                                foreach ($row as $dt) {
-
-                                    if ($dt->level_user == 0) {
-                                        $level = 'Users';
-                                    } else if ($dt->level_user == 1) {
-                                        $level = 'Super Admin ';
-                                    } else {
-                                        $level = 'Users ';
-                                    }
-                                ?>
-                                    <tr align="center">
-                                        <td align="center"><?php echo $no++ ?>.</td>
-                                        <td><?php echo $dt->nama ?></td>
-                                        <td><?php echo $dt->email ?></td>
-                                        <td align="center"><?php echo $dt->username ?></td>
-                                        <td align="center">**********</td>
-                                        <td align="center"><span class="badge badge-md badge-pill badge-info"><?php echo $level ?></span></td>
-                                        <td align="center">
-                                            <a href="#" title="hapus" class="btn btn-success btn-sm">Edit</a>
-                                            <a href="<?php echo site_url('User/hapus_user/' . $dt->id_users) ?>" title="hapus" class="btn btn-danger btn-sm" onClick="javasciprt: return confirm('Yakin menghapus data ?')">Hapus</a>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -96,27 +68,16 @@
                     className: "text-center",
                 },
                 {
-                    data: "jenis_dokumen",
-                    className: "text-center",
+                    data: "nama",
                 },
                 {
-                    data: "no_akta",
-                    className: "text-center",
+                    data: "email",
                 },
                 {
-                    data: "tanggal_akta",
-                    className: "text-center",
+                    data: "username",
                 },
                 {
-                    data: "perihal",
-                    className: "text-center",
-                },
-                {
-                    data: "keterangan",
-                    className: "text-center",
-                },
-                {
-                    data: "file",
+                    data: "level",
                     className: "text-center",
                 },
                 {
