@@ -31,8 +31,9 @@ class Audit extends CI_Controller
                 $file = '-';
             }
 
-            $aksi = '<td class="d-flex">
-                <a href="' . site_url('Audit/edit_audit/' . $row->id_audit) . '" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+            $aksi = '
+            <div class="btn-group" role="group">
+                <a href="' . site_url('Audit/edit_audit/' . $row->id_audit) . '" class="btn btn-success btn-sm mr-2"><i class="fa fa-edit"></i></a>
                 <a href="' . site_url('Audit/hapus_audit_internal/' . $row->id_audit) . '" title="hapus" class="btn btn-danger btn-sm" onClick="javasciprt: return confirm(\'Yakin menghapus data ?\')"><i class="fa fa-trash"></i></a>
             </td>';
 
@@ -148,6 +149,9 @@ class Audit extends CI_Controller
             'tw' => $this->input->post('tw'),
         );
 
+        // var_dump($data);
+        // die;
+
         $uploadPath = 'file_uploads/audit/';
         $config['upload_path'] = $uploadPath;
         $config['allowed_types'] = '*';
@@ -158,25 +162,6 @@ class Audit extends CI_Controller
 
         if ($this->upload->do_upload('file')) {
             if ($this->db->insert('audit', $data)) {
-                echo $this->session->set_flashdata('success', 'Data Berhasil Disimpan');
-            } else {
-                echo $this->session->set_flashdata('error', 'Data Gagal Disimpan');
-            }
-        } else {
-            $data2 = array(
-                'tahun' => $this->input->post('tahun'),
-                'tanggal' => date('Y-m-d', strtotime($this->input->post('tanggal'))),
-                'jenis_audit' => $this->input->post('jenis_audit'),
-                'uraian_temuan' => $this->input->post('uraian_temuan'),
-                'kategori'  => $this->input->post('kategori'),
-                'iso'  => $this->input->post('iso'),
-                'klausul'  => $this->input->post('klausul'),
-                'tindak_lanjut'  => $this->input->post('tindak_lanjut'),
-                'status'  => $this->input->post('status'),
-                'create_date' => date('Y-m-d h:i:s'),
-                'tw' => $this->input->post('tw'),
-            );
-            if ($this->db->insert('audit', $data2)) {
                 echo $this->session->set_flashdata('success', 'Data Berhasil Disimpan');
             } else {
                 echo $this->session->set_flashdata('error', 'Data Gagal Disimpan');
@@ -210,6 +195,7 @@ class Audit extends CI_Controller
             'tahun' => $data_audit['tahun'],
             'tanggal' => $data_audit['tanggal'],
             'tw' => $data_audit['tw'],
+            'file' => $data_audit['file'],
         );
         $this->template->load('template/admin_template', 'audit/edit_audit.php', $data);
     }
@@ -297,25 +283,6 @@ class Audit extends CI_Controller
         if ($this->upload->do_upload('file')) {
             $this->db->where('id_audit', $id_audit);
             if ($this->db->update('audit', $data)) {
-                echo $this->session->set_flashdata('success', 'Data Berhasil Disimpan');
-            } else {
-                echo $this->session->set_flashdata('error', 'Data Gagal Disimpan');
-            }
-        } else {
-            $data2 = array(
-                'tahun' => $this->input->post('tahun'),
-                'tanggal' => date('Y-m-d', strtotime($this->input->post('tanggal'))),
-                'jenis_audit' => $this->input->post('jenis_audit'),
-                'uraian_temuan' => $this->input->post('uraian_temuan'),
-                'kategori'  => $this->input->post('kategori'),
-                'iso'  => $this->input->post('iso'),
-                'klausul'  => $this->input->post('klausul'),
-                'tindak_lanjut'  => $this->input->post('tindak_lanjut'),
-                'status'  => $this->input->post('status'),
-                'tw' => $this->input->post('tw'),
-            );
-            $this->db->where('id_audit', $id_audit);
-            if ($this->db->update('audit', $data2)) {
                 echo $this->session->set_flashdata('success', 'Data Berhasil Disimpan');
             } else {
                 echo $this->session->set_flashdata('error', 'Data Gagal Disimpan');
