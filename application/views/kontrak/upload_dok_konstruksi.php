@@ -47,16 +47,18 @@
                                         // $dok_kontrak = $this->db->query("select *from dok_master join kelengkapan_dok_konstruksi on kelengkapan_dok_konstruksi.id_dok_master=dok_master.id_dok_master where jenis_dok=1 and id_kontrak=".$id_kontrak." order by dok_master.id_dok_master ASC")->result();
                                         $dok_kontrak = $this->db->query("select * from dok_master where id_dok_master in(52,53,3,72,73,1,74) order by id_dok_master ASC")->result();
 
+                                        // var_dump($dok_kontrak);
+                                        // die();
                                         foreach ($dok_kontrak as $dt) {
                                             $detail_dok = $this->db->query('select * from detail_dok_konstruksi where id_kontrak_konstruksi=' . $id_kontrak . ' and id_dok_master=' . $dt->id_dok_master)->row_array();
-                                            $dok = base_url("file_uploads/kontrak_konstruksi/" . $detail_dok['dok_file']);
 
-                                            if (!$detail_dok['nomor_dok']) {
+                                            if (empty($detail_dok['nomor_dok'])) {
                                                 $nomor_dok = '-';
                                                 $tanggal = '-';
                                                 $pic = '-';
                                                 $lokasi = '-';
                                             } else {
+                                                $dok = base_url("file_uploads/kontrak_konstruksi/" . $detail_dok['dok_file']);
                                                 $nomor_dok = $detail_dok['nomor_dok'];
                                                 $tanggal = date('d-m-Y', strtotime($detail_dok['tanggal_dok']));
                                                 $pic = $detail_dok['pic'];
@@ -72,14 +74,14 @@
                                                 <td class="text-center"><?= $lokasi ?></td>
                                                 <td class="text-center"><?= $pic ?></td>
                                                 <td class="text-center">
-                                                    <?php if ($detail_dok['nomor_dok'] == null) { ?>
+                                                    <?php if (empty($detail_dok['nomor_dok'])) { ?>
                                                         <button type="button" class="btn btn-danger btn-sm">Belum diupload</button>
                                                     <?php } else { ?>
                                                         <a href="<?= $dok ?>" target="_blank" class="btn btn-primary btn-sm"><i class="fa fa-print"></i></a>
                                                     <?php } ?>
                                                 </td>
                                                 <td class="text-center">
-                                                    <?php if ($detail_dok['nomor_dok'] == null) { ?>
+                                                    <?php if (empty($detail_dok['nomor_dok'])) { ?>
                                                         <a href="#" data-toggle="modal" data-target="#addRowModal" data-id_kontrak="<?= $id_kontrak ?>" data-id_dok_master="<?= $dt->id_dok_master ?>" data-nama_dok="<?= $dt->nama_dok ?>"> <button class="btn btn-warning btn-sm"><i class="fa fa-upload"></i> Upload</button></a>
                                                     <?php } else { ?>
                                                         <a href="#" data-toggle="modal" data-target="#updateDok" data-id_kontrak="<?= $id_kontrak ?>" data-id_detail_dok="<?= $detail_dok['id_detail_dok'] ?>" data-id_dok_master="<?= $dt->id_dok_master ?>" data-nama_dok="<?= $dt->nama_dok ?>" data-nomor_dok="<?= $detail_dok['nomor_dok'] ?>" data-kantor="<?= $detail_dok['kantor'] ?>" data-pic="<?= $detail_dok['pic'] ?>" data-no_rak="<?= $detail_dok['no_rak'] ?>" data-no_box="<?= $detail_dok['no_box'] ?>" data-file="<?= $detail_dok['dok_file'] ?>" data-tanggal_dok="<?= date('d-m-Y', strtotime($detail_dok['tanggal_dok'])) ?>"> <button class="btn btn-primary btn-sm"><i class="fa fa-upload"></i> Update</button></a>
@@ -123,14 +125,14 @@
 
                                         foreach ($dok_kontrak as $dt) {
                                             $detail_dok = $this->db->query('select * from detail_dok_konstruksi where id_kontrak_konstruksi=' . $id_kontrak . ' and id_dok_master=' . $dt->id_dok_master)->row_array();
-                                            $dok = base_url("file_uploads/kontrak_konstruksi/" . $detail_dok['dok_file']);
 
-                                            if ($detail_dok['nomor_dok'] == null) {
+                                            if (empty($detail_dok['nomor_dok'])) {
                                                 $nomor_dok = '-';
                                                 $tanggal = '-';
                                                 $pic = '-';
                                                 $lokasi = '-';
                                             } else {
+                                                $dok = base_url("file_uploads/kontrak_konstruksi/" . $detail_dok['dok_file']);
                                                 $nomor_dok = $detail_dok['nomor_dok'];
                                                 $tanggal = date('d-m-Y', strtotime($detail_dok['tanggal_dok']));
                                                 $pic = $detail_dok['pic'];
@@ -145,14 +147,14 @@
                                                 <td><?= $lokasi ?></td>
                                                 <td align="center"><?= $pic ?></td>
                                                 <td align="center">
-                                                    <?php if ($detail_dok['nomor_dok'] == null) { ?>
+                                                    <?php if (empty($detail_dok['nomor_dok'])) { ?>
                                                         <button type="button" class="btn btn-danger btn-sm">Belum diupload</button>
                                                     <?php } else { ?>
                                                         <a href="<?= $dok ?>" target="_blank" class="btn btn-primary btn-sm"><i class="fa fa-print"></i></a>
                                                     <?php } ?>
                                                 </td>
                                                 <td align="center">
-                                                    <?php if ($detail_dok['nomor_dok'] == null) { ?>
+                                                    <?php if (empty($detail_dok['nomor_dok'])) { ?>
                                                         <a href="#" data-toggle="modal" data-target="#addRowModal" data-id_kontrak="<?php echo $id_kontrak ?>" data-id_dok_master="<?php echo $dt->id_dok_master ?>" data-nama_dok="<?php echo $dt->nama_dok ?>"> <button class="btn btn-warning btn-sm"><i class="fa fa-upload"></i> Upload</button></a>
                                                     <?php } else { ?>
                                                         <a href="#" data-toggle="modal" data-target="#updateDok" data-id_kontrak="<?php echo $id_kontrak ?>" data-id_detail_dok="<?php echo $detail_dok['id_detail_dok'] ?>" data-id_dok_master="<?php echo $dt->id_dok_master ?>" data-nama_dok="<?php echo $dt->nama_dok ?>" data-nomor_dok="<?php echo $detail_dok['nomor_dok'] ?>" data-kantor="<?php echo $detail_dok['kantor'] ?>" data-pic="<?php echo $detail_dok['pic'] ?>" data-no_rak="<?php echo $detail_dok['no_rak'] ?>" data-no_box="<?php echo $detail_dok['no_box'] ?>" data-file="<?php echo $detail_dok['dok_file'] ?>" data-tanggal_dok="<?php echo date('d-m-Y', strtotime($detail_dok['tanggal_dok'])) ?>"> <button class="btn btn-primary btn-sm"><i class="fa fa-upload"></i> Update</button></a>

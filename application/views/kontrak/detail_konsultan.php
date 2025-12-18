@@ -172,14 +172,14 @@
 
                                                         foreach ($dok_kontrak as $dt) {
                                                             $detail_dok = $this->db->query('select * from detail_dok_konsultan where id_kontrak_konsultan=' . $id_kontrak . ' and id_dok_master=' . $dt->id_dok_master)->row_array();
-                                                            $dok = base_url("file_uploads/kontrak_konsultan/" . $detail_dok['dok_file']);
 
-                                                            if ($detail_dok['nomor_dok'] == null) {
+                                                            if (empty($detail_dok['nomor_dok'])) {
                                                                 $nomor_dok = '-';
                                                                 $tanggal = '-';
                                                                 $pic = '-';
                                                                 $lokasi = '-';
                                                             } else {
+                                                                $dok = base_url("file_uploads/kontrak_konsultan/" . $detail_dok['dok_file']);
                                                                 $nomor_dok = $detail_dok['nomor_dok'];
                                                                 $tanggal = date('d-m-Y', strtotime($detail_dok['tanggal_dok']));
                                                                 $pic = $detail_dok['pic'];
@@ -195,7 +195,7 @@
                                                                 <td><?php echo $lokasi ?></td>
                                                                 <td align="center"><?php echo $pic ?></td>
                                                                 <td align="center">
-                                                                    <?php if ($detail_dok['nomor_dok'] == null) { ?>
+                                                                    <?php if (empty($detail_dok['nomor_dok'])) { ?>
                                                                         <button type="button" class="btn btn-danger btn-sm">Belum diupload</button>
                                                                     <?php } else { ?>
                                                                         <a href="<?php echo $dok ?>" target="_blank" class="btn btn-primary btn-sm"><i class="fa fa-print"></i></a>
@@ -239,14 +239,14 @@
 
                                                         foreach ($dok_kontrak as $dt) {
                                                             $detail_dok = $this->db->query('select * from detail_dok_konsultan where id_kontrak_konsultan=' . $id_kontrak . ' and id_dok_master=' . $dt->id_dok_master)->row_array();
-                                                            $dok = base_url("file_uploads/kontrak_konsultan/" . $detail_dok['dok_file']);
 
-                                                            if ($detail_dok['nomor_dok'] == null) {
+                                                            if (empty($detail_dok['nomor_dok'])) {
                                                                 $nomor_dok = '-';
                                                                 $tanggal = '-';
                                                                 $pic = '-';
                                                                 $lokasi = '-';
                                                             } else {
+                                                                $dok = base_url("file_uploads/kontrak_konsultan/" . $detail_dok['dok_file']);
                                                                 $nomor_dok = $detail_dok['nomor_dok'];
                                                                 $tanggal = date('d-m-Y', strtotime($detail_dok['tanggal_dok']));
                                                                 $pic = $detail_dok['pic'];
@@ -261,7 +261,7 @@
                                                                 <td><?php echo $lokasi ?></td>
                                                                 <td align="center"><?php echo $pic ?></td>
                                                                 <td align="center">
-                                                                    <?php if ($detail_dok['nomor_dok'] == null) { ?>
+                                                                    <?php if (empty($detail_dok['nomor_dok'])) { ?>
                                                                         <button type="button" class="btn btn-danger btn-sm">Belum diupload</button>
                                                                     <?php } else { ?>
                                                                         <a href="<?php echo $dok ?>" target="_blank" class="btn btn-primary btn-sm"><i class="fa fa-print"></i></a>
@@ -304,7 +304,6 @@
 
                                                         foreach ($dok_lain as $dt) {
 
-                                                            $dok = base_url("file_uploads/kontrak_konsultan/" . $dt->dok_file);
 
                                                             if ($dt->nomor_dok == null) {
                                                                 $nomor_dok = '-';
@@ -312,6 +311,7 @@
                                                                 $pic = '-';
                                                                 $lokasi = '-';
                                                             } else {
+                                                                $dok = base_url("file_uploads/kontrak_konsultan/" . $dt->dok_file);
                                                                 $nomor_dok = $dt->nomor_dok;
                                                                 $tanggal = date('d-m-Y', strtotime($dt->tanggal_dok));
                                                                 $pic = $dt->pic;
