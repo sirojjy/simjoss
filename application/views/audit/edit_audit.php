@@ -129,9 +129,10 @@ if ($jenis_audit == 1) {
                                 <div class="col-9">
                                     <div class="browse-wrap">
                                         <input type="file" name="file" id="file" class="btn btn-secondary" title="Choose a file to upload" accept=".pdf">
-                                        <a href="<?php echo base_url('file_uploads/audit/' . $file) ?>" target="_blank" class="btn btn-success px-4">Preview</a>
+                                        <?php if ($file) { ?>
+                                            <a href="<?php echo base_url('file_uploads/audit/' . $file) ?>" target="_blank" class="btn btn-success px-4">Preview</a>
+                                        <?php } ?>
                                     </div>
-                                    <!-- button preview -->
                                 </div>
                             </div>
 
