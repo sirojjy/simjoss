@@ -19,7 +19,7 @@
                         <div id="line_pendapatan" style="height: 450px;"></div>
                     </div>
                 </div>
-                <p class="text-info mt-3"><i>Last updated : <?= $last_update ?> </i></p>
+                <p class="text-info mt-3"><i>Last updated : <?= $lastUpdateDashboard3 ?> </i></p>
             </div>
         </div>
     </div>

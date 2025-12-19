@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-info"><i>Last updated : <?= $format_tw ?></i></p>
+                <p class="text-info"><i>Last updated : <?= $lastUpdateDashboard7 ?></i></p>
             </div>
         </div>
     </div>

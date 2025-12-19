@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-info mt-3"><i>Last updated : <?= $update_bulan_juni ?></i></p>
+                <p class="text-info mt-3"><i>Last updated : <?= $lastUpdateDashboard11 ?></i></p>
                 <p class="text-center">
                     <a href="<?php echo site_url('Dokumen/sop'); ?>" target="_blank" class="btn btn-info"><u>View Summary SOP</u></a>
                 </p>

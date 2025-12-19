@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <br>
-                <p class="text-info"><i>Last updated : <?= $update_bulan_november ?></i></p>
+                <p class="text-info"><i>Last updated : <?= $lastUpdateDashboard2 ?></i></p>
             </div>
         </div>
     </div>

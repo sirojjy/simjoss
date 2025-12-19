@@ -16,6 +16,31 @@ class Dashboard extends CI_Controller
         //$this->load->library(array('PHPExcel','PHPExcel/IOFactory'));
     }
 
+    function bulanTahunIndo($tanggal)
+    {
+        if (!$tanggal) return '-';
+
+        $bulanIndo = [
+            1 => 'Januari',
+            2 => 'Februari',
+            3 => 'Maret',
+            4 => 'April',
+            5 => 'Mei',
+            6 => 'Juni',
+            7 => 'Juli',
+            8 => 'Agustus',
+            9 => 'September',
+            10 => 'Oktober',
+            11 => 'November',
+            12 => 'Desember'
+        ];
+
+        $bulan = (int) date('m', strtotime($tanggal));
+        $tahun = date('Y', strtotime($tanggal));
+
+        return $bulanIndo[$bulan] . ' ' . $tahun;
+    }
+
     // Endpoint Dashboard 3
     function get_tahap1()
     {
@@ -238,20 +263,23 @@ class Dashboard extends CI_Controller
             $result[] = $entry;
         }
         echo json_encode($result);
-        // $data = $this->M_manajemen->get_manajemen_resiko_dashboard();
-        // var_dump($result);
-        // echo json_encode($data);
     }
 
     public function index()
     {
-        // $ses_data = array(
-        //     'act_menu'   => 'dashboard',
-        //     'title'      => 'Dashboard',
-        //     'breadcrumb' => 'dashboard',
-        // );
-        // $this->session->set_userdata($ses_data);
-        // $perbandingan_pendapatan = $this->M_dashboard->get_perbandingan_pendapatan();
+        $lastUpdateDashboard2 = $this->db->query("SELECT * FROM tb_kronologis ORDER BY created_at DESC LIMIT 1")->row()->created_at;
+        $lastUpdateDashboard3 = $this->db->query("SELECT * FROM progres_lahan ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        $lastUpdateDashboard4 = $this->db->query("select * from tb_perbandingan_pendapatan ORDER BY id DESC")->row()->tanggal;
+        $lastUpdateDashboard5 = $this->db->query("SELECT * FROM monitoring_rkap ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        // $lastUpdateDashboard6 = $this->db->query("SELECT * FROM monitoring_rkap ORDER BY create_date DESC LIMIT 1")->row();
+        // $lastUpdateDashboard7 = $this->db->query("SELECT * FROM monitoring_rkap ORDER BY create_date DESC LIMIT 1")->row();
+        // $lastUpdateDashboard8 = $this->db->query("SELECT * FROM tb_manajemen_resiko ORDER BY created_at DESC LIMIT 1")->row();
+        $lastUpdateDashboard9 = $this->db->query("SELECT * FROM tb_manajemen_resiko ORDER BY created_at DESC LIMIT 1")->row()->created_at;
+        $lastUpdateDashboard10 = $this->db->query("SELECT * FROM kewajiban_kepatuhan ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        $lastUpdateDashboard11 = $this->db->query("SELECT * FROM dokumen ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        $lastUpdateDashboard12 = $this->db->query("SELECT * FROM tb_monitoring_kpi ORDER BY created_at DESC LIMIT 1")->row()->created_at;
+        $lastUpdateDashboard13 = $this->db->query("SELECT * FROM progres_lahan ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        $lastUpdateDashboard14 = $this->db->query("SELECT * FROM tb_kontrak_konsultan ORDER BY create_date DESC LIMIT 1")->row()->create_date;
 
         $jml_kontrak_konsultanTol = $this->db->query("select COALESCE(count(id_kontrak_konsultan),0) as jml from tb_kontrak_konsultan where jenis=1")->row()->jml;
         $jml_kontrak_konsultanNonTol = $this->db->query("select COALESCE(count(id_kontrak_konsultan),0) as jml from tb_kontrak_konsultan where jenis=2")->row()->jml;
@@ -565,6 +593,16 @@ class Dashboard extends CI_Controller
             'title' => 'Dashboard',
             'menu' => 'Dashboard',
             'submenu' => '',
+            'lastUpdateDashboard2' => $this->bulanTahunIndo($lastUpdateDashboard2),
+            'lastUpdateDashboard3' => $this->bulanTahunIndo($lastUpdateDashboard3),
+            'lastUpdateDashboard4' => $this->bulanTahunIndo($lastUpdateDashboard4),
+            'lastUpdateDashboard5' => $this->bulanTahunIndo($lastUpdateDashboard5),
+            'lastUpdateDashboard9' => $this->bulanTahunIndo($lastUpdateDashboard9),
+            'lastUpdateDashboard10' => $this->bulanTahunIndo($lastUpdateDashboard10),
+            'lastUpdateDashboard11' => $this->bulanTahunIndo($lastUpdateDashboard11),
+            'lastUpdateDashboard12' => $this->bulanTahunIndo($lastUpdateDashboard12),
+            'lastUpdateDashboard13' => $this->bulanTahunIndo($lastUpdateDashboard13),
+            'lastUpdateDashboard14' => $this->bulanTahunIndo($lastUpdateDashboard14),
 
             'alokasi_kumulatif' => $alokasi_kumulatif,
             'fasilitas_dtt' => $fasilitas_dtt,

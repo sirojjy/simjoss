@@ -1,46 +1,8 @@
 <?php
-// Array nama bulan Bahasa Indonesia
-$bulan = [
-    'January' => 'Januari',
-    'February' => 'Februari',
-    'March' => 'Maret',
-    'April' => 'April',
-    'May' => 'Mei',
-    'June' => 'Juni',
-    'July' => 'Juli',
-    'August' => 'Agustus',
-    'September' => 'September',
-    'October' => 'Oktober',
-    'November' => 'November',
-    'December' => 'Desember'
-];
-
-// Ambil informasi waktu sekarang
-$bulanInggris = date('F');         // Misalnya: "May"
-$tahun = date('Y');                // Misalnya: "2025"
-$bulanAngka = (int)date('n');      // Misalnya: 5
-$bulanIndo = $bulan[$bulanInggris];
-
-// Tentukan Triwulan
-if ($bulanAngka >= 1 && $bulanAngka <= 3) {
-    $triwulan = 'TW I';
-} elseif ($bulanAngka >= 4 && $bulanAngka <= 6) {
-    $triwulan = 'TW II';
-} elseif ($bulanAngka >= 7 && $bulanAngka <= 9) {
-    $triwulan = 'TW III';
-} else {
-    $triwulan = 'TW IV';
-}
-
-// Format-format yang akan ditampilkan
-// $format_tw = "$triwulan $tahun / $bulanIndo $tahun";
-$format_tw = "April $tahun";
-$format_bulan_tahun = "April $tahun";
-$format_bulan_saja = "April $tahun";
-$update_bulan_juni = "Juni $tahun";
-$update_bulan_juli = "Juli $tahun";
-$update_bulan_november = "November $tahun";
-$last_update = "Agustus $tahun";
+$tahun = date('Y');
+$lastUpdateDashboard6 = "November $tahun";
+$lastUpdateDashboard7 = "November $tahun";
+$lastUpdateDashboard8 = "November $tahun";
 ?>
 
 <div class="container-fluid">

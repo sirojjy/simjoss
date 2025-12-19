@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-info mt-3"><i>Last updated : <?= $last_update ?></i></p>
+                <p class="text-info mt-3"><i>Last updated : <?= $lastUpdateDashboard5 ?></i></p>
             </div>
         </div>
     </div>
