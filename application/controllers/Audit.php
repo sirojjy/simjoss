@@ -278,7 +278,7 @@ class Audit extends CI_Controller
 
             $uploadPath = 'file_uploads/audit/';
             $config['upload_path'] = $uploadPath;
-            $config['allowed_types'] = '*';
+            $config['allowed_types'] = 'pdf';
             $config['file_name'] = $eks_file;
         }
 
