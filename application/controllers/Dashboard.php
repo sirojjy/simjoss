@@ -255,7 +255,7 @@ class Dashboard extends CI_Controller
 
         $jml_kontrak_konsultanTol = $this->db->query("select COALESCE(count(id_kontrak_konsultan),0) as jml from tb_kontrak_konsultan where jenis=1")->row()->jml;
         $jml_kontrak_konsultanNonTol = $this->db->query("select COALESCE(count(id_kontrak_konsultan),0) as jml from tb_kontrak_konsultan where jenis=2")->row()->jml;
-        $jml_kontrak_konstruksi = $this->db->query("select COALESCE(count(id_kontrak_konstruksi),0) as jml from kontrak_konstruksi")->row()->jml;
+        $jml_kontrak_konstruksi = $this->db->query("select COALESCE(count(id_kontrak_konstruksi),0) as jml from tb_kontrak_konstruksi")->row()->jml;
         $jml_kontrak_nonTol = $this->db->query("select COALESCE(count(id_kontrak_nontol),0) as jml from kontrak_konstruksi_nontol")->row()->jml;
         $jml_kontrak_peralatanTol = $this->db->query("select COALESCE(count(id_kontrak_konsultan),0) as jml from tb_kontrak_konsultan where jenis=3")->row()->jml;
         $jml_kontrak_lainnya = $this->db->query("select COALESCE(count(id_kontrak),0) as jml from kontrak_lainnya")->row()->jml;
@@ -264,7 +264,7 @@ class Dashboard extends CI_Controller
 
         $nilai_kontrak_konsultanTol = $this->db->query("select COALESCE(sum(nilai_add),0) as sum from tb_kontrak_konsultan where jenis=1")->row()->sum;
         $nilai_kontrak_konsultanNonTol = $this->db->query("select COALESCE(sum(nilai_add),0) as sum from tb_kontrak_konsultan where jenis=2")->row()->sum;
-        $nilai_kontrak_konstruksi = $this->db->query("select COALESCE(sum(nilai_add),0) as sum from kontrak_konstruksi")->row()->sum;
+        $nilai_kontrak_konstruksi = $this->db->query("select COALESCE(sum(nilai_addendum),0) as sum from tb_kontrak_konstruksi")->row()->sum;
         $nilai_kontrak_nonTol = $this->db->query("select COALESCE(sum(nilai_kontrak),0) as sum from kontrak_konstruksi_nontol")->row()->sum;
         $nilai_kontrak_peralatan = $this->db->query("select COALESCE(sum(nilai_add),0) as sum from tb_kontrak_konsultan where jenis=3")->row()->sum;
         $nilai_kontrak_lainnya = $this->db->query("select COALESCE(sum(nilai_kontrak),0) as sum from kontrak_lainnya")->row()->sum;
@@ -892,7 +892,7 @@ class Dashboard extends CI_Controller
     {
         $id_dok = $this->input->post('id_dok');
 
-        $aset = $this->db->query("select * from kontrak_konstruksi as kk where not exists (SELECT id_kontrak_konstruksi from detail_dok_konstruksi as dd where dd.id_kontrak_konstruksi = kk.id_kontrak_konstruksi and dd.id_dok_master=" . $id_dok . ")")->result();
+        $aset = $this->db->query("select * from tb_kontrak_konstruksi as kk where not exists (SELECT id_kontrak_konstruksi from detail_dok_konstruksi as dd where dd.id_kontrak_konstruksi = kk.id_kontrak_konstruksi and dd.id_dok_master=" . $id_dok . ")")->result();
         echo json_encode($aset);
     }
 
