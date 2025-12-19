@@ -23,7 +23,7 @@ class M_audit extends CI_Model
             'column_order'      => ['id_audit', 'uraian_temuan', 'tanggal', 'kategori', 'iso', 'klausul', 'tindak_lanjut', 'status'],
             'column_search'     => ['uraian_temuan', 'tanggal', 'kategori', 'iso', 'klausul', 'tindak_lanjut', 'status'],
             'numeric_columns'   => ['tanggal', 'kategori', 'iso', 'status'],
-            'order'             => ['tanggal' => 'DESC'],
+            'order'             => ['id_audit' => 'DESC'],
             'where'             => ['jenis_audit' => $id]
         ]);
 
