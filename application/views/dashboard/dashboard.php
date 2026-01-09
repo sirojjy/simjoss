@@ -1,5 +1,5 @@
 <?php
-$tahun = date('Y');
+$tahun = '2025';
 $lastUpdateDashboard6 = "November $tahun";
 $lastUpdateDashboard7 = "November $tahun";
 $lastUpdateDashboard8 = "November $tahun";
