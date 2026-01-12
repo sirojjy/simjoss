@@ -199,10 +199,194 @@ $lastUpdateDashboard8 = "November $tahun";
             }
         });
 
+        const tahunLHR = $("#tahun_lhr");
+        const tahunPendapatan = $("#tahun_pendapatan");
+
+        tahunLHR.change(function() {
+            $.ajax({
+                type: "GET",
+                url: "<?php echo site_url('Dashboard/get_data_lhr') ?>",
+                data: {
+                    tahun: tahunLHR.val()
+                },
+                dataType: "json",
+                success: function(res) {
+                    const categories = res.map(item => item.bulan);
+
+                    const ppjt = res.map(item => Number(item.ppjt));
+                    const rkap = res.map(item => Number(item.rkap));
+                    const realisasi = res.map(item => Number(item.realisasi));
+                    const prognosa = res.map(item => Number(item.prognosa));
+                    lineChartDashboard4({
+                        id: 'line_volume_filter',
+                        title: "Laju Harian Rata-Rata (LHR) Tahun " + tahunLHR.val(),
+                        subtitle: "",
+                        yAxisTitle: "Jumlah Volume",
+                        categories: categories,
+                        series: [{
+                                name: 'PPJT',
+                                data: ppjt
+                            },
+                            {
+                                name: 'RKAP',
+                                data: rkap
+                            },
+                            {
+                                name: 'Realisasi',
+                                data: realisasi
+                            },
+                            {
+                                name: 'Prognosa',
+                                data: prognosa
+                            }
+                        ]
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        });
+
+        tahunPendapatan.change(function() {
+            $.ajax({
+                type: "GET",
+                url: "<?php echo site_url('Dashboard/get_data_pendapatan') ?>",
+                data: {
+                    tahun: tahunPendapatan.val()
+                },
+                dataType: "json",
+                success: function(res) {
+                    const categories = res.map(item => item.bulan);
+
+                    const ppjt = res.map(item => Number(item.ppjt));
+                    const rkap = res.map(item => Number(item.rkap));
+                    const realisasi = res.map(item => Number(item.realisasi));
+                    const prognosa = res.map(item => Number(item.prognosa));
+                    lineChartDashboard4({
+                        id: 'line_pendapatan_filter',
+                        title: 'Perbandingan Pendapatan Tol Tahun ' + tahunPendapatan.val(),
+                        subtitle: 'dalam jutaan rupiah',
+                        yAxisTitle: "Jumlah Pendapatan",
+                        categories: categories,
+                        series: [{
+                                name: 'PPJT',
+                                data: ppjt
+                            },
+                            {
+                                name: 'RKAP',
+                                data: rkap
+                            },
+                            {
+                                name: 'Realisasi',
+                                data: realisasi
+                            },
+                            {
+                                name: 'Prognosa',
+                                data: prognosa
+                            }
+                        ]
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        })
+
         // Dashboard 4
+        $.ajax({
+            type: "GET",
+            url: "<?php echo site_url('Dashboard/get_data_lhr') ?>",
+            data: {
+                tahun: tahunLHR.val()
+            },
+            dataType: "json",
+            success: function(res) {
+                const categories = res.map(item => item.bulan);
+
+                const ppjt = res.map(item => Number(item.ppjt));
+                const rkap = res.map(item => Number(item.rkap));
+                const realisasi = res.map(item => Number(item.realisasi));
+                const prognosa = res.map(item => Number(item.prognosa));
+                lineChartDashboard4({
+                    id: 'line_volume_filter',
+                    title: "Laju Harian Rata-Rata (LHR) Tahun " + tahunLHR.val(),
+                    subtitle: "",
+                    yAxisTitle: "Jumlah Volume",
+                    categories: categories,
+                    series: [{
+                            name: 'PPJT',
+                            data: ppjt
+                        },
+                        {
+                            name: 'RKAP',
+                            data: rkap
+                        },
+                        {
+                            name: 'Realisasi',
+                            data: realisasi
+                        },
+                        {
+                            name: 'Prognosa',
+                            data: prognosa
+                        }
+                    ]
+                });
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "<?php echo site_url('Dashboard/get_data_pendapatan') ?>",
+            data: {
+                tahun: tahunPendapatan.val()
+            },
+            dataType: "json",
+            success: function(res) {
+                const categories = res.map(item => item.bulan);
+
+                const ppjt = res.map(item => Number(item.ppjt));
+                const rkap = res.map(item => Number(item.rkap));
+                const realisasi = res.map(item => Number(item.realisasi));
+                const prognosa = res.map(item => Number(item.prognosa));
+                lineChartDashboard4({
+                    id: 'line_pendapatan_filter',
+                    title: 'Perbandingan Pendapatan Tol Tahun ' + tahunPendapatan.val(),
+                    subtitle: 'dalam jutaan rupiah',
+                    yAxisTitle: "Jumlah Pendapatan",
+                    categories: categories,
+                    series: [{
+                            name: 'PPJT',
+                            data: ppjt
+                        },
+                        {
+                            name: 'RKAP',
+                            data: rkap
+                        },
+                        {
+                            name: 'Realisasi',
+                            data: realisasi
+                        },
+                        {
+                            name: 'Prognosa',
+                            data: prognosa
+                        }
+                    ]
+                });
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+
         lineChartDashboard4({
+            // tahun js
             id: 'line_volume',
-            title: "Laju Harian Rata-Rata (LHR)",
+            title: "Laju Harian Rata-Rata (LHR) Tahun " + new Date().getFullYear(),
             subtitle: "",
             yAxisTitle: "Jumlah Volume",
             categories: <?= json_encode($pv_chart_data['pv_labels']) ?>,
@@ -211,7 +395,7 @@ $lastUpdateDashboard8 = "November $tahun";
 
         lineChartDashboard4({
             id: 'line_pendapatan',
-            title: 'Perbandingan Pendapatan Tol',
+            title: 'Perbandingan Pendapatan Tol Tahun Tahun' + new Date().getFullYear(),
             subtitle: 'dalam jutaan rupiah',
             yAxisTitle: "Jumlah Pendapatan",
             categories: <?= json_encode($pp_chart_data['pp_labels']) ?>,

@@ -16,6 +16,20 @@ class Dashboard extends CI_Controller
         //$this->load->library(array('PHPExcel','PHPExcel/IOFactory'));
     }
 
+    function get_data_lhr()
+    {
+        $tahun = $this->input->get('tahun');
+        $data = $this->M_dashboard->get_perbandingan_volume($tahun);
+        echo json_encode($data);
+    }
+
+    function get_data_pendapatan()
+    {
+        $tahun = $this->input->get('tahun');
+        $data = $this->M_dashboard->get_perbandingan_pendapatan($tahun);
+        echo json_encode($data);
+    }
+
     function bulanTahunIndo($tanggal)
     {
         if (!$tanggal) return '-';
