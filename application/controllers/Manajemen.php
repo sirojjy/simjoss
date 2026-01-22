@@ -109,7 +109,7 @@ class Manajemen extends CI_Controller
 
     function get_kpi()
     {
-        $tahun = $this->input->get('tahun') ?? date('Y');
+        $tahun = $this->input->get('tahun');
         $list = $this->M_manajemen->get_kpi($tahun);
         $data = [];
         $no = $_GET['start'];
