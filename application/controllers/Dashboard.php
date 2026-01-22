@@ -559,8 +559,10 @@ class Dashboard extends CI_Controller
         $capex_rencana4 = $this->M_dashboard->capex_rencana(4);
         $capex_realisasi4 = $this->M_dashboard->capex_realisasi(4);
 
-        $tot_opex = $this->db->query("SELECT rencana, realisasi, deviasi FROM monitoring_rkap WHERE jenis = 'Opex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Opex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
-        $tot_capex = $this->db->query("SELECT rencana, realisasi, deviasi FROM monitoring_rkap WHERE jenis = 'Capex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Opex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
+        // $tot_opex = $this->db->query("SELECT rencana, realisasi, deviasi FROM monitoring_rkap WHERE jenis = 'Opex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Opex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
+        // $tot_opex = $this->db->query("SELECT SUM(rencana) AS rencana, SUM(realisasi) AS realisasi, SUM(deviasi) AS deviasi FROM monitoring_rkap WHERE jenis = 'Opex' AND tw = 4 AND tahun = '2025';);")->row();
+        $tot_opex = $this->db->query("SELECT SUM(rencana) AS rencana, SUM(realisasi) AS realisasi, SUM(deviasi) AS deviasi FROM monitoring_rkap WHERE jenis = 'Opex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Opex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
+        $tot_capex = $this->db->query("SELECT SUM(rencana) AS rencana, SUM(realisasi) AS realisasi, SUM(deviasi) AS deviasi FROM monitoring_rkap WHERE jenis = 'Capex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Capex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
         // var_dump($tot_opex->rencana);
         // die;
         // $tot_opex_realisasi = $this->db->query("select COALESCE(sum(realisasi),0) as sum from monitoring_rkap where jenis='Opex' and tahun='2025'")->row()->sum;
