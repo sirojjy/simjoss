@@ -109,25 +109,26 @@ class Manajemen extends CI_Controller
 
     function get_kpi()
     {
-        $tahun = $this->input->get('tahun') ?? null;
+        $tahun = $this->input->get('tahun') ?? date('Y');
         $list = $this->M_manajemen->get_kpi($tahun);
         $data = [];
         $no = $_GET['start'];
 
         foreach ($list as $kpi) {
             if ($kpi->polaritas == 1) {
-                $kpi->polaritas = "Maximize";
+                $polaritas = "Maximize";
             } elseif ($kpi->polaritas == 2) {
-                $kpi->polaritas = "Minimize";
+                $polaritas = "Minimize";
             } else {
                 $kpi->polaritas = "-";
             }
+
             $no++;
             $row = [];
             $row['id'] = $no;
             $row['nama'] = $kpi->nama;
             $row['satuan'] = $kpi->satuan;
-            $row['polaritas'] = $kpi->polaritas;
+            $row['polaritas'] = $polaritas;
             $row['bobot'] = $kpi->bobot;
             $row['batas_nilai'] = $kpi->batas_nilai;
             $row['periode'] = ucfirst($kpi->periode);

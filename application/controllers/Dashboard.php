@@ -559,10 +559,13 @@ class Dashboard extends CI_Controller
         $capex_rencana4 = $this->M_dashboard->capex_rencana(4);
         $capex_realisasi4 = $this->M_dashboard->capex_realisasi(4);
 
-        $tot_opex_rencana = $this->db->query("select COALESCE(sum(rencana),0) as sum from monitoring_rkap where jenis='Opex' and tahun='2025'")->row()->sum;
-        $tot_opex_realisasi = $this->db->query("select COALESCE(sum(realisasi),0) as sum from monitoring_rkap where jenis='Opex' and tahun='2025'")->row()->sum;
-        $tot_capex_rencana = $this->db->query("select COALESCE(sum(rencana),0) as sum from monitoring_rkap where jenis='Capex' and tahun='2025'")->row()->sum;
-        $tot_capex_realisasi = $this->db->query("select COALESCE(sum(realisasi),0) as sum from monitoring_rkap where jenis='Capex' and tahun='2025'")->row()->sum;
+        $tot_opex = $this->db->query("SELECT rencana, realisasi, deviasi FROM monitoring_rkap WHERE jenis = 'Opex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Opex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
+        $tot_capex = $this->db->query("SELECT rencana, realisasi, deviasi FROM monitoring_rkap WHERE jenis = 'Capex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Opex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
+        // var_dump($tot_opex->rencana);
+        // die;
+        // $tot_opex_realisasi = $this->db->query("select COALESCE(sum(realisasi),0) as sum from monitoring_rkap where jenis='Opex' and tahun='2025'")->row()->sum;
+        // $tot_capex_rencana = $this->db->query("select COALESCE(sum(rencana),0) as sum from monitoring_rkap where jenis='Capex' and tahun='2025'")->row()->sum;
+        // $tot_capex_realisasi = $this->db->query("select COALESCE(sum(realisasi),0) as sum from monitoring_rkap where jenis='Capex' and tahun='2025'")->row()->sum;
 
         // $data_seksi = $this->db->query("select * from seksi order by seksi asc")->result();
 
@@ -649,8 +652,8 @@ class Dashboard extends CI_Controller
             'opex_rencana4' => $opex_rencana4,
             'opex_realisasi4' => $opex_realisasi4,
 
-            'tot_opex_rencana' => $tot_opex_rencana,
-            'tot_opex_realisasi' => $tot_opex_realisasi,
+            'tot_opex' => $tot_opex,
+            'tot_capex' => $tot_capex,
 
             'capex_rencana1' => $capex_rencana1,
             'capex_realisasi1' => $capex_realisasi1,
@@ -661,8 +664,8 @@ class Dashboard extends CI_Controller
             'capex_rencana4' => $capex_rencana4,
             'capex_realisasi4' => $capex_realisasi4,
 
-            'tot_capex_rencana' => $tot_capex_rencana,
-            'tot_capex_realisasi' => $tot_capex_realisasi,
+            // 'tot_capex_rencana' => $tot_capex_rencana,
+            // 'tot_capex_realisasi' => $tot_capex_realisasi,
 
             'isu1' => $this->M_dashboard->get_issue(1),
             'isu2' => $this->M_dashboard->get_issue(2),

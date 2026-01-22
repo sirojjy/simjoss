@@ -1,11 +1,43 @@
 <?php
+
+use phpDocumentor\Reflection\DocBlock\Tags\Param;
+
 $tahun = '2025';
-$lastUpdateDashboard6 = "November $tahun";
+$lastUpdateDashboard6 = "Desember $tahun";
 $lastUpdateDashboard7 = "November $tahun";
-$lastUpdateDashboard8 = "November $tahun";
+$lastUpdateDashboard8 = "Desember $tahun";
 ?>
 
 <div class="container-fluid">
+    <div class="mb-2">
+        <div class="d-flex align-items-center justify-content-end">
+            <div class="inline-block">
+                <p class="mb-0 mr-2">Filter:</p>
+            </div>
+            <select class="form-control show-tick ms select2 w-auto mr-2 d-none" name="bulan_filter" id="bulan_filter">
+                <option value="" disabled selected>-- Bulan --</option>
+                <option value="1">Januari</option>
+                <option value="2">Februari</option>
+                <option value="3">Maret</option>
+                <option value="4">April</option>
+                <option value="5">Mei</option>
+                <option value="6">Juni</option>
+                <option value="7">Juli</option>
+                <option value="8">Agustus</option>
+                <option value="9">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+                <option value="12">Desember</option>
+            </select>
+            <select class="form-control show-tick ms select2 w-auto" name="tahun_filter" id="tahun_filter">
+                <option value="" disabled selected>-- Tahun --</option>
+                <?php for ($i = date('Y'); $i >= 2020; $i--): ?>
+                    <option value="<?= $i; ?>" <?= ($i == date('Y')) ? 'selected' : ''; ?>><?= $i; ?></option>
+                <?php endfor; ?>
+            </select>
+        </div>
+    </div>
+
     <!-- Dashboard 1 - Peta Trase -->
     <?php include 'peta_trase.php'; ?>
 
@@ -87,7 +119,86 @@ $lastUpdateDashboard8 = "November $tahun";
         return rataRata.toFixed(2);
     }
 
+    function DataKPI(tahun) {
+        getDataKPI({
+            url: "<?= base_url('Manajemen/get_kpi?tahun=') ?>" + tahun,
+            processing: true,
+            serverSide: true,
+            searching: false,
+            ordering: false,
+            info: false,
+            paging: false,
+            columnDefs: [{
+                    targets: 0,
+                    width: "1%",
+                    className: "dt-nowrap",
+                },
+                {
+                    targets: [0, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14],
+                    className: "text-center",
+                },
+            ],
+            columns: [{
+                    data: "id",
+                },
+                {
+                    data: "nama",
+                },
+                {
+                    data: "satuan",
+                },
+                {
+                    data: "polaritas",
+                },
+                {
+                    data: "bobot",
+                },
+                {
+                    data: "batas_nilai",
+                },
+                {
+                    data: "periode",
+                },
+                {
+                    data: "rencana_q1",
+                },
+                {
+                    data: "rencana_q2",
+                },
+                {
+                    data: "rencana_q3",
+                },
+                {
+                    data: "rencana_1y",
+                },
+                {
+                    data: "realisasi_q1",
+                },
+                {
+                    data: "realisasi_q2",
+                },
+                {
+                    data: "realisasi_q3",
+                },
+                {
+                    data: "realisasi_1y",
+                },
+                {
+                    data: "keterangan",
+                },
+            ],
+        });
+    }
+
     $(document).ready(function() {
+        let tahun_filter = $("#tahun_filter");
+
+        tahun_filter.change(function() {
+            let tahun = $(this).val();
+            console.log(tahun);
+            DataKPI(tahun);
+        });
+
         // Dashboard 3
         $.ajax({
             type: "GET",
@@ -591,74 +702,7 @@ $lastUpdateDashboard8 = "November $tahun";
         });
 
         // Dashboard 12 Monitoring KPI
-        getDataKPI({
-            url: "<?= base_url('Manajemen/get_kpi?tahun=') . date('Y') ?>",
-            processing: true,
-            serverSide: true,
-            searching: false,
-            ordering: false,
-            info: false,
-            paging: false,
-            columnDefs: [{
-                    targets: 0,
-                    width: "1%",
-                    className: "dt-nowrap",
-                },
-                {
-                    targets: [0, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14],
-                    className: "text-center",
-                },
-            ],
-            columns: [{
-                    data: "id",
-                },
-                {
-                    data: "nama",
-                },
-                {
-                    data: "satuan",
-                },
-                {
-                    data: "polaritas",
-                },
-                {
-                    data: "bobot",
-                },
-                {
-                    data: "batas_nilai",
-                },
-                {
-                    data: "periode",
-                },
-                {
-                    data: "rencana_q1",
-                },
-                {
-                    data: "rencana_q2",
-                },
-                {
-                    data: "rencana_q3",
-                },
-                {
-                    data: "rencana_1y",
-                },
-                {
-                    data: "realisasi_q1",
-                },
-                {
-                    data: "realisasi_q2",
-                },
-                {
-                    data: "realisasi_q3",
-                },
-                {
-                    data: "realisasi_1y",
-                },
-                {
-                    data: "keterangan",
-                },
-            ],
-        });
+        DataKPI("<?= date('Y') ?>");
 
         // Dashboard 13 & 14
         <?php if ($this->session->userdata('level_user') == 1) { ?>

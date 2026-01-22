@@ -36,7 +36,7 @@
                                     <th class="font-weight-bold">Periode</th>
                                     <th class="font-weight-bold">Kumulatif </th>
                                     <th class="font-weight-bold">Periodik </th>
-                                    <th class="font-weight-bold">Pembayaran Langsung </th>
+                                    <th class="font-weight-bold d-none">Pembayaran Langsung </th>
                                     <th class="font-weight-bold">Dana Talangan </th>
                                     <th class="font-weight-bold">Persetujuan DTT </th>
                                     <th class="font-weight-bold">File</th>
@@ -79,16 +79,14 @@
                             <input type="text" required="" name="periode" class="form-control">
                         </div>
                     </div>
-
                     <div class="row mb-3">
                         <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Jenis</label>
                         <div class="col-sm-9">
                             <select class="form-control show-tick ms select2" name="jenis" id="jenis">
-                                <option value="">-- Jenis Pengadaan --</option>
+                                <option value="" disabled>-- Sumber Pendanaan --</option>
                                 <option value="1">Sindikasi Bank</option>
-                                <option value="2">SPP dari PPK</option>
+                                <option value="2">Pemerintah</option>
                             </select>
-
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -110,15 +108,15 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Alokasi Dana Talangan</label>
+                        <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Alokasi Dana Pengembalian Kepada BUJT</label>
                         <div class="col-sm-9">
                             <input type="text" required="" name="dana_dtt" class="form-control">
                         </div>
                     </div>
-                    <div class="row mb-3">
+                    <div class="row mb-3 d-none">
                         <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Persetujuan DTT Menteri Keuangan</label>
                         <div class="col-sm-9">
-                            <input type="text" required="" name="persetujuan_dtt" class="form-control">
+                            <input type="text" name="persetujuan_dtt" class="form-control">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -185,10 +183,10 @@
                     data: "dana_talangan",
                     className: "text-center",
                 },
-                {
-                    data: "persetujuan_dtt",
-                    className: "text-center font-weight-bold",
-                },
+                // {
+                //     data: "persetujuan_dtt",
+                //     className: "text-center font-weight-bold",
+                // },
                 {
                     data: "file",
                     className: "text-center",

@@ -19,15 +19,15 @@
                             <div class="col-md-8">
                                 <div class="alert alert-primary">
                                     <p class="text-center mb-0 text-primary font-16 font-weight-bold">
-                                        Total Rencana : Rp. <?= number_format($tot_opex_rencana, 0, ',', '.') ?>
+                                        Total Rencana : Rp. <?= number_format($tot_opex->rencana, 0, ',', '.') ?>
                                     </p>
                                     <p class="text-center mb-0 text-primary font-16 font-weight-bold">
-                                        Total Realisasi : Rp. <?= number_format($tot_opex_realisasi, 0, ',', '.') ?>
+                                        Total Realisasi : Rp. <?= number_format($tot_opex->realisasi, 0, ',', '.') ?>
                                     </p>
                                     <p class="text-center mb-0 text-danger font-16 font-weight-bold">
-                                        Total Deviasi : Rp. <?= number_format($tot_opex_rencana - $tot_opex_realisasi, 0, ',', '.') ?>
-                                        <span>(<?= number_format(($tot_opex_rencana - $tot_opex_realisasi) / $tot_opex_realisasi * 100, 2, ',', '.') ?>%)</span>
-                                        <i class="fa fa-exclamation-triangle <?= ($tot_opex_rencana - $tot_opex_realisasi >= 5) ? '' : 'd-none' ?>"></i>
+                                        Total Deviasi : Rp. <?= number_format($tot_opex->rencana - $tot_opex->realisasi, 0, ',', '.') ?>
+                                        <span>(<?= number_format(($tot_opex->rencana - $tot_opex->realisasi) / $tot_opex->realisasi * 100, 2, ',', '.') ?>%)</span>
+                                        <i class="fa fa-exclamation-triangle <?= ($tot_opex->rencana - $tot_opex->realisasi >= 5) ? '' : 'd-none' ?>"></i>
                                     </p>
                                 </div>
                             </div>
@@ -40,15 +40,15 @@
                             <div class="col-md-8">
                                 <div class="alert alert-primary">
                                     <p class="text-center mb-0 text-primary font-16 font-weight-bold">
-                                        Total Rencana : Rp. <?= number_format($tot_capex_rencana, 0, ',', '.') ?>
+                                        Total Rencana : Rp. <?= number_format($tot_capex->rencana, 0, ',', '.') ?>
                                     </p>
                                     <p class="text-center mb-0 text-primary font-16 font-weight-bold">
-                                        Total Realisasi : Rp. <?= number_format($tot_capex_realisasi, 0, ',', '.') ?>
+                                        Total Realisasi : Rp. <?= number_format($tot_capex->realisasi, 0, ',', '.') ?>
                                     </p>
                                     <p class="text-center mb-0 text-danger font-16 font-weight-bold">
-                                        Total Deviasi : Rp. <?= number_format($tot_capex_rencana - $tot_capex_realisasi, 0, ',', '.') ?>
-                                        <span>(<?= number_format(($tot_capex_rencana - $tot_capex_realisasi) / $tot_capex_realisasi * 100, 2, ',', '.') ?>%)</span>
-                                        <i class="fa fa-exclamation-triangle <?= ($tot_capex_rencana - $tot_capex_realisasi >= 5) ? '' : 'd-none' ?>"></i>
+                                        Total Deviasi : Rp. <?= number_format($tot_capex->rencana - $tot_capex->realisasi, 0, ',', '.') ?>
+                                        <span>(<?= number_format(($tot_capex->rencana - $tot_capex->realisasi) / $tot_capex->realisasi * 100, 2, ',', '.') ?>%)</span>
+                                        <i class="fa fa-exclamation-triangle <?= ($tot_capex->rencana - $tot_capex->realisasi >= 5) ? '' : 'd-none' ?>"></i>
                                     </p>
                                 </div>
                             </div>
@@ -59,10 +59,10 @@
                     <div class="col-10">
                         <div class="alert alert-secondary">
                             <p class="text-center mb-0 font-16 font-weight-bold">
-                                Total Rencana Opex + Capex: Rp. <?= number_format($tot_opex_rencana + $tot_capex_rencana, 0, ',', '.') ?>
+                                Total Rencana Opex + Capex: Rp. <?= number_format($tot_opex->rencana + $tot_capex->rencana, 0, ',', '.') ?>
                             </p>
                             <p class="text-center mb-0 font-16 font-weight-bold">
-                                Total Realisasi Opex + Capex : Rp. <?= number_format($tot_opex_realisasi + $tot_capex_realisasi, 0, ',', '.') ?>
+                                Total Realisasi Opex + Capex : Rp. <?= number_format($tot_opex->realisasi + $tot_capex->realisasi, 0, ',', '.') ?>
                             </p>
                         </div>
                     </div>

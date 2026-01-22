@@ -122,22 +122,22 @@ function chartDashboard8(params) {
 			{
 				name: "Realisasi TW 1",
 				color: "#0639BD",
-				data: [0, 410502672520],
+				data: [0, 460792862119],
 			},
 			{
 				name: "Realisasi TW 2",
 				color: "#FFB848",
-				data: [0, 1206080699158],
+				data: [0, 745287837039],
 			},
 			{
 				name: "Realisasi TW 3",
 				color: "#28B779",
-				data: [0, 0],
+				data: [0, 658343697972],
 			},
 			{
 				name: "Realisasi TW 4",
 				color: "#B74293",
-				data: [10572759334160, 0],
+				data: [10572759334160, 453141528327],
 			},
 		],
 	});
