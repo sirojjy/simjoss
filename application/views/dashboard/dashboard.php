@@ -195,7 +195,6 @@ $lastUpdateDashboard8 = "Desember $tahun";
 
         tahun_filter.change(function() {
             let tahun = $(this).val();
-            console.log(tahun);
             DataKPI(tahun);
         });
 
