@@ -627,6 +627,25 @@ $lastUpdateDashboard8 = "Desember $tahun";
             ]
         });
 
+        // Dashboard 7
+        pieDashboard7({
+            id: "pemegangSaham",
+            title: "Komposisi Pemegang Saham",
+            // PT Jasa Marga dan PT Adhi Karya
+            series: [{
+                name: 'Fasilitas',
+                data: [{
+                    name: 'PT Jasa Marga',
+                    y: 47.18,
+                    color: '#1982c4'
+                }, {
+                    name: 'PT Adhi Karya',
+                    y: 52.82,
+                    color: '#ffca3a'
+                }]
+            }]
+        })
+
         // Dashboard 8
         $.ajax({
             url: "<?= base_url('Progres/getAlokasiDTT'); ?>",

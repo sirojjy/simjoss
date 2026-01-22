@@ -89,7 +89,10 @@ function chartDashboard8(params) {
 			text: params.subtitle ?? "",
 		},
 		xAxis: {
-			categories: ["Realisasi s/d Desember 2024", "Realisasi s/d Juni 2025"],
+			categories: [
+				"Realisasi s/d Desember 2024",
+				"Realisasi s/d Desember 2025",
+			],
 			gridLineWidth: 1,
 			lineWidth: 0,
 		},

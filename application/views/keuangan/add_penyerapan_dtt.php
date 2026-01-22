@@ -1,9 +1,8 @@
-
 <div class="container-fluid">
     <div class="row clearfix">
         <div class="col-xl-11 mx-auto">
             <h5 class="mb-10 text-uppercase"><b>Penyerapan Dana Tanah</b></h5>
-            <hr/>
+            <hr />
             <div class="card border-top border-0 border-4 border-primary">
                 <div class="card-body">
                     <form class="form-horizontal" action="<?php echo $action_add ?>" enctype="multipart/form-data" data-parsley-validate="true" method="post">
@@ -13,7 +12,7 @@
                                 </div>
                                 <h5 class="mb-0 text-primary "> <b>Tambah Data Penyerapan Dana Tanah</b></h5>
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Tanggal</label>
                                 <div class="col-sm-8">
@@ -30,9 +29,9 @@
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Jenis</label>
                                 <div class="col-sm-8">
                                     <select class="form-control show-tick ms select2" name="jenis">
-                                        <option value="">-- Jenis Pengadaan --</option>
+                                        <option value="">-- Sumber Pendanaan --</option>
                                         <option value="1">Sindikasi Bank</option>
-                                        <option value="2">SPP dari PPK</option>
+                                        <option value="2">Pemerintah</option>
                                     </select>
 
                                 </div>
@@ -40,37 +39,37 @@
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Realisasi Internal PL Periodik (PL)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="realisasi_internal_pl" class="form-control" >
+                                    <input type="text" required="" name="realisasi_internal_pl" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Realisasi Internal PL Periodik (DTT)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="realisasi_internal_dtt" class="form-control" >
+                                    <input type="text" required="" name="realisasi_internal_dtt" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Realisasi DT s.d Periode Sebelumnya</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="realisasi_tanah" class="form-control" >
+                                    <input type="text" required="" name="realisasi_tanah" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Realisasi PL s.d Periode Sebelumnya</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="realisasi_pl" class="form-control" >
+                                    <input type="text" required="" name="realisasi_pl" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Realisasi DTT s.d Periode Sebelumnya</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="realisasi_dtt" class="form-control" >
+                                    <input type="text" required="" name="realisasi_dtt" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Carry Over periodik (PL)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="carry_over" class="form-control" >
+                                    <input type="text" required="" name="carry_over" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -98,6 +97,3 @@
         </div>
     </div>
 </div>
-
-
-

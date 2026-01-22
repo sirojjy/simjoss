@@ -19,6 +19,28 @@
     </div>
 </div>
 
+<!-- Modal Dashboard 7 Bisnis Plan -->
+<div class="modal fade show" id="modalBisnisPlan" tabindex="-1" role="dialog" aria-labelledby="modalBisnisPlan" aria-hidden="true">
+    <div class="modal-dialog modal-xl" style="min-width: 75%;">
+        <div class="modal-content">
+            <div class="modal-header text-white" style="background-color:rgb(21, 81, 128);">
+                <h5 class="modal-title" id="detailDttModalLabel">Detail Business Plan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="color:white;">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- view file pdf -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <embed src="<?php echo base_url('assets/pdf/Data-Setoran-Modal-Dashboard-7.pdf') ?>" type="application/pdf" width="100%" height="600px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal Dashboard 7 Tahap 1 -->
 <div class="modal fade show" id="modalPembiayaanTahap1" tabindex="-1" role="dialog" aria-labelledby="detailDttModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" style="min-width: 95%;">

@@ -1,4 +1,3 @@
-
 <div class="modal fade show" id="upload_dok" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document" style="max-width: 40%">
         <div class="modal-content">
@@ -11,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="upload_form" action="<?php echo $upload ?>" enctype="multipart/form-data" data-parsley-validate="true" method="post">
+                <form class="form-horizontal" id="upload_form" action="<?= $upload ?>" enctype="multipart/form-data" data-parsley-validate="true" method="post">
                     <div class="row mb-3">
                         <label for="inputPhoneNo2" class="col-sm-4 col-form-label">File Dokumen (.pdf)</label>
                         <div class="col-sm-8">
@@ -27,13 +26,12 @@
                     <div class="row">
                         <label class="col-sm-4 col-form-label"></label>
                         <div class="col-sm-8">
-                            <button type="submit" class="btn btn-primary px-4">Simpan</button> 
+                            <button type="submit" class="btn btn-primary px-4">Simpan</button>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                
             </div>
         </div>
     </div>

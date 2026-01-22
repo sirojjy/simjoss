@@ -388,6 +388,7 @@ class Manajemen extends CI_Controller
         $this->session->set_userdata($ses_data);
         $data = array(
             'row' => $this->M_manajemen->get_kepatuhan(2),
+            'upload' => site_url('Manajemen/act_upload_dokumen'),
         );
         $this->template->load('template/admin_template', 'manajemen/kepatuhan_korporasi.php', $data);
     }

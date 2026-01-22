@@ -12,6 +12,95 @@
             </div>
             <div class="card-body">
                 <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <div id="pemegangSaham"></div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title font-weight-bold m-t-10">Update Business Plan</h4>
+                            <button type="button" class="btn btn-sm btn-info" onclick="modalPembiayaanTahap('#modalBisnisPlan')">
+                                Detail
+                            </button>
+                        </div>
+                        <!-- table -->
+                        <table class="table table-bordered">
+                            <thead class="bg-theme text-white font-weight-bold">
+                                <th class="font-weight-bold">
+                                    Biaya Investasi
+                                </th>
+                                <th class="font-weight-bold">
+                                    BA BPJT Terupdate
+                                </th>
+                                <th class="font-weight-bold">
+                                    OE
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-weight-bold">A. Biaya Proyek</td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"></td>
+                                </tr>
+                                <tr>
+                                    <td class="">Biaya Konstruksi</td>
+                                    <td class="text-right"> 18.990.999</td>
+                                    <td class="text-right"> 19.446.439</td>
+                                </tr>
+                                <tr>
+                                    <td class="">Peralatan Tol</td>
+                                    <td class="text-right"> 57.800</td>
+                                    <td class="text-right"> 139.413</td>
+                                </tr>
+                                <tr>
+                                    <td class="">Design</td>
+                                    <td class="text-right"> 237.387</td>
+                                    <td class="text-right"> 129.964</td>
+                                </tr>
+                                <tr>
+                                    <td class="">Supervisi + PMI</td>
+                                    <td class="text-right"> 261.167</td>
+                                    <td class="text-right"> 266.236</td>
+                                </tr>
+                                <tr>
+                                    <td class="">Eskalasi</td>
+                                    <td class="text-right"> 1.940.183</td>
+                                    <td class="text-right"> 1.957.904</td>
+                                </tr>
+                                <tr>
+                                    <td class="">Overhead</td>
+                                    <td class="text-right"> 322.320</td>
+                                    <td class="text-right"> 398.202</td>
+                                </tr>
+                                <tr>
+                                    <td class="">PPN</td>
+                                    <td class="text-right"> 2.370.312</td>
+                                    <td class="text-right"> 2.520.264</td>
+                                </tr>
+                                <tr>
+                                    <td class="">Biaya Proyek</td>
+                                    <td class="text-right"> 2.370.312</td>
+                                    <td class="text-right"> 2.520.264</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">B. Financial Fee</td>
+                                    <td class="text-right"> 288.996</td>
+                                    <td class="text-right"> 312.573</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">C. Bunga Masa Konstruksi</td>
+                                    <td class="text-right"> 3.016.993</td>
+                                    <td class="text-right"> 2.379.320</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">Total Biaya Investasi</td>
+                                    <td class="text-right"> 27.486.608</td>
+                                    <td class="text-right"> 27.550.316</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card cursor-pointer">
                             <div class="box bg-success" onclick="modalPembiayaanTahap('#modalPembiayaanTahap1')">

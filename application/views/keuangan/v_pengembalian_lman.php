@@ -120,9 +120,9 @@
                         <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Jenis</label>
                         <div class="col-sm-8">
                             <select class="form-control show-tick ms select2" name="jenis" id="jenis">
-                                <option value="">-- Jenis Pengadaan --</option>
+                                <option value="">-- Sumber Pendanaan --</option>
                                 <option value="1">Sindikasi Bank</option>
-                                <option value="2">SPP dari PPK</option>
+                                <option value="2">Pemerintah</option>
                             </select>
 
                         </div>

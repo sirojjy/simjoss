@@ -181,41 +181,63 @@ function BarChart3D(params) {
 	});
 }
 
-// BarChart3D({
-// 	id: "bar_3d",
-// 	title: "Realisasi HPJT Tiap Tahun Terhadap PPJT Tahap 1 (s.d. 2024)",
-// 	kategori: kategori,
-// 	reversedLegend: true,
-// 	tooltip: {
-// 		formatter: function () {
-// 			return `<span style="color:${this.color}">\u25CF</span> <b>${
-// 				this.series.name
-// 			}</b><br/>
-//             Nilai: <b> Rp ${Highcharts.numberFormat(
-// 							this.point.raw,
-// 							0,
-// 							".",
-// 							","
-// 						)}</b><br/>
-//             Persentase: <b>${Highcharts.numberFormat(this.y, 2)}%</b>`;
-// 		},
-// 	},
-// 	series: dataPersen,
-// });
-
-// BarChart3D({
-// 	id: "bar_3d_outstanding",
-// 	title: "Outstanding Penarikan Terhadap Plafon Fasilitas Kredit (s.d 2024)",
-// 	kategori: kategori,
-// 	reversedLegend: true,
-// 	tooltip: {
-// 		formatter: function () {
-// 			return `<span style="color:${this.color}">\u25CF</span> <b>${
-// 				this.series.name
-// 			}</b><br/>
-// 			Nilai: <b> Rp ${Highcharts.numberFormat(this.point.raw, 0, ".", ",")}</b><br/>
-// 			Persentase: <b>${Highcharts.numberFormat(this.y, 2)}%</b>`;
-// 		},
-// 	},
-// 	series: dataPersenOutstanding,
-// });
+function pieDashboard7(params) {
+	Highcharts.chart(params.id, {
+		credits: {
+			enabled: false,
+		},
+		exporting: {
+			enabled: false,
+		},
+		chart: {
+			type: "pie",
+			zooming: {
+				type: "xy",
+			},
+			panning: {
+				enabled: true,
+				type: "xy",
+			},
+			panKey: "shift",
+		},
+		title: {
+			text: params.title,
+		},
+		tooltip: {
+			formatter: function () {
+				return "<b>" + this.point.name + "</b>";
+			},
+		},
+		// legend: {
+		// 	useHTML: true,
+		// 	labelFormatter: function () {
+		// 		return this.name_custom;
+		// 	},
+		// },
+		plotOptions: {
+			pie: {
+				allowPointSelect: false,
+				cursor: "pointer",
+				dataLabels: [
+					{
+						enabled: false,
+						distance: 20,
+					},
+					{
+						enabled: true,
+						distance: -40,
+						format: "{point.percentage:.1f}%",
+						style: {
+							fontSize: "1em",
+							textOutline: "none",
+							opacity: 0.7,
+						},
+					},
+				],
+				showInLegend: true,
+				point: params.point ?? null,
+			},
+		},
+		series: params.series,
+	});
+}
