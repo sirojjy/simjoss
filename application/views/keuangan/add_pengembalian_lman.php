@@ -1,9 +1,8 @@
-
 <div class="container-fluid">
     <div class="row clearfix">
         <div class="col-xl-11 mx-auto">
             <h5 class="mb-10 text-uppercase"><b>Pengembalian LMAN</b></h5>
-            <hr/>
+            <hr />
             <div class="card border-top border-0 border-4 border-primary">
                 <div class="card-body">
                     <form class="form-horizontal" action="<?php echo $action_add ?>" enctype="multipart/form-data" data-parsley-validate="true" method="post">
@@ -13,7 +12,7 @@
                                 </div>
                                 <h5 class="mb-0 text-primary "> <b>Tambah Data Pengembalian LMAN</b></h5>
                             </div>
-                            <hr/>
+                            <hr />
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Tanggal</label>
                                 <div class="col-sm-8">
@@ -30,9 +29,9 @@
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Jenis</label>
                                 <div class="col-sm-8">
                                     <select class="form-control show-tick ms select2" name="jenis">
-                                        <option value="">-- Jenis Pengadaan --</option>
+                                        <option value="">-- Sumber Pendanaan --</option>
                                         <option value="1">Sindikasi Bank</option>
-                                        <option value="2">SPP dari PPK</option>
+                                        <option value="2">Pemerintah</option>
                                     </select>
 
                                 </div>
@@ -40,37 +39,37 @@
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Rekonsiliasi DTT per [saat ini]</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="rekon_dtt" class="form-control" >
+                                    <input type="text" required="" name="rekon_dtt" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Rekonsiliasi CoF per [saat ini]</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="rekon_cof" class="form-control" >
+                                    <input type="text" required="" name="rekon_cof" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Pengembalian DTT per [saat ini]</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="pengembalian_dtt" class="form-control" >
+                                    <input type="text" required="" name="pengembalian_dtt" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Pengembalian CoF per [saat ini]</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="pengembalian_cof" class="form-control" >
+                                    <input type="text" required="" name="pengembalian_cof" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Penerimaan Pengembalian DTT per [saat ini]</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="penerimaan_kembali_dtt" class="form-control" >
+                                    <input type="text" required="" name="penerimaan_kembali_dtt" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-4 col-form-label">Penerimaan Pengembalian CoF per [saat ini]</label>
                                 <div class="col-sm-8">
-                                    <input type="text" required="" name="penerimaan_kembali_cof" class="form-control" >
+                                    <input type="text" required="" name="penerimaan_kembali_cof" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -98,6 +97,3 @@
         </div>
     </div>
 </div>
-
-
-

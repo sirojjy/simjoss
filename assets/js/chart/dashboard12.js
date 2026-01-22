@@ -17,6 +17,11 @@ const lang = {
 };
 
 function getDataKPI(params) {
+	// if datatable init, remove and reinit
+	if ($.fn.DataTable.isDataTable("#dt_kpi")) {
+		$("#dt_kpi").DataTable().clear().destroy();
+	}
+
 	$("#dt_kpi").DataTable({
 		processing: params.processing,
 		serverSide: params.serverSide,

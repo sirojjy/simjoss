@@ -16,9 +16,11 @@ class M_dashboard extends CI_Model
     parent::__construct();
   }
 
-  public function get_perbandingan_volume()
+  public function get_perbandingan_volume($year = null)
   {
-    $year = date('Y');
+    if ($year == null) {
+      $year = date('Y');
+    }
     $sql = "SELECT
                 TO_CHAR(tanggal, 'Mon') AS bulan,
                 MAX(CASE WHEN jenis = 'ppjt' THEN nilai END) AS ppjt,
@@ -38,9 +40,11 @@ class M_dashboard extends CI_Model
     }
   }
 
-  public function get_perbandingan_pendapatan()
+  public function get_perbandingan_pendapatan($year = null)
   {
-    $year = date('Y');
+    if ($year == null) {
+      $year = date('Y');
+    }
     $sql = "SELECT
                 TO_CHAR(tanggal, 'Mon') AS bulan,
                 MAX(CASE WHEN jenis = 'ppjt' THEN nilai END) AS ppjt,

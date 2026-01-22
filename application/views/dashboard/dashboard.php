@@ -1,49 +1,43 @@
 <?php
-// Array nama bulan Bahasa Indonesia
-$bulan = [
-    'January' => 'Januari',
-    'February' => 'Februari',
-    'March' => 'Maret',
-    'April' => 'April',
-    'May' => 'Mei',
-    'June' => 'Juni',
-    'July' => 'Juli',
-    'August' => 'Agustus',
-    'September' => 'September',
-    'October' => 'Oktober',
-    'November' => 'November',
-    'December' => 'Desember'
-];
 
-// Ambil informasi waktu sekarang
-$bulanInggris = date('F');         // Misalnya: "May"
-$tahun = date('Y');                // Misalnya: "2025"
-$bulanAngka = (int)date('n');      // Misalnya: 5
-$bulanIndo = $bulan[$bulanInggris];
+use phpDocumentor\Reflection\DocBlock\Tags\Param;
 
-// Tentukan Triwulan
-if ($bulanAngka >= 1 && $bulanAngka <= 3) {
-    $triwulan = 'TW I';
-} elseif ($bulanAngka >= 4 && $bulanAngka <= 6) {
-    $triwulan = 'TW II';
-} elseif ($bulanAngka >= 7 && $bulanAngka <= 9) {
-    $triwulan = 'TW III';
-} else {
-    $triwulan = 'TW IV';
-}
-
-// Format-format yang akan ditampilkan
-// $format_tw = "$triwulan $tahun / $bulanIndo $tahun";
-$format_tw = "April $tahun";
-$format_bulan_tahun = "April $tahun";
-$format_bulan_saja = "April $tahun";
-$update_bulan_juni = "Juni $tahun";
-$update_bulan_juli = "Juli $tahun";
-$update_bulan_november = "November $tahun";
-$last_update = "Agustus $tahun";
+$tahun = '2025';
+$lastUpdateDashboard6 = "Desember $tahun";
+$lastUpdateDashboard7 = "November $tahun";
+$lastUpdateDashboard8 = "Desember $tahun";
 ?>
 
 <div class="container-fluid">
+    <div class="mb-2">
+        <div class="d-flex align-items-center justify-content-end">
+            <div class="inline-block">
+                <p class="mb-0 mr-2">Filter:</p>
+            </div>
+            <select class="form-control show-tick ms select2 w-auto mr-2 d-none" name="bulan_filter" id="bulan_filter">
+                <option value="" disabled selected>-- Bulan --</option>
+                <option value="1">Januari</option>
+                <option value="2">Februari</option>
+                <option value="3">Maret</option>
+                <option value="4">April</option>
+                <option value="5">Mei</option>
+                <option value="6">Juni</option>
+                <option value="7">Juli</option>
+                <option value="8">Agustus</option>
+                <option value="9">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+                <option value="12">Desember</option>
+            </select>
+            <select class="form-control show-tick ms select2 w-auto" name="tahun_filter" id="tahun_filter">
+                <option value="" disabled selected>-- Tahun --</option>
+                <?php for ($i = date('Y'); $i >= 2020; $i--): ?>
+                    <option value="<?= $i; ?>" <?= ($i == date('Y')) ? 'selected' : ''; ?>><?= $i; ?></option>
+                <?php endfor; ?>
+            </select>
+        </div>
+    </div>
+
     <!-- Dashboard 1 - Peta Trase -->
     <?php include 'peta_trase.php'; ?>
 
@@ -125,7 +119,86 @@ $last_update = "Agustus $tahun";
         return rataRata.toFixed(2);
     }
 
+    function DataKPI(tahun) {
+        getDataKPI({
+            url: "<?= base_url('Manajemen/get_kpi?tahun=') ?>" + tahun,
+            processing: true,
+            serverSide: true,
+            searching: false,
+            ordering: false,
+            info: false,
+            paging: false,
+            columnDefs: [{
+                    targets: 0,
+                    width: "1%",
+                    className: "dt-nowrap",
+                },
+                {
+                    targets: [0, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14],
+                    className: "text-center",
+                },
+            ],
+            columns: [{
+                    data: "id",
+                },
+                {
+                    data: "nama",
+                },
+                {
+                    data: "satuan",
+                },
+                {
+                    data: "polaritas",
+                },
+                {
+                    data: "bobot",
+                },
+                {
+                    data: "batas_nilai",
+                },
+                {
+                    data: "periode",
+                },
+                {
+                    data: "rencana_q1",
+                },
+                {
+                    data: "rencana_q2",
+                },
+                {
+                    data: "rencana_q3",
+                },
+                {
+                    data: "rencana_1y",
+                },
+                {
+                    data: "realisasi_q1",
+                },
+                {
+                    data: "realisasi_q2",
+                },
+                {
+                    data: "realisasi_q3",
+                },
+                {
+                    data: "realisasi_1y",
+                },
+                {
+                    data: "keterangan",
+                },
+            ],
+        });
+    }
+
     $(document).ready(function() {
+        let tahun_filter = $("#tahun_filter");
+
+        tahun_filter.change(function() {
+            let tahun = $(this).val();
+            console.log(tahun);
+            DataKPI(tahun);
+        });
+
         // Dashboard 3
         $.ajax({
             type: "GET",
@@ -237,10 +310,194 @@ $last_update = "Agustus $tahun";
             }
         });
 
+        const tahunLHR = $("#tahun_lhr");
+        const tahunPendapatan = $("#tahun_pendapatan");
+
+        tahunLHR.change(function() {
+            $.ajax({
+                type: "GET",
+                url: "<?php echo site_url('Dashboard/get_data_lhr') ?>",
+                data: {
+                    tahun: tahunLHR.val()
+                },
+                dataType: "json",
+                success: function(res) {
+                    const categories = res.map(item => item.bulan);
+
+                    const ppjt = res.map(item => Number(item.ppjt));
+                    const rkap = res.map(item => Number(item.rkap));
+                    const realisasi = res.map(item => Number(item.realisasi));
+                    const prognosa = res.map(item => Number(item.prognosa));
+                    lineChartDashboard4({
+                        id: 'line_volume_filter',
+                        title: "Laju Harian Rata-Rata (LHR) Tahun " + tahunLHR.val(),
+                        subtitle: "",
+                        yAxisTitle: "Jumlah Volume",
+                        categories: categories,
+                        series: [{
+                                name: 'PPJT',
+                                data: ppjt
+                            },
+                            {
+                                name: 'RKAP',
+                                data: rkap
+                            },
+                            {
+                                name: 'Realisasi',
+                                data: realisasi
+                            },
+                            {
+                                name: 'Prognosa',
+                                data: prognosa
+                            }
+                        ]
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        });
+
+        tahunPendapatan.change(function() {
+            $.ajax({
+                type: "GET",
+                url: "<?php echo site_url('Dashboard/get_data_pendapatan') ?>",
+                data: {
+                    tahun: tahunPendapatan.val()
+                },
+                dataType: "json",
+                success: function(res) {
+                    const categories = res.map(item => item.bulan);
+
+                    const ppjt = res.map(item => Number(item.ppjt));
+                    const rkap = res.map(item => Number(item.rkap));
+                    const realisasi = res.map(item => Number(item.realisasi));
+                    const prognosa = res.map(item => Number(item.prognosa));
+                    lineChartDashboard4({
+                        id: 'line_pendapatan_filter',
+                        title: 'Perbandingan Pendapatan Tol Tahun ' + tahunPendapatan.val(),
+                        subtitle: 'dalam jutaan rupiah',
+                        yAxisTitle: "Jumlah Pendapatan",
+                        categories: categories,
+                        series: [{
+                                name: 'PPJT',
+                                data: ppjt
+                            },
+                            {
+                                name: 'RKAP',
+                                data: rkap
+                            },
+                            {
+                                name: 'Realisasi',
+                                data: realisasi
+                            },
+                            {
+                                name: 'Prognosa',
+                                data: prognosa
+                            }
+                        ]
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        })
+
         // Dashboard 4
+        $.ajax({
+            type: "GET",
+            url: "<?php echo site_url('Dashboard/get_data_lhr') ?>",
+            data: {
+                tahun: tahunLHR.val()
+            },
+            dataType: "json",
+            success: function(res) {
+                const categories = res.map(item => item.bulan);
+
+                const ppjt = res.map(item => Number(item.ppjt));
+                const rkap = res.map(item => Number(item.rkap));
+                const realisasi = res.map(item => Number(item.realisasi));
+                const prognosa = res.map(item => Number(item.prognosa));
+                lineChartDashboard4({
+                    id: 'line_volume_filter',
+                    title: "Laju Harian Rata-Rata (LHR) Tahun " + tahunLHR.val(),
+                    subtitle: "",
+                    yAxisTitle: "Jumlah Volume",
+                    categories: categories,
+                    series: [{
+                            name: 'PPJT',
+                            data: ppjt
+                        },
+                        {
+                            name: 'RKAP',
+                            data: rkap
+                        },
+                        {
+                            name: 'Realisasi',
+                            data: realisasi
+                        },
+                        {
+                            name: 'Prognosa',
+                            data: prognosa
+                        }
+                    ]
+                });
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "<?php echo site_url('Dashboard/get_data_pendapatan') ?>",
+            data: {
+                tahun: tahunPendapatan.val()
+            },
+            dataType: "json",
+            success: function(res) {
+                const categories = res.map(item => item.bulan);
+
+                const ppjt = res.map(item => Number(item.ppjt));
+                const rkap = res.map(item => Number(item.rkap));
+                const realisasi = res.map(item => Number(item.realisasi));
+                const prognosa = res.map(item => Number(item.prognosa));
+                lineChartDashboard4({
+                    id: 'line_pendapatan_filter',
+                    title: 'Perbandingan Pendapatan Tol Tahun ' + tahunPendapatan.val(),
+                    subtitle: 'dalam jutaan rupiah',
+                    yAxisTitle: "Jumlah Pendapatan",
+                    categories: categories,
+                    series: [{
+                            name: 'PPJT',
+                            data: ppjt
+                        },
+                        {
+                            name: 'RKAP',
+                            data: rkap
+                        },
+                        {
+                            name: 'Realisasi',
+                            data: realisasi
+                        },
+                        {
+                            name: 'Prognosa',
+                            data: prognosa
+                        }
+                    ]
+                });
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+            }
+        });
+
         lineChartDashboard4({
+            // tahun js
             id: 'line_volume',
-            title: "Laju Harian Rata-Rata (LHR)",
+            title: "Laju Harian Rata-Rata (LHR) Tahun " + new Date().getFullYear(),
             subtitle: "",
             yAxisTitle: "Jumlah Volume",
             categories: <?= json_encode($pv_chart_data['pv_labels']) ?>,
@@ -249,7 +506,7 @@ $last_update = "Agustus $tahun";
 
         lineChartDashboard4({
             id: 'line_pendapatan',
-            title: 'Perbandingan Pendapatan Tol',
+            title: 'Perbandingan Pendapatan Tol Tahun Tahun' + new Date().getFullYear(),
             subtitle: 'dalam jutaan rupiah',
             yAxisTitle: "Jumlah Pendapatan",
             categories: <?= json_encode($pp_chart_data['pp_labels']) ?>,
@@ -370,6 +627,25 @@ $last_update = "Agustus $tahun";
             ]
         });
 
+        // Dashboard 7
+        pieDashboard7({
+            id: "pemegangSaham",
+            title: "Komposisi Pemegang Saham",
+            // PT Jasa Marga dan PT Adhi Karya
+            series: [{
+                name: 'Fasilitas',
+                data: [{
+                    name: 'PT Jasa Marga',
+                    y: 47.18,
+                    color: '#1982c4'
+                }, {
+                    name: 'PT Adhi Karya',
+                    y: 52.82,
+                    color: '#ffca3a'
+                }]
+            }]
+        })
+
         // Dashboard 8
         $.ajax({
             url: "<?= base_url('Progres/getAlokasiDTT'); ?>",
@@ -445,74 +721,7 @@ $last_update = "Agustus $tahun";
         });
 
         // Dashboard 12 Monitoring KPI
-        getDataKPI({
-            url: "<?= base_url('Manajemen/get_kpi?tahun=') . date('Y') ?>",
-            processing: true,
-            serverSide: true,
-            searching: false,
-            ordering: false,
-            info: false,
-            paging: false,
-            columnDefs: [{
-                    targets: 0,
-                    width: "1%",
-                    className: "dt-nowrap",
-                },
-                {
-                    targets: [0, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14],
-                    className: "text-center",
-                },
-            ],
-            columns: [{
-                    data: "id",
-                },
-                {
-                    data: "nama",
-                },
-                {
-                    data: "satuan",
-                },
-                {
-                    data: "polaritas",
-                },
-                {
-                    data: "bobot",
-                },
-                {
-                    data: "batas_nilai",
-                },
-                {
-                    data: "periode",
-                },
-                {
-                    data: "rencana_q1",
-                },
-                {
-                    data: "rencana_q2",
-                },
-                {
-                    data: "rencana_q3",
-                },
-                {
-                    data: "rencana_1y",
-                },
-                {
-                    data: "realisasi_q1",
-                },
-                {
-                    data: "realisasi_q2",
-                },
-                {
-                    data: "realisasi_q3",
-                },
-                {
-                    data: "realisasi_1y",
-                },
-                {
-                    data: "keterangan",
-                },
-            ],
-        });
+        DataKPI("<?= date('Y') ?>");
 
         // Dashboard 13 & 14
         <?php if ($this->session->userdata('level_user') == 1) { ?>

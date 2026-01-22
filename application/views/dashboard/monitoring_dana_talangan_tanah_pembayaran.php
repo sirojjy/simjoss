@@ -45,11 +45,15 @@
                                     <tbody>
                                         <tr>
                                             <td class="font-weight-bold">Pembayaran Tanah Ke Warga</td>
-                                            <td class="text-right"> 150,562,181,272</td>
+                                            <td class="text-right"> 154.528.113.325</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-weight-bold">Lolos Verifikasi BPKP/BPJT</td>
+                                            <td class="text-right"> 126.557.544.980</td>
                                         </tr>
                                         <tr>
                                             <td class="font-weight-bold">Telah Dikembalikan oleh Pemerintah</td>
-                                            <td class="text-right"> 87,106,921,529 </td>
+                                            <td class="text-right"> 108.951.585.898</td>
                                         </tr>
                                         <tr>
                                             <td colspan="4" class="font-weight-bold">
@@ -57,20 +61,20 @@
                                             </td>
                                         </tr>
                                         <tr class="realisasi_dtt_left">
-                                            <td class="font-weight-bold indent">Sisa DTT Eligible</td>
-                                            <td class="text-right">82,490,747,870 </td>
+                                            <td class="font-weight-bold indent">Proses Penagihan</td>
+                                            <td class="text-right">28.511.279.711</td>
                                         </tr>
                                         <tr class="realisasi_dtt_left">
-                                            <td class="font-weight-bold indent">DTT Ineligible</td>
-                                            <td class="text-right">-</td>
+                                            <td class="font-weight-bold indent">Retur LMAN</td>
+                                            <td class="text-right">7.230.809.100</td>
                                         </tr>
                                         <tr class="realisasi_dtt_left">
-                                            <td class="font-weight-bold indent">Belum Verifikasi</td>
-                                            <td class="text-right"> 68,071,433,402</td>
+                                            <td class="font-weight-bold indent">Belum Rekonsiliasi</td>
+                                            <td class="text-right">26.471.041.045</td>
                                         </tr>
                                         <tr class="realisasi_dtt_left">
                                             <td class="font-weight-bold indent">Total</td>
-                                            <td class="text-right"> 63,455,259,743</td>
+                                            <td class="text-right"> 62.213.129.856</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -85,7 +89,7 @@
                                     <tbody>
                                         <tr>
                                             <td class="font-weight-bold">Bunga Pinjaman</td>
-                                            <td class="text-right"> 11,752,672,241 </td>
+                                            <td class="text-right"> 16.122.191.210</td>
                                         </tr>
                                         <tr>
                                             <td colspan="4" class="font-weight-bold">
@@ -94,27 +98,27 @@
                                         </tr>
                                         <tr class="realisasi_dtt_right">
                                             <td class="font-weight-bold indent">Total</td>
-                                            <td class="text-right">7,070,606,828</td>
+                                            <td class="text-right">9.907.794.718</td>
                                         </tr>
                                         <tr class="realisasi_dtt_right">
                                             <td class="font-weight-bold indent">Telah Direkonsiliasi</td>
-                                            <td class="text-right">1,182,011,927 </td>
+                                            <td class="text-right">2.647.618.683</td>
                                         </tr>
                                         <tr class="realisasi_dtt_right">
                                             <td class="font-weight-bold indent">Telah Dikembalikan</td>
-                                            <td class="text-right">752,141,034 </td>
+                                            <td class="text-right">2.647.618.683</td>
                                         </tr>
                                         <tr class="realisasi_dtt_right">
                                             <td class="font-weight-bold indent">Sisa Terhadap Hasil Rekon</td>
-                                            <td class="text-right">429,870,893 </td>
+                                            <td class="text-right">-</td>
                                         </tr>
                                         <tr class="realisasi_dtt_right">
                                             <td class="font-weight-bold indent">Sisa Terhadap Total</td>
-                                            <td class="text-right">6,318,465,794</td>
+                                            <td class="text-right">7.260.176.035</td>
                                         </tr>
                                         <tr>
                                             <td class="font-weight-bold">Beban BUJT</td>
-                                            <td class="text-right">4,682,065,413</td>
+                                            <td class="text-right">6.214.396.492</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -132,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-info"><i>Last updated : <?= $last_update ?></i></p>
+                <p class="text-info"><i>Last updated : <?= $lastUpdateDashboard8 ?></i></p>
             </div>
         </div>
     </div>

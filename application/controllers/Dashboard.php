@@ -16,6 +16,45 @@ class Dashboard extends CI_Controller
         //$this->load->library(array('PHPExcel','PHPExcel/IOFactory'));
     }
 
+    function get_data_lhr()
+    {
+        $tahun = $this->input->get('tahun');
+        $data = $this->M_dashboard->get_perbandingan_volume($tahun);
+        echo json_encode($data);
+    }
+
+    function get_data_pendapatan()
+    {
+        $tahun = $this->input->get('tahun');
+        $data = $this->M_dashboard->get_perbandingan_pendapatan($tahun);
+        echo json_encode($data);
+    }
+
+    function bulanTahunIndo($tanggal)
+    {
+        if (!$tanggal) return '-';
+
+        $bulanIndo = [
+            1 => 'Januari',
+            2 => 'Februari',
+            3 => 'Maret',
+            4 => 'April',
+            5 => 'Mei',
+            6 => 'Juni',
+            7 => 'Juli',
+            8 => 'Agustus',
+            9 => 'September',
+            10 => 'Oktober',
+            11 => 'November',
+            12 => 'Desember'
+        ];
+
+        $bulan = (int) date('m', strtotime($tanggal));
+        $tahun = date('Y', strtotime($tanggal));
+
+        return $bulanIndo[$bulan] . ' ' . $tahun;
+    }
+
     // Endpoint Dashboard 3
     function get_tahap1()
     {
@@ -238,20 +277,23 @@ class Dashboard extends CI_Controller
             $result[] = $entry;
         }
         echo json_encode($result);
-        // $data = $this->M_manajemen->get_manajemen_resiko_dashboard();
-        // var_dump($result);
-        // echo json_encode($data);
     }
 
     public function index()
     {
-        // $ses_data = array(
-        //     'act_menu'   => 'dashboard',
-        //     'title'      => 'Dashboard',
-        //     'breadcrumb' => 'dashboard',
-        // );
-        // $this->session->set_userdata($ses_data);
-        // $perbandingan_pendapatan = $this->M_dashboard->get_perbandingan_pendapatan();
+        $lastUpdateDashboard2 = $this->db->query("SELECT * FROM tb_kronologis ORDER BY created_at DESC LIMIT 1")->row()->created_at;
+        $lastUpdateDashboard3 = $this->db->query("SELECT * FROM progres_lahan ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        $lastUpdateDashboard4 = $this->db->query("select * from tb_perbandingan_pendapatan ORDER BY id DESC")->row()->tanggal;
+        $lastUpdateDashboard5 = $this->db->query("SELECT * FROM monitoring_rkap ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        // $lastUpdateDashboard6 = $this->db->query("SELECT * FROM monitoring_rkap ORDER BY create_date DESC LIMIT 1")->row();
+        // $lastUpdateDashboard7 = $this->db->query("SELECT * FROM monitoring_rkap ORDER BY create_date DESC LIMIT 1")->row();
+        // $lastUpdateDashboard8 = $this->db->query("SELECT * FROM tb_manajemen_resiko ORDER BY created_at DESC LIMIT 1")->row();
+        $lastUpdateDashboard9 = $this->db->query("SELECT * FROM tb_manajemen_resiko ORDER BY created_at DESC LIMIT 1")->row()->created_at;
+        $lastUpdateDashboard10 = $this->db->query("SELECT * FROM kewajiban_kepatuhan ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        $lastUpdateDashboard11 = $this->db->query("SELECT * FROM dokumen ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        $lastUpdateDashboard12 = $this->db->query("SELECT * FROM tb_monitoring_kpi ORDER BY created_at DESC LIMIT 1")->row()->created_at;
+        $lastUpdateDashboard13 = $this->db->query("SELECT * FROM progres_lahan ORDER BY create_date DESC LIMIT 1")->row()->create_date;
+        $lastUpdateDashboard14 = $this->db->query("SELECT * FROM tb_kontrak_konsultan ORDER BY create_date DESC LIMIT 1")->row()->create_date;
 
         $jml_kontrak_konsultanTol = $this->db->query("select COALESCE(count(id_kontrak_konsultan),0) as jml from tb_kontrak_konsultan where jenis=1")->row()->jml;
         $jml_kontrak_konsultanNonTol = $this->db->query("select COALESCE(count(id_kontrak_konsultan),0) as jml from tb_kontrak_konsultan where jenis=2")->row()->jml;
@@ -517,10 +559,15 @@ class Dashboard extends CI_Controller
         $capex_rencana4 = $this->M_dashboard->capex_rencana(4);
         $capex_realisasi4 = $this->M_dashboard->capex_realisasi(4);
 
-        $tot_opex_rencana = $this->db->query("select COALESCE(sum(rencana),0) as sum from monitoring_rkap where jenis='Opex' and tahun='2025'")->row()->sum;
-        $tot_opex_realisasi = $this->db->query("select COALESCE(sum(realisasi),0) as sum from monitoring_rkap where jenis='Opex' and tahun='2025'")->row()->sum;
-        $tot_capex_rencana = $this->db->query("select COALESCE(sum(rencana),0) as sum from monitoring_rkap where jenis='Capex' and tahun='2025'")->row()->sum;
-        $tot_capex_realisasi = $this->db->query("select COALESCE(sum(realisasi),0) as sum from monitoring_rkap where jenis='Capex' and tahun='2025'")->row()->sum;
+        // $tot_opex = $this->db->query("SELECT rencana, realisasi, deviasi FROM monitoring_rkap WHERE jenis = 'Opex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Opex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
+        // $tot_opex = $this->db->query("SELECT SUM(rencana) AS rencana, SUM(realisasi) AS realisasi, SUM(deviasi) AS deviasi FROM monitoring_rkap WHERE jenis = 'Opex' AND tw = 4 AND tahun = '2025';);")->row();
+        $tot_opex = $this->db->query("SELECT SUM(rencana) AS rencana, SUM(realisasi) AS realisasi, SUM(deviasi) AS deviasi FROM monitoring_rkap WHERE jenis = 'Opex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Opex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
+        $tot_capex = $this->db->query("SELECT SUM(rencana) AS rencana, SUM(realisasi) AS realisasi, SUM(deviasi) AS deviasi FROM monitoring_rkap WHERE jenis = 'Capex' AND (tahun, tw) = (SELECT tahun, tw FROM monitoring_rkap WHERE jenis = 'Capex' ORDER BY tahun DESC, tw DESC LIMIT 1);")->row();
+        // var_dump($tot_opex->rencana);
+        // die;
+        // $tot_opex_realisasi = $this->db->query("select COALESCE(sum(realisasi),0) as sum from monitoring_rkap where jenis='Opex' and tahun='2025'")->row()->sum;
+        // $tot_capex_rencana = $this->db->query("select COALESCE(sum(rencana),0) as sum from monitoring_rkap where jenis='Capex' and tahun='2025'")->row()->sum;
+        // $tot_capex_realisasi = $this->db->query("select COALESCE(sum(realisasi),0) as sum from monitoring_rkap where jenis='Capex' and tahun='2025'")->row()->sum;
 
         // $data_seksi = $this->db->query("select * from seksi order by seksi asc")->result();
 
@@ -565,6 +612,16 @@ class Dashboard extends CI_Controller
             'title' => 'Dashboard',
             'menu' => 'Dashboard',
             'submenu' => '',
+            'lastUpdateDashboard2' => $this->bulanTahunIndo($lastUpdateDashboard2),
+            'lastUpdateDashboard3' => $this->bulanTahunIndo($lastUpdateDashboard3),
+            'lastUpdateDashboard4' => $this->bulanTahunIndo($lastUpdateDashboard4),
+            'lastUpdateDashboard5' => $this->bulanTahunIndo($lastUpdateDashboard5),
+            'lastUpdateDashboard9' => $this->bulanTahunIndo($lastUpdateDashboard9),
+            'lastUpdateDashboard10' => $this->bulanTahunIndo($lastUpdateDashboard10),
+            'lastUpdateDashboard11' => $this->bulanTahunIndo($lastUpdateDashboard11),
+            'lastUpdateDashboard12' => $this->bulanTahunIndo($lastUpdateDashboard12),
+            'lastUpdateDashboard13' => $this->bulanTahunIndo($lastUpdateDashboard13),
+            'lastUpdateDashboard14' => $this->bulanTahunIndo($lastUpdateDashboard14),
 
             'alokasi_kumulatif' => $alokasi_kumulatif,
             'fasilitas_dtt' => $fasilitas_dtt,
@@ -597,8 +654,8 @@ class Dashboard extends CI_Controller
             'opex_rencana4' => $opex_rencana4,
             'opex_realisasi4' => $opex_realisasi4,
 
-            'tot_opex_rencana' => $tot_opex_rencana,
-            'tot_opex_realisasi' => $tot_opex_realisasi,
+            'tot_opex' => $tot_opex,
+            'tot_capex' => $tot_capex,
 
             'capex_rencana1' => $capex_rencana1,
             'capex_realisasi1' => $capex_realisasi1,
@@ -609,8 +666,8 @@ class Dashboard extends CI_Controller
             'capex_rencana4' => $capex_rencana4,
             'capex_realisasi4' => $capex_realisasi4,
 
-            'tot_capex_rencana' => $tot_capex_rencana,
-            'tot_capex_realisasi' => $tot_capex_realisasi,
+            // 'tot_capex_rencana' => $tot_capex_rencana,
+            // 'tot_capex_realisasi' => $tot_capex_realisasi,
 
             'isu1' => $this->M_dashboard->get_issue(1),
             'isu2' => $this->M_dashboard->get_issue(2),

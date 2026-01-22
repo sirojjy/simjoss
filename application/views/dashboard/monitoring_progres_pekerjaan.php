@@ -153,7 +153,7 @@
                     </div>
                 </div>
                 <br>
-                <p class="text-info mt-3"><i> Last updated : <?= $update_bulan_november ?></i></p>
+                <p class="text-info mt-3"><i> Last updated : <?= $lastUpdateDashboard3 ?></i></p>
             </div>
         </div>
     </div>

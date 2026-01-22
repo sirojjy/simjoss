@@ -290,8 +290,8 @@
                                 <select name="periode" id="edit_periode" required class="form-control">
                                     <option value="" selected disabled>-- Pilih --</option>
                                     <option value="triwulan">Triwulan</option>
-                                    <option value="semesteran">Semesteran</option>
-                                    <option value="tahunan">Tahunan</option>
+                                    <option value="semester">Semester</option>
+                                    <option value="tahun">Tahun</option>
                                 </select>
                             </div>
                             <div class="row">

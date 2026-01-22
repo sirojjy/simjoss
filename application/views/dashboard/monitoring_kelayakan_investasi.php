@@ -25,13 +25,13 @@
                                     <td class="font-wight-bold">IRR on Project </td>
                                     <td class="text-center"><span class="badge badge-lg badge-pill badge-success " style="font-size: 12px">12.03%</span></td>
                                     <td class="text-center"><span class="badge badge-lg badge-pill badge-primary " style="font-size: 12px">12.03%</span></td>
-                                    <td class="text-center"><span class="badge badge-lg badge-pill badge-info " style="font-size: 12px">11.42%</span></td>
+                                    <td class="text-center"><span class="badge badge-lg badge-pill badge-info " style="font-size: 12px">10.72%</span></td>
                                 </tr>
                                 <tr>
                                     <td class="font-wight-bold">IRR on Equity </td>
                                     <td class="text-center"><span class="badge badge-lg badge-pill badge-success " style="font-size: 12px">14.14%</span></td>
                                     <td class="text-center"><span class="badge badge-lg badge-pill badge-primary " style="font-size: 12px">14.09%</span></td>
-                                    <td class="text-center"><span class="badge badge-lg badge-pill badge-info " style="font-size: 12px">14.12%</span></td>
+                                    <td class="text-center"><span class="badge badge-lg badge-pill badge-info " style="font-size: 12px">14.53%</span></td>
                                 </tr>
                                 <tr>
                                     <td class="font-wight-bold">Net Present Value/NPV (Rp Juta) </td>
@@ -123,13 +123,13 @@
                                     <td><b>Penyesuaian Tarif</b></td>
                                     <td class="text-center"><span class="badge badge-lg badge-pill badge-success " style="font-size: 12px">8.00%</span></td>
                                     <td class="text-center"><span class="badge badge-lg badge-pill badge-primary " style="font-size: 12px">8.00%</span></td>
-                                    <td class="text-center"><span class="badge badge-lg badge-pill badge-info " style="font-size: 12px">8.00%</span></td>
+                                    <td class="text-center"><span class="badge badge-lg badge-pill badge-info " style="font-size: 12px">6.00%</span></td>
                                 </tr>
                                 <tr>
                                     <td><b>% Inflasi </b></td>
                                     <td class="text-center"><span class="badge badge-lg badge-pill badge-success " style="font-size: 12px">4.00%</span></td>
                                     <td class="text-center"><span class="badge badge-lg badge-pill badge-primary " style="font-size: 12px">4.00%</span></td>
-                                    <td class="text-center"><span class="badge badge-lg badge-pill badge-info " style="font-size: 12px">4.00%</span></td>
+                                    <td class="text-center"><span class="badge badge-lg badge-pill badge-info " style="font-size: 12px">3.00%</span></td>
                                 </tr>
                                 <tr>
                                     <td><b>% Rate Bunga Pokok</b></td>
@@ -148,7 +148,7 @@
                     </div>
                 </div>
                 <br>
-                <p class="text-info"><i>Last updated : <?= $last_update ?></i></p>
+                <p class="text-info"><i>Last updated : <?= $lastUpdateDashboard6 ?></i></p>
             </div>
         </div>
     </div>

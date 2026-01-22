@@ -24,7 +24,7 @@ class Audit extends CI_Controller
         foreach ($result['data'] as $row) {
             $no++;
 
-            if ($row->file != null) {
+            if ($row->file) {
                 $lokasi_file = base_url("file_uploads/audit/" . $row->file);
                 $file = '<a href="' . $lokasi_file . '" target="_blank" class="btn btn-primary btn-sm" ><i class="fa fa-print"></i></a>';
             } else {
@@ -126,15 +126,7 @@ class Audit extends CI_Controller
             $menu = 'eksternal';
         }
 
-        $filename = $_FILES['file']['name'];
-        $ekstensi_file = substr(strtolower(strrchr($filename, ".")), 1);
-
-        $string_replace = array('/', ';', '[', '&', ']', '{', '}', '|', '^', '~', ' ', '.', '-');
-        $nama = str_replace($string_replace, '_', $filename);
-        $eks_file = $menu . '_' . $nama . '_' . date('d-m-Y_h-i-s') . '.' . $ekstensi_file;
-
-
-        $data = array(
+        $data = [
             'tahun' => $this->input->post('tahun'),
             'tanggal' => date('Y-m-d', strtotime($this->input->post('tanggal'))),
             'jenis_audit' => $this->input->post('jenis_audit'),
@@ -144,23 +136,35 @@ class Audit extends CI_Controller
             'klausul'  => $this->input->post('klausul'),
             'tindak_lanjut'  => $this->input->post('tindak_lanjut'),
             'status'  => $this->input->post('status'),
-            'file' => $eks_file,
             'create_date' => date('Y-m-d h:i:s'),
             'tw' => $this->input->post('tw'),
-        );
+        ];
 
-        // var_dump($data);
-        // die;
+        if ($_FILES['file']['name']) {
+            $filename = $_FILES['file']['name'];
+            $ekstensi_file = substr(strtolower(strrchr($filename, ".")), 1);
 
-        $uploadPath = 'file_uploads/audit/';
-        $config['upload_path'] = $uploadPath;
-        $config['allowed_types'] = '*';
-        $config['file_name'] = $eks_file;
+            $string_replace = array('/', ';', '[', '&', ']', '{', '}', '|', '^', '~', ' ', '.', '-');
+            $nama = str_replace($string_replace, '_', $filename);
+            $eks_file = $menu . '_' . $nama . '_' . date('d-m-Y_h-i-s') . '.' . $ekstensi_file;
+            $data['file'] = $eks_file;
+
+            $uploadPath = 'file_uploads/audit/';
+            $config['upload_path'] = $uploadPath;
+            $config['allowed_types'] = '*';
+            $config['file_name'] = $eks_file;
+        }
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
         if ($this->upload->do_upload('file')) {
+            if ($this->db->insert('audit', $data)) {
+                echo $this->session->set_flashdata('success', 'Data Berhasil Disimpan');
+            } else {
+                echo $this->session->set_flashdata('error', 'Data Gagal Disimpan');
+            }
+        } else {
             if ($this->db->insert('audit', $data)) {
                 echo $this->session->set_flashdata('success', 'Data Berhasil Disimpan');
             } else {
@@ -250,14 +254,6 @@ class Audit extends CI_Controller
             $menu = 'eksternal';
         }
 
-        $filename = $_FILES['file']['name'];
-        $ekstensi_file = substr(strtolower(strrchr($filename, ".")), 1);
-
-        $string_replace = array('/', ';', '[', '&', ']', '{', '}', '|', '^', '~', ' ', '.', '-');
-        $nama = str_replace($string_replace, '_', $filename);
-        $eks_file = $menu . '_' . $nama . '_' . date('d-m-Y_h-i-s') . '.' . $ekstensi_file;
-
-
         $data = array(
             'tahun' => $this->input->post('tahun'),
             'tanggal' => date('Y-m-d', strtotime($this->input->post('tanggal'))),
@@ -268,19 +264,35 @@ class Audit extends CI_Controller
             'klausul'  => $this->input->post('klausul'),
             'tindak_lanjut'  => $this->input->post('tindak_lanjut'),
             'status'  => $this->input->post('status'),
-            'file' => $eks_file,
             'tw' => $this->input->post('tw'),
         );
 
-        $uploadPath = 'file_uploads/audit/';
-        $config['upload_path'] = $uploadPath;
-        $config['allowed_types'] = '*';
-        $config['file_name'] = $eks_file;
+        if ($_FILES['file']['name']) {
+            $filename = $_FILES['file']['name'];
+            $ekstensi_file = substr(strtolower(strrchr($filename, ".")), 1);
+
+            $string_replace = array('/', ';', '[', '&', ']', '{', '}', '|', '^', '~', ' ', '.', '-');
+            $nama = str_replace($string_replace, '_', $filename);
+            $eks_file = $menu . '_' . $nama . '_' . date('d-m-Y_h-i-s') . '.' . $ekstensi_file;
+            $data['file'] = $eks_file;
+
+            $uploadPath = 'file_uploads/audit/';
+            $config['upload_path'] = $uploadPath;
+            $config['allowed_types'] = 'pdf';
+            $config['file_name'] = $eks_file;
+        }
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
         if ($this->upload->do_upload('file')) {
+            $this->db->where('id_audit', $id_audit);
+            if ($this->db->update('audit', $data)) {
+                echo $this->session->set_flashdata('success', 'Data Berhasil Disimpan');
+            } else {
+                echo $this->session->set_flashdata('error', 'Data Gagal Disimpan');
+            }
+        } else {
             $this->db->where('id_audit', $id_audit);
             if ($this->db->update('audit', $data)) {
                 echo $this->session->set_flashdata('success', 'Data Berhasil Disimpan');

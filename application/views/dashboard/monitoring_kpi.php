@@ -56,7 +56,7 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p class="text-info"><i>Last updated : <?= $last_update ?></i></p>
+                <p class="text-info"><i>Last updated : <?= $lastUpdateDashboard12 ?></i></p>
             </div>
         </div>
     </div>

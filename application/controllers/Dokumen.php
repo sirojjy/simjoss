@@ -1528,19 +1528,11 @@ class Dokumen extends CI_Controller
     {
         $config = array();
 
-        $filename = $_FILES['file']['name'];
-        $ekstensi_file = substr(strtolower(strrchr($filename, ".")), 1);
-
-        $string_replace = array('/', ';', '&', '[', ']', '{', '}', '|', '^', '~', ' ', '.', '-');
-        $nama = str_replace($string_replace, '_', $filename);
-        $eks_file = $nama . '_' . date('d-m-Y_h-i-s') . '.' . $ekstensi_file;
-
         $data = array(
             'nama' => $this->input->post('nama'),
             'nomor' => $this->input->post('nomor'),
             'tanggal' => date('Y-m-d', strtotime($this->input->post('tanggal'))),
             'keterangan' => $this->input->post('keterangan'),
-            'dok_file' => $eks_file,
             'create_date' => date('Y-m-d h:i:s'),
             'jenis' => 'sop',
             'kantor' => $this->input->post('kantor'),
@@ -1555,21 +1547,37 @@ class Dokumen extends CI_Controller
             'iso_37001' => $this->input->post('iso_37001'),
         );
 
-        // print_r($data); exit();
-        $uploadPath = 'file_uploads/dokumen/sop/';
-        $config['upload_path'] = $uploadPath;
-        $config['allowed_types'] = 'pdf';
-        $config['max_size'] = 0;
-        $config['file_name'] = $eks_file;
+        if ($_FILES['file']['name']) {
+
+            $filename = $_FILES['file']['name'];
+            $ekstensi_file = substr(strtolower(strrchr($filename, ".")), 1);
+
+            $string_replace = array('/', ';', '&', '[', ']', '{', '}', '|', '^', '~', ' ', '.', '-');
+            $nama = str_replace($string_replace, '_', $filename);
+            $eks_file = $nama . '_' . date('d-m-Y_h-i-s') . '.' . $ekstensi_file;
+            $data['dok_file'] = $eks_file;
+            $uploadPath = 'file_uploads/dokumen/sop/';
+            $config['upload_path'] = $uploadPath;
+            $config['allowed_types'] = 'pdf';
+            $config['max_size'] = 0;
+            $config['file_name'] = $eks_file;
+        }
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
         if ($this->upload->do_upload('file')) {
             $this->upload->data();
-            $this->db->insert('dokumen', $data);
-            echo $this->session->set_flashdata('msg', 'success');
+            if ($this->db->insert('dokumen', $data)) {
+                echo $this->session->set_flashdata('success', 'Data Berhasil Di Tambahkan');
+            } else {
+                echo $this->session->set_flashdata('error', 'Data Gagal Di Tambahkan');
+            }
         } else {
-            echo $this->session->set_flashdata('msg', 'error');
+            if ($this->db->insert('dokumen', $data)) {
+                echo $this->session->set_flashdata('success', 'Data Berhasil Di Tambahkan');
+            } else {
+                echo $this->session->set_flashdata('error', 'Data Gagal Di Tambahkan');
+            }
         }
 
         redirect('Dokumen/sop');
@@ -1624,19 +1632,11 @@ class Dokumen extends CI_Controller
         $config = array();
         $id_dokumen = $this->input->post('id_dokumen');
 
-        $filename = $_FILES['file']['name'];
-        $ekstensi_file = substr(strtolower(strrchr($filename, ".")), 1);
-
-        $string_replace = array('/', ';', '[', ']', '&', '{', '}', '|', '^', '~', ' ', '.', '-');
-        $nama = str_replace($string_replace, '_', $filename);
-        $eks_file = $nama . '_' . date('d-m-Y_h-i-s') . '.' . $ekstensi_file;
-
         $data = array(
             'nama' => $this->input->post('nama'),
             'nomor' => $this->input->post('nomor'),
             'tanggal' => date('Y-m-d', strtotime($this->input->post('tanggal'))),
             'keterangan' => $this->input->post('keterangan'),
-            'dok_file' => $eks_file,
             'kantor' => $this->input->post('kantor'),
             'no_rak' => $this->input->post('rak'),
             'no_box' => $this->input->post('box'),
@@ -1649,28 +1649,22 @@ class Dokumen extends CI_Controller
             'iso_37001' => $this->input->post('iso_37001'),
         );
 
-        $data2 = array(
-            'nama' => $this->input->post('nama'),
-            'nomor' => $this->input->post('nomor'),
-            'tanggal' => date('Y-m-d', strtotime($this->input->post('tanggal'))),
-            'keterangan' => $this->input->post('keterangan'),
-            'kantor' => $this->input->post('kantor'),
-            'no_rak' => $this->input->post('rak'),
-            'no_box' => $this->input->post('box'),
-            'pic' => $this->input->post('pic'),
-            'nomor_revisi' => $this->input->post('nomor_revisi'),
-            'divisi' => $this->input->post('divisi'),
-            'iso_9001' => $this->input->post('iso_9001'),
-            'iso_14001' => $this->input->post('iso_14001'),
-            'iso_45001' => $this->input->post('iso_45001'),
-            'iso_37001' => $this->input->post('iso_37001'),
-        );
+        if ($_FILES['file']['name']) {
 
-        $uploadPath = 'file_uploads/dokumen/sop/';
-        $config['upload_path'] = $uploadPath;
-        $config['allowed_types'] = 'pdf';
-        $config['max_size'] = 0;
-        $config['file_name'] = $eks_file;
+            $filename = $_FILES['file']['name'];
+            $ekstensi_file = substr(strtolower(strrchr($filename, ".")), 1);
+
+            $string_replace = array('/', ';', '[', ']', '&', '{', '}', '|', '^', '~', ' ', '.', '-');
+            $nama = str_replace($string_replace, '_', $filename);
+            $eks_file = $nama . '_' . date('d-m-Y_h-i-s') . '.' . $ekstensi_file;
+            $data['dok_file'] = $eks_file;
+
+            $uploadPath = 'file_uploads/dokumen/sop/';
+            $config['upload_path'] = $uploadPath;
+            $config['allowed_types'] = 'pdf';
+            $config['max_size'] = 0;
+            $config['file_name'] = $eks_file;
+        }
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
@@ -1678,17 +1672,16 @@ class Dokumen extends CI_Controller
             $this->upload->data();
             $this->db->where('id_dokumen', $id_dokumen);
             if ($this->db->update('dokumen', $data)) {
-                echo $this->session->set_flashdata('msg', 'success');
+                echo $this->session->set_flashdata('success', 'Data berhasil ditambahkan');
             } else {
-                echo $this->session->set_flashdata('msg', 'error');
+                echo $this->session->set_flashdata('error', 'Data gagal ditambahkan');
             }
         } else {
-            // print_r($data2); exit();
             $this->db->where('id_dokumen', $id_dokumen);
-            if ($this->db->update('dokumen', $data2)) {
-                echo $this->session->set_flashdata('msg', 'success');
+            if ($this->db->update('dokumen', $data)) {
+                echo $this->session->set_flashdata('success', 'Data berhasil ditambahkan');
             } else {
-                echo $this->session->set_flashdata('msg', 'error');
+                echo $this->session->set_flashdata('error', 'Data gagal ditambahkan');
             }
         }
 

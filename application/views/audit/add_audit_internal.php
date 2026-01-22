@@ -24,7 +24,7 @@ if ($jenis_audit == 1) {
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Tahun</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control show-tick ms select2" name="tahun">
+                                    <select class="form-control show-tick ms select2" name="tahun" required>
                                         <option value="">-- Pilih Tahun --</option>
                                         <?php
                                         $year = date('Y');
@@ -53,13 +53,13 @@ if ($jenis_audit == 1) {
 
                                 <label for="inputEmailAddress2" class="col-sm-3 col-form-label">Uraian Temuan</label>
                                 <div class="col-sm-9">
-                                    <textarea name="uraian_temuan" rows="3" class="form-control"></textarea>
+                                    <textarea name="uraian_temuan" rows="3" class="form-control" required></textarea>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Kategori</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control show-tick ms select2" name="kategori">
+                                    <select class="form-control show-tick ms select2" name="kategori" required>
                                         <option value="">-- Pilih Kategori --</option>
                                         <option value="3">Mayor</option>
                                         <option value="2">Minor</option>
@@ -95,7 +95,7 @@ if ($jenis_audit == 1) {
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Status</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control show-tick ms select2" name="status">
+                                    <select class="form-control show-tick ms select2" name="status" required>
                                         <option value="">-- Pilih Status --</option>
                                         <option value="1">Open</option>
                                         <option value="2">Close</option>

@@ -13,13 +13,39 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <div class="pl-2">
+                                <select class="form-control show-tick ms select2" name="tahun" id="tahun_lhr">
+                                    <?php for ($i = date('Y'); $i >= 2021; $i--) { ?>
+                                        <option value="<?= $i ?>" <?= ($i == (date('Y') - 1)) ? 'selected' : '' ?>><?= $i ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="line_volume_filter" style="height: 450px;"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <div class="pl-2">
+                                <select class="form-control show-tick ms select2" name="tahun" id="tahun_pendapatan">
+                                    <?php for ($i = date('Y'); $i >= 2021; $i--) { ?>
+                                        <option value="<?= $i ?>" <?= ($i == (date('Y') - 1)) ? 'selected' : '' ?>><?= $i ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="line_pendapatan_filter" style="height: 450px;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
                         <div id="line_volume" style="height: 450px;"></div>
                     </div>
                     <div class="col-md-6">
                         <div id="line_pendapatan" style="height: 450px;"></div>
                     </div>
                 </div>
-                <p class="text-info mt-3"><i>Last updated : <?= $last_update ?> </i></p>
+                <p class="text-info mt-3"><i>Last updated : <?= $lastUpdateDashboard3 ?> </i></p>
             </div>
         </div>
     </div>
