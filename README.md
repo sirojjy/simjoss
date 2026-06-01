@@ -13,6 +13,8 @@
 **SIMJOS** hadir untuk memberdayakan tim Anda dalam mengelola setiap fase kehidupan proyek jalan tol. 
 Mulai dari pembebasan lahan, pengelolaan kontrak, hingga audit akhir—semuanya dalam satu platform yang humanis, terpusat, dan mudah digunakan.
 
+*Seluruh antarmuka (frontend) dan perancangan sistem desain (design system) modern dalam aplikasi ini dibangun dan dikembangkan sepenuhnya oleh saya.*
+
 </div>
 
 ---
@@ -53,6 +55,22 @@ Berikut adalah beberapa cuplikan antarmuka dari aplikasi SIMJOS yang dirancang a
 
 ### Form Input
 ![Form Input](assets/assets/images/readme/4%20simjoss%20input.png)
+
+---
+
+## 🎨 Kontribusi Frontend & Sistem Desain (Design System)
+
+Sebagai pengembang frontend pada proyek ini, saya merancang antarmuka **SIMJOS** dengan pendekatan *user-centered design* untuk menjamin kemudahan navigasi (*usability*) serta estetika visual yang premium.
+
+### Sistem Desain (Design System)
+SIMJOS mengusung sebuah sistem desain terstruktur guna memastikan konsistensi visual di seluruh modul aplikasi:
+*   **🎨 HSL Tailored Palette**: 
+    *   **Warna Utama (Primary)**: Slate / Navy Blue untuk memberikan kesan profesional, tepercaya, dan berstandar *enterprise*.
+    *   **Warna Aksen**: Warna oranye hangat (*warm orange*) dan kuning keemasan yang terinspirasi dari marka serta elemen visual jalan tol untuk menyoroti navigasi aktif dan status penting.
+    *   **Warna Semantik**: Merah (keterlambatan/bahaya), Hijau (selesai/operasi), Jingga (persiapan/konstruksi) untuk mempermudah pemindaian status data secara instan.
+*   **✍️ Tipografi & Hirarki**: Menggunakan font modern sans-serif yang bersih dengan hirarki ukuran yang tegas, memastikan laporan angka dan data teknis jalan tol sangat mudah dibaca.
+*   **🧱 Komponen Visual Konsisten**: Kartu ringkasan (*dashboard cards*), tabel data interaktif (*Datatables*), tombol aksi, dan formulir input dirancang seragam demi pengalaman navigasi yang intuitif.
+*   **📱 Responsivitas Penuh**: Tata letak fleksibel didesain agar adaptif untuk diakses nyaman oleh manajemen di kantor pusat (desktop) maupun pengawas lapangan (tablet/smartphone).
 
 ---
 
